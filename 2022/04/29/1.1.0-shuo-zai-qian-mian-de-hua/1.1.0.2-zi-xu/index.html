@@ -1,0 +1,1566 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="1.1.0.2 自序, Java">
+    <meta name="description" content="目前分享的内容是 Java 相关内容">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>1.1.0.2 自序 | cqh</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1328f3b279d23f6c7b036c50a5338b0e141c1677.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653204287&t=cae11edf73cb8d93e3cfdea085643e0a);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+				<div>
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">cqh</span>
+				</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">cqh</div>
+        <div class="logo-desc">
+            
+            目前分享的内容是 Java 相关内容
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ccqqhh" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>请给我留言
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ccqqhh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="请给我留言" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">1.1.0.2 自序</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">1.1 语法入门</span>
+                            </a>
+                        
+                            <a href="/tags/1-JavaSE/">
+                                <span class="chip bg-color">1. JavaSE</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-1-0-%E8%AF%B4%E5%9C%A8%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D/" class="post-category">
+                                1.1.0 说在前面的话
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-04-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="自序">自序</h2>
+<h3 id="第-3-版自序">第 3 版自序</h3>
+<p>之前是想要找文献与资料，四处找不到；现在是资料漫天飞，四顾茫然；曾经的我反复横跳，浪费了很多时间与精力，干脆把曾经所做的学习笔记整合起来，方便大家。并且这期间，如果另有收获，会持续更新此书的内容。（学海无涯苦作舟）</p>
+<p>本人专科毕业。我始终认为只有自己喜欢的才需要学，忽略了高中这不是专项发展，而是筛选人才；那么多的人，企业正好设置为本科门槛可以节省筛选时间；此外你通不过本科，企业难道不会怀疑你的学习能力有问题？既然是为了赚钱，那为什么不选更好的？人才多的去，谁稀罕你这一个。</p>
+<p>我倒是不后悔，因为学历与钱对我而言不太重要，还比不上自身学会了写代码的那种喜悦；只是觉得大多数人经过
+18
+年的学习，转眼间淘汰了一半人，估计都流向工厂的流水线了，太浪费了。</p>
+<p>但是学历高，见识的东西就更多，能够打下更坚实的地基，就算现在一无所有，也能东山再起。</p>
+<p>一直笑着说大不了回家种田，但其实要是真的能够维持生活，没有人愿意背井离乡，出去打工的。我之前提到过滞后性，上一辈人因为这种滞后性，吃够了亏，于是只让我们专心学习，自己在外辛苦打工，承受所有的风险，只为了子代不再重蹈覆辙，以为我们考上大学了以后就能赚很多钱，可以享福了，却忽略了其它方面。</p>
+<p>我们都以为学成了，考上了好大学，也许前途就顺了。但总还有一半人被淘汰了，比如我，父母还是抱有期望的，至少是个大学生啊！至少比我们强吧，结果期望越大，失望也就越大。</p>
+<p>其实学校教的东西可用的很少，大多数就是纯粹应付考试。等上了大学后，被忽略的其它方面，弊处就开始显现；上一辈人突然觉得这么聪明的大学生，这点生活常识都不懂？人际交往、生活常识、整理内务、洗衣做饭、修电脑啥都一团糟？你们在学校学了个啥？换我来吧！读书有啥用！废物！你们
+90 后当家了，这个社会要完蛋！</p>
+<p>我不太在意，我知道他的局限性，他所在的小地方，也就只能看到我，误以为我就是大学生的缩影。但是网上有才有能力的人多了海了，否则你们找工作怎么这么难找。当然工厂、销售...等岗位还是挺需要人的。</p>
+<p>我认为有这些高智商的人材们，尤其是特别努力勤奋的，社会只会越来越好，但是对自己的命运不是特别乐观。</p>
+<p>我希望以后不会固步自封，局限自己的认知，觉得自己经历过这么多的事情，可以一言堂，断定周围人的秉性。因为经验有时效性，且与个人息息相关，在别人身上不一定适用。传递的观念如果别人不听后吃亏掉坑，我就在旁边暗笑，那样太可怕了，那说明我已经变质了，经验此时反而束缚住了我前进的脚步。</p>
+<blockquote>
+<p>警告自己的一句话：我知道人都会变，可是当你看到这曾经写下的这句话，如果觉得很幼稚可笑，算了，不想前进了，就说明你已经融化了。那么狠狠地抽自己，往死里抽，别让我瞧不起你，你欠我的。我现在拼死累活地，下决心，不是为了让现在的你心安理得的阻碍其他人的梦想，嘲讽其他人，也不是让你吃老本，坐吃山空，别以为这是理所当然，好好想想自己该做什么，还是在楼下打麻将与其他人夸天？</p>
+</blockquote>
+<p>当初高中毕业，选专业，虽然实现不了小时候的理想，但是想着新能源汽车发展起来了，也可以保护环境啊，于是特别天真地就选了此专业。唉，实习时来的都是接插线、黑白班做饲料、卖挖掘机、开叉车...尤其看到要求男女不限，18
+~ 50，身体健康...沉默，我这时才明白自己早就已经 out
+了，到这来只是将噩耗延迟而已，其实刚进大学时觉得完了啊，时间一长，如同温水煮青蛙一般，渐渐习惯了自己的处境，我应该事先多看看东西扩展一下视野，或许可以认清自己，然后挣扎一下；不禁怀疑我到底这
+18
+年的生涯到底学了什么？混成这个样子？竟然不知道在简历添些什么东西，热情开朗？踏实能干？会求微积分？也不明白自己有什么优点，自己的价值在哪？凭什么让企业招聘我。再看看其它要求高的，不觉得我能够达到，别人说不定看不上，真是贱啊。</p>
+<p>好吧，乌龟壳虽然保护了我不受伤害，但是一旦有朝一日，从壳中脱离，没有练成应对危机的本能，只能扑街。</p>
+<p>因为上半年考了一个电工证与驾驶证，友每天恨铁不成钢，即使之前有多不敢，导致错失了机会，所以这次一定不能放过！于是如同赶鸭子上架般慌着选择了工作，貌似能扯上一点关系的物业维修，正遭疫情，每天都是抄水电表，没积累可用的工作经验。解封辞职后开始学
+Java，跟着网上的博客与视频一步步来，哎！觉得希望来了，这有什么难的。</p>
+<p>那段时间，父亲和亲戚不再问读书成绩的事了，时常问我学了什么名堂，答：我学的这个集合很厉害，底层用多种数据结构存储数据，你看这个双向链...停停停，别跟我讲这个，我听不懂，这么有用，什么时候出去找事？可以赚多少钱？答：额...</p>
+<p>得，赶进度吧，花了5个多月的时间，数据结构与算法、MySQL、JDBC、HTML、CSS、JavaScript、Tomcat、Http
+协议、Servlet、JSP、AJAX、JQuery、Maven、MyBatis、SVN、Git、Spring、SpringMVC、Dubbo、Linux、SpringBoot、SpringCloud、Nginx、SpringSession、FastDFS、RabbitMQ、SpringSecurity、Shiro、Swagger、CRM
+项目...</p>
+<p>期间为了方便翻阅和复习，加页码、加目录、记时间、正字复习、画星星、康奈尔...方法效果甚微。</p>
+<figure>
+<img src="https://img-blog.csdnimg.cn/1145392c9f5f49498ac28e37335a389f.png" alt="动力节点的 IDEA 如何安装">
+<figcaption aria-hidden="true">动力节点的 IDEA 如何安装</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/6GFICf9tp4KxEmA.png" alt="韩顺平老师的数据结构与算法">
+<figcaption aria-hidden="true">韩顺平老师的数据结构与算法</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/Rpg7jdAvW3o2CL6.png" alt="杜聚宾老师的 JavaScript">
+<figcaption aria-hidden="true">杜聚宾老师的 JavaScript</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/IasLWx185YHdc2h.png" alt="杜老师的 Servlet">
+<figcaption aria-hidden="true">杜老师的 Servlet</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/oT4uKgbdaOyFnit.png" alt="Spring">
+<figcaption aria-hidden="true">Spring</figcaption>
+</figure>
+<p>所以以我为反例，别用纸质笔记，很不方便的。</p>
+<p>（之前有人问我，5
+个月怎么这么慢？其实我之前太贪心了，还想学数学、英语、物理...）</p>
+<p>也不是没有人劝我，江山易改本性难移，固定的思维就像茅坑里的石头难以改变。每次听到劝导，又开始神经发作，万一呢？你到底怕什么呢？谁会吃了你？这是否已经成了本能？我想不通，也说不清了...</p>
+<p>我的理智告诉我，我只是害怕未知，本能拒绝去尝试，害怕再次失败，又被人侮辱与嘲笑，尤其是年龄大了，没有试错机会了，只能尽力维持现状，一旦没有了父母的支撑，把我投入到大海中，要么四肢扑腾，学会游泳，要么淹死。说到底，我还是有很好的父母，坚实的后盾，实在太幸福了，所以才令人感到如此悲哀。再结合到三和大神、26
+岁成人被饿死之类的，我能理解亲戚他们的想法。算了，不说了，混成这个小孩模样，也是没谁了，希望能在饿死之前，主动寻求改变吧。没想到还真自证了自己初中时的想法，讽刺啊。</p>
+<p>觉得学的也差不多了，开始看招聘，清一色的本科以上要求，这还玩个毛啊。再从网上看看题目，倒是不难，但想流利的说出，还是要背；语文、英语对我还是有点难，由于耳朵问题，只习惯看字幕，真不想把时间花在这无用的试探之上。说到底，我的信心一直被摧残，没被培养起来，一做事就放下手头的事跑过来看我，指指点点，说这不行那不行，不停地被否定，最后直接推开替换了我，一说话就被认为是借口，为什么别人行而我不行？对啊，我也纳闷这到底是为什么。所以畏手畏脚，一想到工作就躲避，哎呀都是我不行的，干不了，主动失去信心，下贱自己。那么别人看到这个样子，没有一点正能量，只会让现状越来越坏，犹如囚笼之兽。现在回想起来，这本来就不难，小事一桩！为什么非要挫折教育呢？？？究竟经历过什么事才会认为这是正确的做法？是不是我视野窄了，看不到背后的良苦用心？</p>
+<p>得到一个规律：不犯错，必败事；如果小时候文文静静，逆来顺受，畏手畏脚，被框在自以为的规矩下，不敢尝试，看上去很听话很乖；但年纪大了，躲得了一时，躲不了一世，没有小错带来的经验，将来必定踩坑，成为平庸的人；这虽然不是必然发生的，但是概率很大，常在河边走总有一次会湿鞋嘛。小时犯错相比大时犯错，周围人包容度更高，所以建议小时多尝试。</p>
+<p>受限于学历，所以我降低了要求，不得非要与代码搭边，随便啊，别进工厂黑白班、天天
+12
+小时，我还不想猝死。你们如果有什么好的渠道，智联、前程、脉脉...欢迎交流啊！</p>
+<p>回顾，自己表面掌握了什么高大上的框架，但框架用起来很简单的，底层屏蔽了繁琐细节的具体实现，从配置多个
+XML 文件到约定大于配置直接启动，增删改查就增几个注解，改下 SQL
+语句，越学越简单，只是要背注解、方法名、操作步骤...才发现我其实也就是只会调下
+API，太浅显了，一遇到稍微深层次的问题就扑街。忘了代码就在网上搜索复制粘贴，这不就是搬砖吗？我学到这之后就没学了，就是觉得太浅了，简直把我当做硬盘在用。这些方法名，记流程有个鬼用，时代一换，又得重新开始。</p>
+<p>我觉得是基础没打好，也许是哪里走错，之前学的不够系统，又把 JavaSE
+内容看了一遍，尚硅谷、动力节点、狂神说...，收获不是很大。</p>
+<p>终于下定决心，这 Java
+内容之多，之繁杂，总得有人要整理一下节省小白的时间，稍微扑腾一下吧；为了帮助和我一样的人，避免踏入同一个坑，开始本书的第
+1 版制作：</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/sMVWgjUqenT5rpS.png" alt="2021 春节时折腾的 JavaSE 笔记">
+<figcaption aria-hidden="true">2021 春节时折腾的 JavaSE
+笔记</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/stpw46jfTRd8IEC.png" alt="前端">
+<figcaption aria-hidden="true">前端</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/qkaVbGeh2vx9YRy.png" alt="MySQL 数据库">
+<figcaption aria-hidden="true">MySQL 数据库</figcaption>
+</figure>
+<figure>
+<img src="https://img-blog.csdnimg.cn/3f434ba185a84387861657f6e5e1bd86.png" alt="MyBatis">
+<figcaption aria-hidden="true">MyBatis</figcaption>
+</figure>
+<figure>
+<img src="https://img-blog.csdnimg.cn/b27e374baf484b4885c2fc1f2f688188.png" alt="架构的发展历史">
+<figcaption aria-hidden="true">架构的发展历史</figcaption>
+</figure>
+<p>（当然现在忘得差不多了）</p>
+<p>当时正是过年，前前后后忙了几个月。又被打击了一顿，说我在家里游手好闲、不学无术，不务正业，试过辩解，被认为只晓得找借口，是废物一个，在村里都不好意思说，不敢走亲戚，抬不起头，对外统一口径是我好高骛远，只晓得在家里玩，那么我也就没有什么可以说的呢，我不明白这是在激励我还是在保护我呢；每当别人问起我的年龄时，是否还在上学，总是感到脸上一阵青一阵白十分羞愧，无力感萦绕在心头阴魂不散。此时负标终于超过负荷，被最后一根稻草压倒，期间强行振作，努力维护日常作息，又被说年轻人还是没有被锻炼到，还是要多给点压力锻炼下，否则太脆弱了，心理承受能力太差，连这点打击就把你压垮了，去做销售扭转下性格就好了，挺适合的。终于压不住内心的痛苦崩溃了，开始自暴自弃，为什么所有的评价都认为只有我这么废？算了吧，说的对啊，我的确没用，还学什么啊，都卖了吧，我实在太脆弱了不堪一击，整个人又坏又蠢，估计就连小学的我就瞧不起现在的自己，不搞了，自闭中；眼泪不能流，声音不能出，打碎牙齿往肚子里呜咽...男人！男人嘛，男人！你这么大个人，怎么还跟小儿一样，好意思吗？没希望了，一生已经毁了。</p>
+<p>但是过了一段日子后，越看越觉得这个笔记不对劲，写的这么粗略，这是给自己看的吧？新手能够看得懂吗？强行驱动自己，做事必须有头有尾，还是续了一根弦。在此期间，我明白了寻求人的认同十分困难，干脆把精力放在代码、鱼、自然身上。有人说自然与这些生物有灵性，我不否认，可是它们的灵性如果达到了人的高度，假如我散步去了另一个地方、今天没有喂鱼...它们会不会在心里扯着喉咙喊：“为什么不到我这玩！为什么今天不喂我！！”那我该是什么表情？是不是比与人打交道更累？</p>
+<p>当时又看了韩顺平老师的课程，他总结的学习方法很不错，先 demo
+再写注意事项。然后由此编写了第 2 版：</p>
+<p>初入门时 JDK 安的是 15，（应该是 8，做第一版教程时才应该把 8
+删了，重新下了
+15）当我重新准备下载时，发现页面找不到了，这才知道长期支持版本是什么东东。</p>
+<p>好吧，为了回顾当初下载软件时遇见的问题，场景重现，方便截屏，狠心格式化了电脑，把之前的
+Node.js、Linux、MySQL、Navicat、Maven仓库、Tomcat
+等一切全部删了，直到现在都还没下载回来。之前放入 GitHub
+仓库的代码，比如数据结构，被我认为代码写的太垃圾了，直接清空了。（现在就没有参照了，真是白给）</p>
+<p>只剩下 FastDFS、RabbitMQ、SpringSession 的 demo 了。</p>
+<p>好，没关系，大不了重新开始。</p>
+<p>花了好几个月，废了很大心血，删了改，改了删，半夜突然醒来，打开电脑就只为修改一句话，信心满满，没有多少评论，想着是不是网络上资源太多，唾手可得，根本就不缺我一人的努力，此时突然觉得我都没有找到工作，所学知识之浅，路之狭窄已到头，还敢斗胆发文章，也不称称自己的斤两，这不是误人子弟吗，于是把之前的所有博客都删了，秉持了不尝试就不会失败的鸵鸟原则。</p>
+<p>我现在想明白了，去追赶那些前言技术，学习语法，如何使用，只会流于表面，疲于奔命；干脆放弃掉，重新开始。我觉得就连
+Java
+语法，也变得不太重要，毕竟只是背别人定义的规则，还是表面；但是要写程序，没有办法，于是就有了语法入门篇。</p>
+<p>根据纸质资料和粗略的第 1 版，以及网上的博客资料，拼拼凑凑得来了第 3
+版，至此只完成到集合部分。并且我还是不满意，决定抽出时间，继续重置。</p>
+<p>现在又要看最开始的老版笔记重新写一遍，做事有始有终，不能轻言放弃，爬也要爬到终点！没有什么是不可能的（Nothing
+is
+impossible），即使这份感情被背叛过千百次。还好现在没工作，否则抽不出时间写。由于删了之前的博客，有很多都是后来在最初版的基础上修修补补地，可能有很多疏漏、没来得及添加的、知识变异了的，恳请大家提出宝贵的批评和建议，以便改正。学习路线就按韩老师的来，先
+demo 再声明课堂注意、出题目，按部就班的点还是挺不错的。</p>
+<p>2022.3.11</p>
+<h3 id="第-2-版自序">第 2 版自序</h3>
+<p>接受现实，痛定思痛，干脆抽出时间，整理曾经写过的纸质笔记与博客，为尚未踏出校门的同学节省一点时间。</p>
+<p>有的地方根本没必要学，直接复制粘贴看看 API
+就行，没啥技术含量的。对于那些性格内向的人，心里有很多内容与墨水，但嘴里吐不出话的人，我特别能够理解你的苦衷，珍惜校招吧，避免毕业就是失业的尴尬局面。</p>
+<p>有些人的确很聪明，在这里我不想扯勤奋与努力，以前也讲过，这只是表象，何况对于有些人也真的很难，考虑到通用性，内容稍微细一点，不要嫌我啰嗦。</p>
+<p>我已经很知足了，阳光、空气、可以动的四肢、能计算 1 + 1
+的大脑，没用什么遗憾了。对我而言，健康远比时间、金钱、技术重要。不对，这该死的技术，这抵挡不住的魅力啊！！！</p>
+<p>真的好怀念魔兽，如果阿尔萨斯王子没走屠杀线一定会有美好的结局吧。</p>
+<p>2021.7.4</p>
+<h3 id="第-1-版自序">第 1 版自序</h3>
+<p>最近学习了 MarkDown
+语法与五笔打字，打算把纸质笔记整理成书，帮助大家。</p>
+<p>经过一段时间的摸索中，得出了以下结论，希望对新手有帮助。</p>
+<p><strong>1、删除无效的软件</strong>（打造合适的环境）</p>
+<p>比如一直让你刷刷刷，停不下来的。因为你每次刷，都在期待下一个视频对你有用，但很大的可能只是满足了你的多巴胺分泌。</p>
+<p>上瘾后不要责怪自己，想办法清醒后把这些触手可及的东西，不管是卸载、还是关闭推送、扔在角落...尽一切可能不要让它来打扰你；如果你是因为没有事情，好无聊，看这些来打发时间，那就找一些其他事情吧，如散步、健身、看书什么都可以...</p>
+<p>这种大量占用时间碎片，令人上瘾的软件，可以说是一种毒瘤，我想不通为什么要研发它，钱真的很重要，但也不至于这样吧。</p>
+<p>我说过人就是个石头，现在看看销售营销等一些手段玩弄心理，越发坚定这个想法；我们能做的只不过是别让那些外力推动自己。</p>
+<p><strong>2、工作与学习之间的平衡</strong></p>
+<p>公司都是重复性劳动，没有实际上的经验提升，还要担心上级领导的试探，同事的打压，构建话术。下标后自学也只能学习
+1、2
+个小时，并且还不包括动手尝试的环节，能够学到手的知识十分浅显。等学完，天都换了。</p>
+<p>并且公司本质上是私人组织的、有了好点子想变现、以盈利为目的的结构；你想想你要是老板，谁不行直接替换掉，反正人才多的是，为何还要等你慢慢成长，真以为自己是潜力股吗。</p>
+<p>但是辞职也不可取，长时间在家，没有了生活来源；走在路上还要被婆婆们嬉笑。</p>
+<p>此外亲戚们都不会理解，最亲的人也会骂你不中用，你给他也讲不明白，还会被觉得十分可怜。一开始还可以打哈哈，说自己已经毕业了，在学习编程；但之后呢？这条漫长的学习之路，不同于进厂教教就能直接上手。</p>
+<p>我想提醒你，你是否也感觉大学的课完全没必要上，但我们也许还如同高中一样，按部就班，讲什么就听什么，那么到了毕业就等于失业，你应该抽空把自己的爱好发扬光大。如果等到上班再学，其他人会怎么想？</p>
+<p>结论：<strong>请好好珍惜大学的时光，那是唯一适合自学的时候</strong>。否则你要承担额外的精神压力，扛不住人就废了。</p>
+<p><strong>3、适当约束自己的好奇心</strong></p>
+<p>不要看到什么都想学，什么都想买，一直在搜，知识太多，你学不过来的。你先在网上搜索，比如后端的整套知识点，按顺序来，一心一意，一套教程为主，有疑惑的再去别的地方比对。不要没事就搜索一大堆资料收藏，又不开始，资料一定要精简，那些看上去有用的知识但短期用不上的，直接取消收藏。等你到了这步，再找资源，别做松鼠。</p>
+<p>关于难度高的，可以先跳过，记录下来，后面再补上，比如数据结构、JVM
+底层、多线程与高并发、GUI 等等...别把初学时间浪费在这上面。</p>
+<p>不要背代码，要掌握原理，方法可以到 API
+文档上查。之前基本都是概念上的东西，理解就好了，但学到集合、IO、常用类如
+String，只背方法名一定会消灭你学习的兴趣。</p>
+<p>如果学习资料抛出一大堆让人心痒痒的新名词，操作不讲规则与原理，没有容易理解的例子，只是像背或粘贴似的敲打代码以及一大堆的命令控制流程，那么我劝你趁早跳过，用时再翻阅。</p>
+<p><strong>4、管理好精力</strong></p>
+<p>并不是一直在同一个地方枯坐，工作效率才会高。</p>
+<p>要合理分配精力，因为精力是有限的。学习并不是生活的全部，如果你整天扑到学习上，只会感动自己。随着精力的消耗，自控力的减弱，一定会在某天突然崩掉，开始变得什么都没有兴趣，行动力拉到最低，即使强迫在学，也只是枯坐原地，享受着左耳进右耳出的枯燥感。</p>
+<p>早起别熬夜，每天一定留至少 30 分钟的时间午睡。（为了第 2
+天的精神良好）学习时推荐使用番茄钟，每过半小时就休息一小会，合理分配精力。（休息时不要看电子产品与动脑筋，要适当远眺）</p>
+<p><strong>5、学好英语</strong></p>
+<p>没什么说的，英语真的很通用很重要，为了阅读懂优质的国外资料。看着机翻的我太拉跨的，简直是哑巴英语。学不会也没关系，就算关了一扇窗，把开这扇窗的力量用到别的地方去，一定不会浪费的。</p>
+<p><strong>6、必学的知识点</strong></p>
+<p>从大多招聘岗位的要求取出交集：</p>
+<p>IO、集合、JVM、多线程、Spring、SpringBoot、SpringMVC、MyBatis、Dubbo、SpringCloud、JavaScript、Vue、MySQL
+与 Oracle 取其一、SQL
+调优、Redis、Tomcat、Nginx、Docker、Zookeeper、RabbitMQ、Kafka、Linux、HTTP
+与 TCP / IP 协议、Socker、Maven、Git、AJAX、ElasticSearch</p>
+<p>剩下的知识，应聘意中岗位时再选择性补全。</p>
+<p><strong>7、选择书籍还是视频</strong></p>
+<p>视频时间看完所需时间更长，但可以一步步来，如果章节内容划分合理，每个视频时常合适，学习者更轻松完成每个目标，掌握自己的进度。适合初学者。</p>
+<p>书籍花费时间较少，但经常有断节之处，初学者搞不明白缺少哪一个环节，看着晦涩难懂的文字，翻不了几页就草草放弃，适合耐得住性子的人。</p>
+<p><strong>8、不要过分追求完美（承认自己的不足之处）</strong></p>
+<p>想做就直接放手干，不要计划的那么周全，稍微一有变动，就放弃目标，想明天再做。是吧，别觉得只有从容不迫、不慌不忙、按部就班地才叫做事，而达不到自己的心理预期就不做了，大多数人都是计划赶不上变化，被搞得灰头土脸的。</p>
+<p>另外人都是有惯性的，如果设置了太高的目标难度，只要有一天没坚持下来或不想做了，那么最终结果一定是放弃。</p>
+<p>这不禁让我怀疑，以前对生命的定义。我本来以为生命是一种奇迹，我感到自豪，超脱于物质之上；比如从下坡推一个石头，它只会毫无疑问的滚落下去，而我们可以做出反应。</p>
+<p>但经过太多的事后，我发现生命的本质与死物没有太大区别；生命就像是一台精密的操作仪器，如同电脑、机器人，只不过比它们先进点。</p>
+<p>接收输入做出反应，将应对方式与最终结果存储；等下一次事件再发生时，可以不断优化脑海中存储的应对危机的方法，达成自我学习的本领。</p>
+<p><strong>9、学会分享</strong></p>
+<p>不要闭门造车，要发在各大网站上分享，Markdown
+语法如果你都会了，直接发在博客网上。不要觉得自己技术菜。</p>
+<p>第一，人人都有开始，你发出来了，别人才能纠正你的错误，避免成为井底之蛙。</p>
+<p>第二，你又开始自耗了，不停地在脑海天人交战，一顿脑补：会不会万一发出来被人嘲笑怎么办？...于是藏着掖着，生怕别人知道，出丑，事情还未做，就想一系列的后果，别人有多可恶。我觉得世上还是好心人多，当然不要被零星几个恶评就忽略了大多数支持你的人。</p>
+<p>第三，百分之 99.9 的人根本刷不到你的文章，或者一下就 ×
+过去了，即使刷到了，那还有 9.9
+成人浏览刷的一下就关了，评论的那是少之又少，凤毛麟角。如果帮助不到他，谁还关心你是谁，最多充当局外客感到可笑。当你还在纠结别人的看法时，纠结要不要做时，别人根本记都不记得你。我们在网络时代那是十分渺小，沧海一粟，很快被淹没，就算有弄潮儿掀起了几朵浪花，也会很快平息，所以别再纠结丢不丢脸了。</p>
+<p><strong>10、关于努力与勤奋</strong></p>
+<p>有人经常说，要自律，要吃苦，要努力，才能成功，你看看这些成功人士都是这样...努力才能得到一切，才能成功。但我抛出一个结论：努力与吃苦，并不能成功，也不能改变命运。</p>
+<p>他们忽略了一个东西，自律、吃苦等只是个表面行动展现出来的结果，并不是成功的原因。比如你打王者，技术很菜，但是你就想升段位，不用别人提醒，开了一把有一把，一直连跪，日夜颠倒，身体早就向你警告了，这种违反本能的行为真够自律的。不打一定不会上王者，打了无数盘由于技术太菜，也不一定能上王者。</p>
+<p>如果你真心地想要完成某个目标，你不会觉得这是折磨的。再次声明，不是自律、努力才会成功，<strong>它们实际是想到达成目标，而自发控制自己身体机能活动的行为。</strong></p>
+<p>所以努力只是达成目标的一种手段；由于基因与环境很难改变，于是性格也几乎定型，形成了独有的接人待物的一套行为模式，感兴趣并为之付出汗水的也就那么几件，还要承受不理解；之所以说“努力改变命运”这种只是安慰、激励自己的空话，是因为要给一点希望，如果让“唉，都是自己不够聪明，天赋不好，于是就不努力了，让子代好好搞吧”的观点占了主流，那么原本有希望改变的人也会受到负面影响，并且我之前都说过部分人根本就谈不上拼努力与天赋，正常学习不放弃就
+OK，没有必要与头部的那群神仙比，那么我换一种说法：“经验、知识就是力量”。</p>
+<p>友情提醒：全身心很耗精力，记得番茄钟打断此状态（半小时），休息的时间眺望远方，不要看电视、玩智能设备，否则越来越累。</p>
+<p><strong>11、学完要多久？</strong></p>
+<p>如果你不复习，不怎么练，只看视频的话，最多半年。能够记住多少看命。</p>
+<p>正常一年半（每天 8 小时以上不间断）</p>
+<p><strong>12、是不是很难？</strong></p>
+<p>相比越到后面越抽象，一环扣一环的数学，Java
+其实还算好，小白也能调用方法完成工作，理解一下就行，屏蔽了底层如何实现的繁琐细节，看看
+API 即可拿来用。</p>
+<p>至于为什么一看就会，一敲就废？是不是我没有天赋？</p>
+<p>说实话，这些东西不会就跳过，以后再补，只要学会调用方法，看看 API
+就行。还没有达到拼天赋的地步，努力也无需拼，努力只是外表展现的结果，而不是因，若你感觉自己很努力了，很痛苦，就像我之前说的这样，你想想哪里出现了问题，是不是真的不感兴趣，居然会觉得要强逼自己，努力才会成功？想着人只有逼逼自己才行？</p>
+<p>话说回来，不会不是真的完全不会，而是你看时觉得很正常，但一到做时脑海中缺少一些关键片段，甚至连思绪的头都没有，无法串联成珠，往往出错，其他人只不过是由于过往经历（熟能生巧）或者下自然地就补齐了这个漏洞。</p>
+<p>没必要担心，如果你接触它的时间过长，会弥补的。不用特意寻找解决它的办法，多看看就行。（把同一个知识点学三遍差不多就熟了）</p>
+<p>此外我觉得人略微笨些，是好事，意味着你能够帮助这世界绝大多数人，不会出现理所当然，而一些人却不能理解的事，知道哪里有槛，知道一些人哪里有误区。只要你走通了，其他人就能走通。</p>
+<p>花自己的时间，让更多人节省了时间，值。努力活完短短的一生，将所得成果留给后代分享，人类真的是很了不起呢。</p>
+<p>2021.2.11</p>
+<h3 id="第-0-版自序">第 0 版自序</h3>
+<p>今天是网上学习 Java
+的第一天，自学，根据学习路线图一篇篇在网上搜来的知识。</p>
+<p>本人才疏学浅，感悟还不够深，只能根据些许痕迹揣摩出背后道理。主要是臆想成分居多,如果有什么不对的地方,还请各位大师指点,大家一起共同进步。</p>
+<p>另外希望把已建立的认知体系撕开一个口，推倒。<strong>包容，承认自己的失败</strong>，不要斗气就认这个死理，大不了掌握其它方法重头再来。</p>
+<p>2020.6.13</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">cqh</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ccqqhh.github.io/2022/04/29/1.1.0-shuo-zai-qian-mian-de-hua/1.1.0.2-zi-xu/">https://ccqqhh.github.io/2022/04/29/1.1.0-shuo-zai-qian-mian-de-hua/1.1.0.2-zi-xu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">cqh</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">1.1 语法入门</span>
+                                </a>
+                            
+                                <a href="/tags/1-JavaSE/">
+                                    <span class="chip bg-color">1. JavaSE</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">心意我领了，谢谢您</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/04/29/1.1.0-shuo-zai-qian-mian-de-hua/1.1.0.1-qian-yan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="1.1.0.1 前言">
+                        
+                        <span class="card-title">1.1.0.1 前言</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-0-%E8%AF%B4%E5%9C%A8%E5%89%8D%E9%9D%A2%E7%9A%84%E8%AF%9D/" class="post-category">
+                                    1.1.0 说在前面的话
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/29/1.1.6-shu-zu/1.1.6.1-yi-wei-shu-zu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="1.1.6.1 一维数组">
+                        
+                        <span class="card-title">1.1.6.1 一维数组</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-6-%E6%95%B0%E7%BB%84/" class="post-category">
+                                    1.1.6 数组
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: cqh<br />'
+            + '文章作者: cqh<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，转载请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">cqh</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">88.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="https://github.com/ccqqhh" class="tooltipped" target="_blank" data-tooltip="访问我的 GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2675385031@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2675385031" class="tooltipped" target="_blank" data-tooltip="QQ 联系我: 2675385031" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

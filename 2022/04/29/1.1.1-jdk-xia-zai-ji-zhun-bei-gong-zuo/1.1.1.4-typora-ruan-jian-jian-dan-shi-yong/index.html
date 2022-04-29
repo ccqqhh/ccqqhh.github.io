@@ -1,0 +1,1761 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="1.1.1.4 Typora 软件简单使用, Java">
+    <meta name="description" content="目前分享的内容是 Java 相关内容">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>1.1.1.4 Typora 软件简单使用 | cqh</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1328f3b279d23f6c7b036c50a5338b0e141c1677.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653204287&t=cae11edf73cb8d93e3cfdea085643e0a);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+				<div>
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">cqh</span>
+				</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">cqh</div>
+        <div class="logo-desc">
+            
+            目前分享的内容是 Java 相关内容
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ccqqhh" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>请给我留言
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ccqqhh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="请给我留言" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">1.1.1.4 Typora 软件简单使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">1.1 语法入门</span>
+                            </a>
+                        
+                            <a href="/tags/1-JavaSE/">
+                                <span class="chip bg-color">1. JavaSE</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-1-1-JDK-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="post-category">
+                                1.1.1 JDK 下载及准备工作
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-04-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="typora-软件使用">1.4 Typora 软件使用</h2>
+<p>简洁、功能强大、实时预览的 md 编辑器。</p>
+<h3 id="下载与安装">1.4.1 下载与安装</h3>
+<p>下载地址：https://www.typora.io</p>
+<p>往下翻，点击 Windows（我的是 Windows 系统 64 位），点击 Donwload
+Beta（x64），就会自动下载；</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/vgrTx8u7R2FOVUD.png" alt="Typora 下载">
+<figcaption aria-hidden="true">Typora 下载</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/8UVisvOaqYZx9LT.png" alt="目前 Typora 网站已访问不了">
+<figcaption aria-hidden="true">目前 Typora 网站已访问不了</figcaption>
+</figure>
+<p>双击下载好的 .exe，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/wboODYk1vLh3tAd.png" alt="Typora 安装界面">
+<figcaption aria-hidden="true">Typora 安装界面</figcaption>
+</figure>
+<p>指定安装位置，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/BpMjPLrACKWfTkI.png" alt="让电脑上所有用户共享此应用">
+<figcaption aria-hidden="true">让电脑上所有用户共享此应用</figcaption>
+</figure>
+<p>下一步 next，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/T1LbQk3WpEg9OMK.png" alt="指定安装目录">
+<figcaption aria-hidden="true">指定安装目录</figcaption>
+</figure>
+<p>选中复选框代表创建桌面快捷方式。</p>
+<h3 id="如何创建-markdown-文件">1.4.2 如何创建 Markdown 文件</h3>
+<p>创建以 .md 结尾的文件，如
+test.md，鼠标右键新建/文本文档，双击打开发现怎么还是记事本？</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/jCGgFhSmf9BOabP.png" alt="记事本">
+<figcaption aria-hidden="true">记事本</figcaption>
+</figure>
+<p>打开文件资源管理器，把文件扩展名和隐藏的项目打上对勾，就可以看到隐藏的后缀和文件夹如
+AppData；</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/TfGSN18zxAJKLyl.png" alt="被隐藏的文件扩展名">
+<figcaption aria-hidden="true">被隐藏的文件扩展名</figcaption>
+</figure>
+<p>此时刚刚创建的文件显露真身，原来还是 txt 文件；右键重命名，把 .txt
+去掉，再双击点进去。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/MBOFWSqbRuc851T.png" alt="显示的文件扩展名 .txt">
+<figcaption aria-hidden="true">显示的文件扩展名 .txt</figcaption>
+</figure>
+<h3 id="常用的-markdown-语法">1.4.3 常用的 Markdown 语法</h3>
+<p>此软件使用的是 Markdown
+语法，一种纯文本格式的轻量级标记语言。通过简单的标记语法,它可以使普通文本内容具有一定的格式。</p>
+<p>md 语法的出现不是为了替代 html，而是更方便书写。如果让我写那么多的
+&lt;&gt;，不停思索如何嵌套，写一大堆长长的 css，我会疯掉的。</p>
+<p>这款软件它可以你更加关注内容，而不是注意怎么摆弄格式。Word
+是边写边在上面的边栏调字体大小、颜色、格式，很不方便。</p>
+<p>内容如下：</p>
+<ul>
+<li>字体格式：如标题、斜体、加粗</li>
+<li>跳转链接：如超链接与图片</li>
+<li>内容排列：如表格、有序无序列表、各种图表、分割线</li>
+</ul>
+<p><strong>标题</strong></p>
+<p>一个 # + 空格，跟上标题内容即可。（Ctrl + 1
+是一级标题，以此类推）</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex"># 我是什么人
+## 我是第2种人<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>一个 # 是一级标题，两个 # 是二级标题，依此类推，直到 6
+级标题。（越来越小）</p>
+<p><strong>复选框</strong></p>
+<p>一个减号 + 空格 + [ ] + 空格</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">- [ ] 锻炼<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul class="task-list">
+<li><input type="checkbox" disabled="">
+锻炼，可以点击就能打上对勾。</li>
+</ul>
+<p><strong>粗、斜、斜加粗等字体</strong></p>
+<p>1、被两个星号包裹的字自动变粗（Ctrl + B）；</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">**我是粗**<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>我是粗</strong></p>
+<p>2、被一个星号包裹的字是斜体（Ctrl + i）；</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">*我是斜*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><em>我是斜</em></p>
+<p>3、被 3 个星号包裹的字是粗斜；</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">***粗斜体***<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong><em>粗斜体</em></strong></p>
+<p>4、Tab 上面有一个键，按住 Shift，再按住它，可以打出 ~。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">~~废弃~~<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><del>废弃</del></p>
+<p><strong>引用</strong></p>
+<p>大于号 + 空格 + 内容</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">&gt; 摘抄自大文豪张三的一句话<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>摘抄自大文豪张三的一句话</p>
+</blockquote>
+<p><strong>键盘风格</strong></p>
+<p>被成对的 kbd 标签的内容。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">&lt;kbd&gt;ctrl&lt;/kbd&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><kbd>ctrl</kbd>+<kbd>c</kbd>是复制</p>
+<p><strong>超链接和图片</strong></p>
+<p>这些地址就是网址。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">![图片名](图片地址)
+[超链接名](超链接地址)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com">百度</a>（右击打开链接或按住
+Ctrl，再单击此链接）</p>
+<p><strong>表格</strong></p>
+<p>Ctrl + T 快捷键创建表格，Ctrl + Enter 添加新行，Shift + Ctrl + Del
+删除一行。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">名称|性别|生日
+--|--|--
+赵三|男|1213.2.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>名称</th>
+<th>性别</th>
+<th>生日</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>赵三</td>
+<td>男</td>
+<td>1213.2.1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>代码</strong></p>
+<p>单行使用 `，多行三个 `，指定代码语言：</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">`单行代码`
+```java
+多行代码
+```
+```javascript
+//实际写法var foo = 'bar';
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>单行代码</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">多行代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//实际写法var foo = 'bar';</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>列表</strong></p>
+<p>1、无序列表</p>
+<p>单个星号 + 空格 + 内容</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">* 语文
+* 数学
+* 英语<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>语文</li>
+<li>数学</li>
+<li>英语</li>
+</ul>
+<p>2、有序列表</p>
+<p>数字. + 空格 + 内容</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">1. 起床
+2. 刷牙
+3. 吃饭<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol type="1">
+<li>起床</li>
+<li>刷牙</li>
+<li>吃饭</li>
+</ol>
+<p>3、列表套列表</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">* 起床  
+    * 睁开眼睛  
+    * 我是沙福林
+* 刷牙<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>起床
+<ul>
+<li>睁开眼睛</li>
+<li>我是沙福林</li>
+</ul></li>
+<li>刷牙</li>
+</ul>
+<p><strong>大纲</strong></p>
+<p>可以把标题列出来，即 # 后的内容。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">[TOC]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>分割线</strong></p>
+<p>三个减号+回车（Enter）</p>
+<hr>
+<p>以下内容不需要了解，几乎不用。</p>
+<p><strong>甘特图</strong></p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">```mermaid
+gantt
+        dateFormat  YYYY-MM-DD
+        title 这是标题，上面是日期格式年月日
+        section 计划表
+        准备行李（已完成）               :done,    des1, 2014-01-06,2014-01-08
+        买机票（进行中）               :active,  des2, 2014-01-09, 3d
+        拍照（计划）               :         des3, after des2, 5d
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">gantt</span>
+        dateFormat  YYYY-MM-DD
+        title 这是标题，上面是日期格式年月日
+        section 计划表
+        准备行李（已完成）               <span class="token operator">:</span>done,    des1, 2014-01-06,2014-01-08
+        买机票（进行中）               <span class="token operator">:</span>active,  des2, 2014-01-09, 3d
+        拍照（计划）               <span class="token operator">:</span>         des3, after des2, 5d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>UML图表</strong></p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">```mermaid
+sequenceDiagram
+张三-&gt;&gt; 李四: 你好！李四, 最近怎么样?
+李四--&gt;&gt;王五: 你最近怎么样，王五？
+李四--x 张三: 我很好，谢谢!
+李四-x 王五: 我很好，谢谢!
+
+李四--&gt;&gt;张三: 打量着王五...
+张三-&gt;&gt;王五: 很好... 王五, 你怎么样?
+王五-&gt;&gt;张三: 不好
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">sequenceDiagram</span>
+张三<span class="token arrow operator">-&gt;&gt;</span> 李四<span class="token operator">:</span> 你好！李四, 最近怎么样?
+李四<span class="token arrow operator">--&gt;&gt;</span>王五<span class="token operator">:</span> 你最近怎么样，王五？
+李四<span class="token arrow operator">--x</span> 张三<span class="token operator">:</span> 我很好，谢谢!
+李四<span class="token arrow operator">-x</span> 王五<span class="token operator">:</span> 我很好，谢谢!
+
+李四<span class="token arrow operator">--&gt;&gt;</span>张三<span class="token operator">:</span> 打量着王五...
+张三<span class="token arrow operator">-&gt;&gt;</span>王五<span class="token operator">:</span> 很好... 王五, 你怎么样?
+王五<span class="token arrow operator">-&gt;&gt;</span>张三<span class="token operator">:</span> 不好<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>流程图</strong></p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">```mermaid
+graph LR
+A[长方形] -- 链接 --&gt; B((圆))
+A --&gt; C(圆角长方形)
+B --&gt; D{菱形}
+C --&gt; D
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">graph</span> LR
+A<span class="token text string">[长方形]</span> <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">链接</span> <span class="token arrow operator">--&gt;</span></span> B<span class="token text string">((圆))</span>
+A <span class="token arrow operator">--&gt;</span> C<span class="token text string">(圆角长方形)</span>
+B <span class="token arrow operator">--&gt;</span> D<span class="token text string">{菱形}</span>
+C <span class="token arrow operator">--&gt;</span> D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="常用的设置">1.4.4 常用的设置</h3>
+<p>内容如下：</p>
+<ul>
+<li>常用的快捷键：如加粗、标题、表格等</li>
+<li>更改风格：如字体颜色、样式，显示代码行号</li>
+<li>将笔记导入导出</li>
+<li>支持数学符号</li>
+</ul>
+<p>因为都是中文，只讲一点点，剩下的自己在菜单栏上研究吧。</p>
+<p><strong>快捷键</strong></p>
+<p>直接点击菜单栏，查看快捷方式，如点击视图、段落，上面显示了快捷方式更方便触发；或者按住
+Alt + O，即可打开格式：如 Ctrl + B 是加粗的快捷键，Ctrl + \
+是清除样式，Ctrl + T 是创建表格的快捷方式，Ctrl + /
+是查看源代码，Windows + 句号是表情符号、视图放大、缩小...</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/xj4LVWfCd8GJhya.png" alt="常见的快捷键">
+<figcaption aria-hidden="true">常见的快捷键</figcaption>
+</figure>
+<p>段落/YAML Front
+Matter（前言），因为我暂时用不上，看看其他人写的文章吧：</p>
+<p>https://zhuanlan.zhihu.com/p/78087948?from_voters_page=true</p>
+<p>https://zhuanlan.zhihu.com/p/370113792</p>
+<p>https://blog.csdn.net/weixin_46037781/article/details/118759174</p>
+<p>https://blog.csdn.net/qq_43444349/article/details/105282118</p>
+<p><strong>主题</strong></p>
+<p>Alt + T 选择自己想要的主题。</p>
+<p><strong>偏好设置</strong></p>
+<p>Ctrl + ,</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/7Azmlu26Iq1hRWU.png" alt="偏好设置">
+<figcaption aria-hidden="true">偏好设置</figcaption>
+</figure>
+<p>如通用的自动保存选上，每次修改自动保存，不用按下 Ctrl + S。</p>
+<p>高级模式选中调试模式，关闭文件后重新打开，右键检查元素（或 Shift +
+F12），会发现此软件就是一个浏览器，（浏览器按住 F12
+键，会打开开发者模式，与这差不多）我们看到的笔记，实际是 md
+语法被解析后生成的 HTML 标签与 CSS 相配合展现的页面；现在你再看看 md
+语法到底有多方便了吧，这些标签要你自己写该多麻烦。</p>
+<p><strong>代码块显示行号</strong></p>
+<p>Markdown，将显示行号复选框勾选。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/brL3VMOp5lYkSTz.png" alt="代码块显示行号">
+<figcaption aria-hidden="true">代码块显示行号</figcaption>
+</figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">你看左边的<span class="token number">1</span>
+你看左边的<span class="token number">2</span>    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>更换主题</strong></p>
+<p>学了 CSS 后，再来。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/3RFCpSY2Zu4mhU9.png" alt="自定义主题">
+<figcaption aria-hidden="true">自定义主题</figcaption>
+</figure>
+<p>之前创建 md 文件时，给隐藏的项目了打上对勾，代表显示隐藏的项目。其中
+AppData 就是隐藏的项目，一般存放软件的配置文件。</p>
+<p><code>C:\Users\你的用户名\AppData\Roaming\Typora\themes</code>
+下的几个 CSS 文件代表着不同的主题，如果不满意页面样式，可以修改对应主题
+CSS（记得留个备份）或自定义 CSS，重新打开笔记后，可以在主题中看到你的
+CSS，随便更换。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/U2VpxT7gjMSblfr.png" alt="选择主题">
+<figcaption aria-hidden="true">选择主题</figcaption>
+</figure>
+<p>补丁：蓝色背景下的 gif 动图字体会模糊，必须在纯色红或白色背景下，gif
+动图字体才会清晰，所以取消动图的使用。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/KgfDFMRZL8i4GbX.png" alt="不兼容 gif">
+<figcaption aria-hidden="true">不兼容 gif</figcaption>
+</figure>
+<p><strong>将笔记转成其他类型的文件</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/8CSAQgvRLEwdmna.png" alt="导出">
+<figcaption aria-hidden="true">导出</figcaption>
+</figure>
+<p>文件/导出，</p>
+<p>PDF、HTML 等类型的都行，（without styles 是不带样式即没有 CSS
+修饰，自己试试就知道区别了)</p>
+<p>或者打开浏览器，使用打印功能（Ctrl + P），无渲染与解析，很差劲。</p>
+<p><strong>支持数学公式</strong></p>
+<p>按下 <code>Ctrl + ,</code> 快捷键打开偏好设置/Markdown/Markdown
+扩展语法/勾选内联公式，再用 <code>$某字母$</code>
+显示常用的数学符号。（当内联公式过多，可以考虑使用
+<code>$$某字母$$</code>） </p><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">$$
+\in
+$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p></p>
+<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.09ex" xmlns="http://www.w3.org/2000/svg" width="1.509ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 667 580"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path></g></g></g></svg></mjx-container></span></p>
+<p>常用的的数学符号写法：</p>
+<ul>
+<li>作者：<a target="_blank" rel="noopener" href="https://blog.csdn.net/happyday_d">DaneAI</a>，https://blog.csdn.net/happyday_d/article/details/83715440</li>
+<li>作者：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38228254">韩湘</a>，https://blog.csdn.net/qq_38228254/article/details/78515800</li>
+<li>作者：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43444930">白白旧维</a>，https://www.cnblogs.com/1024th/p/11623258.html</li>
+<li>作者：<a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/1024th/">樱花赞</a>，https://blog.csdn.net/weixin_43444930/article/details/119791074</li>
+</ul>
+<p><strong>恢复未保存的文件</strong></p>
+<p>打开偏好设置，点击恢复未保存的草稿。</p>
+<figure>
+<img src="https://s2.loli.net/2022/03/14/GyEuv5d1MKLcHYa.png" alt="恢复未保存的草稿">
+<figcaption aria-hidden="true">恢复未保存的草稿</figcaption>
+</figure>
+<h3 id="官网打不开的原因">1.4.5 官网打不开的原因</h3>
+<p>它升级到了 1.0 版本了！收费了。</p>
+<p>不要惊讶，能够开源一定要有其它稳定的收入作为支撑；否则没钱，功能不会太强大，作者都快饿死了，当然没有功夫贡献自己的力量，进行频繁更新，跟上时代。</p>
+<p>不能坚守本心的人会过的很苦：动摇，时刻怀疑自己的决定是否正确；后悔，要是当初如何...现在就...</p>
+<p>Typora 代理商：https://typoraio.cn/</p>
+<p>最后一个免费版，分享者：王炳明，https://wwe.lanzoui.com/i8PP3wzahrg</p>
+<p>其实从来都没有说过免费，之前只是 Beta
+测试版，类似于游戏中的公测吧，也不知道免费版什么时候就“关服”了。</p>
+<p>作为一个即时渲染，所见即所得，按下 Ctrl + /
+就可以看源码，简洁实用，早已习惯，离不开它了。其它的软件花里胡哨，什么功能都往里面加，试图想代替其它同类型的软件，结果搞得不伦不类，十分臃肿。</p>
+<p>像其它 md
+编辑器，大部分都是双栏丑丑的大屏幕，十分占空间，并且滚动内容时，左右视图不一致，还得分心同时看两边，真的是种折磨。应该让软件配合人，而不是让人记住软件的用法，主次关系要分清；真希望以后能够统一，有个规范，其它软件实现就可以了。</p>
+<p>如果下载的是收费版，记得打开偏好设置/通用，将 Typora
+服务器使用国内服务器复选框勾选一下，怕连不上服务器，激活不了此软件。</p>
+<h3 id="自动上传图片">1.4.6 自动上传图片</h3>
+<p>你如果使用久了，经常在网上发布文章，一定会遇见这个问题。</p>
+<p>把写好的 md
+文件，复制粘贴到博客园中。结果你发现图片加载不出来，一看地址，<code>C:\Users\自己的用户名\AppData\Roaming\Typora\typora-user-images\xxx</code>。</p>
+<p>这才知道原来图片被保存到了本地中，也难怪网上读取不到。那么你发现了，将图片直接拖拽到博客园的编辑页面，会自动生成网络上的
+URL，可以在全网都能访问到。</p>
+<p>但是时间长了，一张、一张拖拽也不是事啊。这时就需要图床替我们自动保存图片。下面介绍两种方式；</p>
+<p><strong>命令行上传图片</strong></p>
+<p>打开偏好设置/图像，</p>
+<figure>
+<img src="https://s2.loli.net/2022/03/14/FXS7oTtjIQefqsL.png" alt="上传图片">
+<figcaption aria-hidden="true">上传图片</figcaption>
+</figure>
+<p>意思是当本地图片被你拖进 md 文件中，会自动上传图片。</p>
+<p>点击下载或更新，下好了后会出现打开配置文件按钮，点击弹出 JSON
+文件，将以下代码粘贴到这个文件中。</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"picBed"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"uploader"</span><span class="token operator">:</span> <span class="token string">"smms"</span><span class="token punctuation">,</span><span class="token comment">//代表当前的默认上传图床为 SM.MS</span>
+    <span class="token property">"smms"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">"LFJLSJljlfaoFJOLAF"</span><span class="token comment">//这里面的token换成自己生成的token，一定要换</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"picgoPlugins"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//为插件预留</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个 token 如何填？</p>
+<p>打开 SM.MS 图床：https://sm.ms/register
+自己注册账号后，再登陆：https://sm.ms/login</p>
+<p>点击 User/Dashboard/API Token，进入：https://sm.ms/home/apitoken</p>
+<p>点击 Generate Secret Token 按钮生成 token，将其填入 JSON 文件。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/waFKojW8vVTbPrX.png" alt="smms Token">
+<figcaption aria-hidden="true">smms Token</figcaption>
+</figure>
+<p>填完后，保存 JSON 文件。将图片拖拽 md 文件时，如有 Uploading
+字样，就成功了。</p>
+<p>在 Pictures 可以管理或删除这些文件，可惜根本没法根据 URL
+找到图片，时间长了，定位删除图片还是不方便。</p>
+<p>说实话我很担心，手贱全删了，导致 md
+文件图片全部失效，还是放在博客园中保险些，真可惜我的硬盘不能作为服务器。</p>
+<p><strong>PicGo app 上传图片</strong></p>
+<p>下载地址：https://github.com/Molunerfinn/PicGo/tags</p>
+<p>选择一个版本点击，下翻，在 Assets 中选择 exe
+文件下载，安装后直接运行。</p>
+<p>但无论怎么双击就是不会显示窗口，看看电脑右下角，点击蓝色图标：<img src="https://s2.loli.net/2022/04/09/Wk8ix9tfAbFEDZr.png" alt="Windows 系统想要运行需要双击右下角的蓝色图标"></p>
+<p>图片上传区：图片上传 - SM.MS</p>
+<p>图床设置/SM.MS，填入 Token 后确定，设为默认图床。</p>
+<p>Typora 软件，偏好/图像，按图设置</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/shrWV5Rcq7YQePC.png" alt="上传服务选择 PicGO app">
+<figcaption aria-hidden="true">上传服务选择 PicGO app</figcaption>
+</figure>
+<p>在 PicGo 的安装目录下有个 PicGo.exe，PicGo 路径就选择此 exe
+的绝对路径。</p>
+<p>格式/图像/上传所有本地图片</p>
+<p><strong>Typora 在 Windows 下自动上传图片</strong></p>
+<p>目前支持上传的方式有：自建服务器、腾讯云 COS、阿里云 OSS、七牛云
+、Github、Gitee（码云）...</p>
+<p>作者：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/thobian">thobian</a>，https://www.zhihu.com/question/56641227/answer/810364545</p>
+<p><strong>阿里云</strong></p>
+<p>作者：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/xia_2">夏2同学</a>，https://zhuanlan.zhihu.com/p/138878534</p>
+<p><strong>其它图床</strong></p>
+<p>免费图床整理，https://withpinbox.com/explore/collection/332056</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">cqh</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ccqqhh.github.io/2022/04/29/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.4-typora-ruan-jian-jian-dan-shi-yong/">https://ccqqhh.github.io/2022/04/29/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.4-typora-ruan-jian-jian-dan-shi-yong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">cqh</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">1.1 语法入门</span>
+                                </a>
+                            
+                                <a href="/tags/1-JavaSE/">
+                                    <span class="chip bg-color">1. JavaSE</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">心意我领了，谢谢您</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/04/29/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.2-jdk-xia-zai/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="1.1.1.2 JDK 下载">
+                        
+                        <span class="card-title">1.1.1.2 JDK 下载</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-1-JDK-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="post-category">
+                                    1.1.1 JDK 下载及准备工作
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/29/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.3-bian-xie-dai-ma-qian-de-zhun-bei/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="1.1.1.3 编写代码前的准备">
+                        
+                        <span class="card-title">1.1.1.3 编写代码前的准备</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-1-JDK-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="post-category">
+                                    1.1.1 JDK 下载及准备工作
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: cqh<br />'
+            + '文章作者: cqh<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，转载请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">cqh</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">88.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="https://github.com/ccqqhh" class="tooltipped" target="_blank" data-tooltip="访问我的 GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2675385031@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2675385031" class="tooltipped" target="_blank" data-tooltip="QQ 联系我: 2675385031" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
