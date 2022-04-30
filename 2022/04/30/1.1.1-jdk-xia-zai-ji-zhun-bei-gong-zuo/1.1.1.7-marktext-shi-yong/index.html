@@ -1,0 +1,1720 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="1.1.1.7 MarkText 使用, Java">
+    <meta name="description" content="目前分享的内容是 Java 相关内容">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>1.1.1.7 MarkText 使用 | cqh</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1328f3b279d23f6c7b036c50a5338b0e141c1677.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653204287&t=cae11edf73cb8d93e3cfdea085643e0a);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+				<div>
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">cqh</span>
+				</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">cqh</div>
+        <div class="logo-desc">
+            
+            目前分享的内容是 Java 相关内容
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ccqqhh" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>请给我留言
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ccqqhh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="请给我留言" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">1.1.1.7 MarkText 使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">1.1 语法入门</span>
+                            </a>
+                        
+                            <a href="/tags/1-JavaSE/">
+                                <span class="chip bg-color">1. JavaSE</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-1-1-JDK-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="post-category">
+                                1.1.1 JDK 下载及准备工作
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-30
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-04-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="marktext-使用">1.7 MarkText 使用</h2>
+<p>是 Typora 的同类型产品，开源免费。</p>
+<p>下载地址：https://marktext.app/</p>
+<p>有时候可能打不开，https://github.com/marktext/marktext/tags</p>
+<p>选择版本后，Assets 下点击 exe 文件进行下载。</p>
+<p>由于作者计划 v1.0.0
+以后支持其它语言（国际化），英语不好的，可以搜下汉化版。</p>
+<p>如果 git 下载太慢：（慎用！！！）</p>
+<p>作者：<a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/ziyue7575/">紫月java</a>，https://www.cnblogs.com/ziyue7575/p/14157952.html</p>
+<ul>
+<li><p>安装用户脚本管理器：https://greasyfork.org/zh-CN/help/installing-user-scripts</p></li>
+<li><p>加速脚本：https://greasyfork.org/zh-CN/scripts/397419-fastgithub-%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE-%E5%85%8B%E9%9A%86%E5%92%8C%E4%B8%8B%E8%BD%BD</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/Lfp5RcKoQEYuAy7.png" alt="添加新脚本">
+<figcaption aria-hidden="true">添加新脚本</figcaption>
+</figure>
+<p>将 js 文件拖入其中，刷新页面，效果如图：</p></li>
+</ul>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/vxqZDl7ebO6IKoL.png" alt="使用加速">
+<figcaption aria-hidden="true">使用加速</figcaption>
+</figure>
+<p>随便点击，开始下载吧。</p>
+<h3 id="编辑区域">1.7.1 编辑区域</h3>
+<p><strong>查看源代码：Ctrl + E</strong></p>
+<p><strong>整体布局</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/gkKYX3AGeqfNw28.png" alt="编辑区域">
+<figcaption aria-hidden="true">编辑区域</figcaption>
+</figure>
+<p>正上方是 md 文件的绝对路径；</p>
+<p>左上角 A 是总字符个数；点击可以切换。</p>
+<ul>
+<li>Words：单词个数（一个汉字算一个单词）</li>
+<li>Characters：可见字符个数</li>
+<li>Paragraphs：段落个数</li>
+</ul>
+<p><strong>右键标签栏</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/4nlGS5CgtpUs3q1.png" alt="弹出的选项">
+<figcaption aria-hidden="true">弹出的选项</figcaption>
+</figure>
+<p>Close：关闭文件（未 Ctrl + S 保存会弹出提示）</p>
+<p>Close others：关闭其它文件</p>
+<p>Close saved tabs：关闭已保存的文件</p>
+<p>Close all tabs：关闭所有文件</p>
+<p>Rename：重命名文件</p>
+<p>Copy path：复制文件的绝对路径</p>
+<p>Show in folder：打开文件所在目录</p>
+<p><strong>段落快捷操作</strong></p>
+<p>当你每次移动光标时，当前段落对应的图标（最左边）就会显示，点击</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/uodWe2zh1GfZsCQ.png" alt="段落快捷操作">
+<figcaption aria-hidden="true">段落快捷操作</figcaption>
+</figure>
+<p>Duplicate：向下复制当前段落</p>
+<p>Turn Into：变成？</p>
+<ul>
+<li>Paragraph（Ctrl + 0）：段落</li>
+<li>Header 1（Ctrl + 1）：h1 标题</li>
+<li>Display Math（Alt + Ctrl + M）：内联公式块</li>
+<li>HTML Block（Alt + Ctrl + J）：div 标签</li>
+<li>Code Block（Alt + Ctrl + C）：代码块</li>
+<li>Quote Block（Alt + Ctrl + Q）：引用</li>
+<li>Order List（Alt + Ctrl + O）：有序列表</li>
+<li>Bullet List（Alt + Ctrl + U）：无序列表</li>
+<li>To-do List（Alt + Ctrl + X）：任务复选框</li>
+</ul>
+<p>New Paragraph：创建新的段落</p>
+<p>Delete：删除当前段落</p>
+<p><strong>选中文字</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/8gpyh2dRI3lqbVs.png" alt="格式变换">
+<figcaption aria-hidden="true">格式变换</figcaption>
+</figure>
+<p>从左至右依次是：粗（Ctrl + B）、斜（Ctrl + I）、下划线（Ctrl +
+U）、删除线（Ctrl + D）、高亮（Ctrl + H）、代码块（Ctrl +
+`）、内联公式（Ctrl + M）、超链接（Ctrl + L）、插入图片（Ctrl + Shift +
+I）、清除格式（Ctrl + Shift + R）</p>
+<p><strong>插入表情</strong></p>
+<p>Windows + 句号，或者 <code>:a:</code>，两个冒号跟一个字母</p>
+<h3 id="偏好设置">1.7.2 偏好设置</h3>
+<p>Ctrl + 逗号</p>
+<p><strong>General</strong></p>
+<p><strong>自动保存</strong></p>
+<p>Auto Save：</p>
+<ul>
+<li>Automatically save document changes：更改时自动保存</li>
+<li>Delay following document edit before automatically saving：延迟 ?ms
+后保存</li>
+</ul>
+<p><strong>更改菜单栏位置</strong></p>
+<p>Window：</p>
+<p>Title bar style：</p>
+<ul>
+<li>Custom：左上角</li>
+<li>Native：正上方</li>
+</ul>
+<p><strong>Editor</strong></p>
+<p><strong>字体样式</strong></p>
+<p>Text editor settings：文本编辑设置</p>
+<ul>
+<li>Font size：字体大小</li>
+<li>Line height：行距</li>
+<li>Font family：字体样式</li>
+<li>Maximum width of text
+editor：编辑器最大宽度，单位有：ch、px、%，例：输入
+100px；输入错误会报红。</li>
+</ul>
+<p><strong>Markdown</strong></p>
+<p><strong>支持上下标</strong></p>
+<p>Markdown extensions：扩展语法</p>
+<p>启用 Enable Pandoc-style superscript and subscript</p>
+<ul>
+<li><code>5^3^</code>：5<sup>3</sup></li>
+<li><code>5~3~</code>：5<sub>3</sub></li>
+</ul>
+<p><strong>Spelling</strong></p>
+<p>Enable spell checker：开启拼写检查</p>
+<p>Default language for spell checker：检查器的默认语言</p>
+<p><strong>Key Binding</strong></p>
+<p><strong>更改操作的快捷键方式</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/4h3QWx2prdMOPen.png" alt="操作快捷方式">
+<figcaption aria-hidden="true">操作快捷方式</figcaption>
+</figure>
+<p>修改，重置，删除</p>
+<p>每次修改后，需要翻到最下面保存</p>
+<ul>
+<li>Save：保存</li>
+<li>Restore default key bindings：恢复默认快捷键</li>
+</ul>
+<h3 id="图片上传">1.7.3 图片上传</h3>
+<p>偏好设置/Image,</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/fsTA7yxPiUm632L.png" alt="图片上传">
+<figcaption aria-hidden="true">图片上传</figcaption>
+</figure>
+<p>Default action after an image is inserted from local folder or
+clipboard：插入图片后的操作（只支持 macOS 和 Windows 系统）</p>
+<ul>
+<li><p>Keep original location：保存在原位置</p></li>
+<li><p>Copy image to designated relative assets or global local
+folder：复制图片至指定位置（绝对或相对路径）</p></li>
+<li><p>Upload image to cloud using selected uploader（must be configured
+below）：上传至云端</p></li>
+</ul>
+<p>Global or relative image folder：指定图片保存的绝对路径</p>
+<p>Prefer relative assets folder：...相对路径，开启后，图片会放在与 md
+文件的同级目录下</p>
+<ul>
+<li>Relative image folder name：目录名称，即图片会放在此目录下</li>
+</ul>
+<p>说一下历程吧。</p>
+<p>之前不是使用 Typora 软件时下载了 <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/tags">PicGo app</a>
+嘛，但是提示检查不出来，说不存在；试着使用命令行方式吧（github
+方式将来会废弃），下拉列表切换为 Command line script，提示要安装
+PicGo-Core，于是先安装 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">Node.js</a>，打开 DOS
+窗口，输入 <code>npm install picgo -g</code>
+命令，安装位置：<code>C:\Users\自己的用户名\AppData\Roaming\npm\node_modules</code></p>
+<p>在 <code>C:\Users\你的用户名\.picgo</code> 下创建了 config.json
+文件，复制了如下：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"picBed"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"uploader"</span><span class="token operator">:</span> <span class="token string">"smms"</span><span class="token punctuation">,</span> <span class="token comment">// 代表当前的默认上传图床为 SM.MS,</span>
+    <span class="token property">"smms"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">""</span> <span class="token comment">// 从 https://sm.ms/home/apitoken 获取的 token</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"picgoPlugins"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 为插件预留</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PicGo-Core
+指南：https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90</p>
+<p>用法：https://github.com/PicGo/PicGo-Core</p>
+<p>如上传文件：<code>picgo upload 文件的绝对路径</code></p>
+<p>于是学了一下 Shell
+脚本的语法，提示说输入的唯一参数是图片路径，要求输出图片的 url
+路径；于是上网搜，如何接收第一个参数、输出，分别是
+$1、echo；尝试过程中发现路径必须以 <code>/</code> 分隔，而不是
+<code>\</code>。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span><span class="token string">"en_US.UTF-8"</span>
+
+<span class="token assign-left variable">str</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>picgo upload $1<span class="token variable">)</span></span>
+<span class="token assign-left variable">img</span><span class="token operator">=</span><span class="token variable">${str<span class="token operator">#</span>*"<span class="token punctuation">[</span>PicGo SUCCESS<span class="token punctuation">]</span><span class="token operator">:</span> "}</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$img</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>测试中发现运行不了，需要环境，接着下载了 <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a>，打开 bash 窗口使用
+./xxx.sh 命令运行此文件。</p>
+<p>正以为大功告成，可 MarkText 保存不了此 Shell
+脚本的绝对路径。没有办法，下载了 v0.16.3 版本覆盖安装，偏好设置里 Image
+下多了一项 <code>Image Uploader</code>，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/ElkeQWOj1GNShs5.png" alt="旧版本">
+<figcaption aria-hidden="true">旧版本</figcaption>
+</figure>
+<p>选择，点击 Set as default，默认图片上传至 sm.ms。</p>
+<p>然后下载新版本，再覆盖安装一次，打开</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/L78OKNSv3G1HzQb.png" alt="新版本">
+<figcaption aria-hidden="true">新版本</figcaption>
+</figure>
+<p>下拉框改为 Picgo 即可。</p>
+<p>拖入图片到窗口时，必须拖到当前段落（会显示一条绿线），才会成功。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/CfUobvlHAt7B4kR.png" alt="如何上传图片">
+<figcaption aria-hidden="true">如何上传图片</figcaption>
+</figure>
+<p>点击此图片，可以修改图片（查看是否为网络 URL）以及位置。</p>
+<blockquote>
+<p>脚本：解释性语言，且是文本格式。</p>
+</blockquote>
+<h3 id="file">1.7.4 File</h3>
+<p>英语不好，又没有安装汉化版的...下面是菜单栏的各项，先从 File
+开始：</p>
+<p>New Tab（Ctrl + T）：新建文件</p>
+<p>New Window（Ctrl + N）：生成新窗口</p>
+<p>Open File（Ctrl + O）：打开文件（可以直接将 md 文件拖入此窗口）</p>
+<p>Open Folder（Ctrl + Shift + O）：打开目录（显示目录下的 md
+文件、查找、显示文章中的标题）</p>
+<p>Open Recent：打开最近文件</p>
+<ul>
+<li>Clear Recently Used：清空最近文件（只是清除记录）</li>
+</ul>
+<p>Save（Ctrl + S）：保存</p>
+<p>Save As（Ctrl + Shift + S）：另存</p>
+<p>Auto Save：退出文件前自动保存</p>
+<p>Move To：将文件移动至...</p>
+<p>Rename：重命名</p>
+<p>Export：导出为</p>
+<p>HTML</p>
+<ul>
+<li><p>Page：设置页面标题（title 标签里的文本）</p></li>
+<li><p>Style</p>
+<ul>
+<li><p>Overwrite theme font settings：更改字体样式、大小、行距</p></li>
+<li><p>Auto numbering headings：自动为 h1 以下级别的标题编号</p></li>
+<li><p>Show front matter：显示前言</p></li>
+</ul></li>
+<li><p>Theme：选择主题</p></li>
+<li><p>Table of Contents：目录列表</p></li>
+</ul>
+<p>PDF</p>
+<ul>
+<li><p>Page</p>
+<ul>
+<li><p>Page size：设置纸张大小</p></li>
+<li><p>Landscape orientation：是否横向</p></li>
+<li><p>Page margin：页边距（毫米）</p>
+<ul>
+<li><p>Top/Bottom：上下边距</p></li>
+<li><p>Left/Right：左右边距</p></li>
+</ul></li>
+<li><p>Header &amp; Footer：页眉页脚</p>
+<ul>
+<li><p>Header type：页眉类型</p>
+<ul>
+<li><p>Single cell：单（中间）</p></li>
+<li><p>None：无</p></li>
+<li><p>Three cells：三（左中右）</p></li>
+</ul></li>
+<li><p>Customize style：定制风格</p>
+<ul>
+<li>Header and footer font size：页眉页脚字体大小</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Preferences（Ctrl + 逗号）：偏好设置</p></li>
+<li><p>Close Tab（Ctrl + W）：关闭文件</p></li>
+<li><p>Close Window（Ctrl + Shift + W）：关闭窗口</p></li>
+<li><p>Quit（Ctrl + Q）：关闭所有窗口</p></li>
+</ul>
+<p>导出时新增主题：https://github.com/marktext/marktext/blob/develop/docs/EXPORT_THEMES.md</p>
+<h3 id="edit">1.7.5 Edit</h3>
+<p>Undo（Ctrl + Z）：撤销</p>
+<p>Redo（Ctrl + Shift + Z）：反撤销</p>
+<p>Cut（Ctrl + X）：剪切</p>
+<p>Copy（Ctrl + C）：复制</p>
+<p>Paste（Ctrl + V）：粘贴</p>
+<p>Copy as Markdown（Ctrl + Shift + C）：以 Markdown 形式复制</p>
+<p>Copy as HTML：以 HTML 标签形式复制</p>
+<p>Paste as Plain Text（Ctrl + Shift + V）：纯文本粘贴</p>
+<p>Select All（Ctrl + A）：选中所有</p>
+<p>Duplicate（Alt + Ctrl + D）：向下复制一行</p>
+<p>Create Paragraph（Ctrl + Shift + N）：创建新的段落</p>
+<p>Delete Paragraph（Ctrl + Shift + D）：删除当前段落</p>
+<p>Find（Ctrl + F）：查找</p>
+<ul>
+<li>Case Sensitive：区分大小写</li>
+<li>Select whole word：选择整个单词，如查找 a，不会出现包含 a 的单词如
+puba，而是只有单独的 a。</li>
+<li>Use query as RegEx：使用正则表达式</li>
+<li>Find Next（F3）：往下找</li>
+<li>Find Previous（Shift + F3）：往上找</li>
+</ul>
+<p>Replace（Ctrl + R）：替换所有、一个个替换</p>
+<p>Find in Folder（Ctrl + Shift + F）：在目录下的文件中查找（首先得 Open
+Folder 打开目录）</p>
+<p>Line Ending：换行方式</p>
+<ul>
+<li><p>Carriage return and line feed（CRLF）：Windows 换行方式，即
+<code>\r\n</code></p></li>
+<li><p>Line feed（LF）：Linux换行方式，即 <code>\n</code></p></li>
+</ul>
+<h3 id="paragraph">1.7.6 Paragraph</h3>
+<p>Heading 1、2、...、6 为 H1、H2、...、H6 标题</p>
+<p>Promote Heading（Ctrl + Shift + =、Ctrl + 加号）：提升标题等级</p>
+<p>Demote Heading（Ctrl + -）：降低标题等级</p>
+<p>Table（Ctrl + Shift + T）：创建表格</p>
+<p>Code Fences（Ctrl + Shift + K）：代码块</p>
+<p>Quote Block（Ctrl + Shift + Q）：引用</p>
+<p>Math Block（Alt + Ctrl + N）：内联公式块</p>
+<p>HTML Block（Alt + Ctrl + H）：HTML 标签</p>
+<p>Ordered List（Ctrl + G）：有序列表</p>
+<p>Bullet List（Ctrl + H）：无序列表</p>
+<p>Task List（Alt + Ctrl + X）：复选框</p>
+<p>Loose List Item（Alt + Ctrl + L）：增加列表之间的距离</p>
+<p>Paragraph（Ctrl + Shift + 0）：段落</p>
+<p>Horizontal Rule（Ctrl + Shift + U）：分隔线</p>
+<p>Front Matter（Alt + Ctrl + Y）：前言</p>
+<h3 id="format">1.7.7 Format</h3>
+<p>Bold（Ctrl + B）：粗体</p>
+<p>Italic（Ctrl + I）：斜体</p>
+<p>Underline（Ctrl + U）：下划线</p>
+<p>Superscript：上标</p>
+<p>Subscript：下标</p>
+<p>Highlight（Ctrl + Shift + H）: 黄色高亮</p>
+<p>Inline Code（Ctrl + `）：单行代码块</p>
+<p>Inline Math（Ctrl + Shift + M）：单行内联公式</p>
+<p>Strikethrough（Ctrl + D）：删除线</p>
+<p>Hyperlink（Ctrl + L）：超链接</p>
+<p>Image（Ctrl + Shift + I）：图片链接</p>
+<p>Clear Formatting（Ctrl + Shift + R）：清除格式</p>
+<h3 id="window">1.7.8 Window</h3>
+<p>Minimize（Ctrl + M）：窗口最小化</p>
+<p>Always on Top：总是显示在最上层</p>
+<p>Zoom In：放大</p>
+<p>Zoom Out：缩小</p>
+<p>Show in Full Screen（F11）：全屏显示</p>
+<h3 id="view">1.7.9 View</h3>
+<p>Command Palette（Ctrl + Shift + P）：查看操作的快捷方式</p>
+<p>Source Code Mode（Ctrl + E）：查看源代码</p>
+<p>Typewriter Mode（Ctrl + Shift +
+G）：打字机模式，保证光标在屏幕中间</p>
+<p>Focus Mode（Ctrl + Shift + J）：焦点模式，只关注当前输入行</p>
+<p>Show Sidebar（Ctrl + J）：显示侧边栏（目录树、查找、文章标题）</p>
+<p>Show Tab Bar（Ctrl + Shift + B）：显示标签栏（md 文件名）</p>
+<p>Toggle Table of Contents（Ctrl + K）：跳转至对应的 H
+标题位置（点击左边侧边栏显示的标题）</p>
+<p>Reload Images（F5）：重新加载图片</p>
+<h3 id="help">1.7.10 Help</h3>
+<p>Quick Start：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/docs/README.md">快速开始</a></p>
+<p>Markdown Reference：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/docs/MARKDOWN_SYNTAX.md">Markdown
+语法</a></p>
+<p>Changelog：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/.github/CHANGELOG.md">更新日志</a></p>
+<p><a target="_blank" rel="noopener" href="https://opencollective.com/marktext">Donate via Open
+Collective</a>：赞助</p>
+<p>Feedback via Twitter：反馈（使用推特）</p>
+<p>Report Issue or Request Feature：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/issues">报告问题或请求功能</a></p>
+<p>Website：<a target="_blank" rel="noopener" href="https://marktext.app/">网站</a></p>
+<p>Watch on GitHub：<a target="_blank" rel="noopener" href="https://marktext.app/">查看 Github
+项目</a></p>
+<p>Follow us on GitHub：<a target="_blank" rel="noopener" href="https://github.com/Jocs">关注我们（GitHub）</a></p>
+<p>Follow us on Twitter：关注我们（Twitter）</p>
+<p>License：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/LICENSE">许可证</a></p>
+<p>Check for updates：检查更新</p>
+<p>About MarkText：关于 MarkText</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">cqh</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ccqqhh.github.io/2022/04/30/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.7-marktext-shi-yong/">https://ccqqhh.github.io/2022/04/30/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.7-marktext-shi-yong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">cqh</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">1.1 语法入门</span>
+                                </a>
+                            
+                                <a href="/tags/1-JavaSE/">
+                                    <span class="chip bg-color">1. JavaSE</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">心意我领了，谢谢您</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/04/30/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.6-jopin-shi-yong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="1.1.1.6 Jopin 使用">
+                        
+                        <span class="card-title">1.1.1.6 Jopin 使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-1-JDK-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="post-category">
+                                    1.1.1 JDK 下载及准备工作
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/30/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/1.1.1.5-chang-yong-de-dos-ming-ling/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/35.jpg" class="responsive-img" alt="1.1.1.5 常用的 DOS 命令">
+                        
+                        <span class="card-title">1.1.1.5 常用的 DOS 命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-1-JDK-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="post-category">
+                                    1.1.1 JDK 下载及准备工作
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: cqh<br />'
+            + '文章作者: cqh<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，转载请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">cqh</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">69k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="https://github.com/ccqqhh" class="tooltipped" target="_blank" data-tooltip="访问我的 GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2675385031@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2675385031" class="tooltipped" target="_blank" data-tooltip="QQ 联系我: 2675385031" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
