@@ -1,0 +1,2293 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="1.1.6.3 简单排序, Java">
+    <meta name="description" content="目前分享的内容是 Java 相关内容">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>1.1.6.3 简单排序 | cqh</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style>
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1328f3b279d23f6c7b036c50a5338b0e141c1677.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653204287&t=cae11edf73cb8d93e3cfdea085643e0a);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+				<div>
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">cqh</span>
+				</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">cqh</div>
+        <div class="logo-desc">
+            
+            目前分享的内容是 Java 相关内容
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ccqqhh" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>请给我留言
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ccqqhh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="请给我留言" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">1.1.6.3 简单排序</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">1.1 语法入门</span>
+                            </a>
+                        
+                            <a href="/tags/1-JavaSE/">
+                                <span class="chip bg-color">1. JavaSE</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-1-6-%E6%95%B0%E7%BB%84/" class="post-category">
+                                1.1.6 数组
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-05-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="简单排序">6.3 简单排序</h2>
+<p>内容导视：</p>
+<ul>
+<li>时间复杂度</li>
+<li>空间复杂度</li>
+<li>冒泡排序</li>
+<li>简单选择排序</li>
+<li>直接插入排序</li>
+</ul>
+<p>我们知道了如何定义数组来存放元素，那就试试对数组中的元素排序吧。</p>
+<p>排序：一组元素按指定顺序排列的过程。生活中，排序无处不在，我会依次介绍，默认顺序：从小到大排。</p>
+<p>对于初学者，只需要了解简单排序，其它不用看，因为大部分人不可能一次学会；如果是天才当我没说。（怨念~_~）</p>
+<p>排序算法分为：</p>
+<ul>
+<li>交换排序
+<ul>
+<li>冒泡排序</li>
+<li>快速排序</li>
+</ul></li>
+<li>选择排序
+<ul>
+<li>简单选择排序</li>
+<li>堆排序</li>
+</ul></li>
+<li>插入排序
+<ul>
+<li>直接插入排序</li>
+<li>希尔排序</li>
+</ul></li>
+<li>归并排序</li>
+<li>基数排序</li>
+</ul>
+<p>在完成功能的情况下，我们需要考虑如何让程序运行时间更短，占用空间更小。（你也不希望软件卡半天没响应，又特别占用内存，对吧）</p>
+<p>由此引申出来时间复杂度与空间复杂度，接下来一一介绍。</p>
+<h3 id="时间复杂度">6.3.1 时间复杂度</h3>
+<p>描述了解决特定问题的步骤称为算法，如排序算法解决了元素无序的问题。只不过在计算机上，可以使用代码描述。</p>
+<p>解决问题的方法有多种，不同算法的效率有高有低；最直观的方法就是编写不同的程序实现不同的算法，然后输入不同数据，进行编译，运行
+时对它们进行计时，用时最短的就是最好的。但这种事后测量的方法有很大的缺点与不确定性：</p>
+<ul>
+<li>实现不同程序需要耗费大量时间，而我们只需保留其中之一。</li>
+<li>数据的不同，可能对某个算法更加有利；如使用顺序与逆序查找，如果查找的数就在开头，顺序唰的一下找到了，就能说明顺序一定比逆序好吗？如何选择测试数据以及数据量的多少，才能能够保证结果的公平性，很难判断的。</li>
+<li>在不同的运行环境、硬件性能情况下得到的结果可能相差会很大；即使在同台机器上，也有可能测试时
+CPU
+负荷突然过高、运行内存忽高忽低、计算机电量不足...代码运行速度慢了下来，你究竟要测试几次，在不同的机器上，配置一个怎么样的的环境，才能得出令人信服的结果？</li>
+</ul>
+<p>这时就需要我们自己在编写程序前，能够粗略估计代码的运行时间。（事前分析估算方法）</p>
+<p><strong>语句执行次数</strong></p>
+<p>也称语句频度、时间频度，记为 T(n），n
+代表数据的个数。假设运行一行基础代码就算执行一次语句。代码花费的时间与语句执行次数成正比例，执行的语句越多，花费时间越多。</p>
+<p>求 m1 方法内语句执行次数：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">m1</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你好"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 执行 1 次</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我饿了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 执行 1 次</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>T(n）= 2；</p>
+<p>此时数组中元素的个数 n 不会对语句执行次数产生影响，也就是说无论
+arr.length 有多大，语句执行次数也就是 2。</p>
+<p>求 for 内的语句执行次数：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">m2</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token comment">// 从 0 到 n - 1，一共循环 n 次，每次循环执行 2 个语句</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我不想排序"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 一共执行 n 次</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我想睡觉"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 一共执行 n 次</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>T(n）= 2n；</p>
+<p>求 for 内的语句执行次数：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">m3</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">*=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"没想到吧"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"还有乘等"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>for 循环执行了几次？</p>
+<p>每次循环 i *= 2 第 1 次循环 i = 1 = 2<sup>0</sup>; 第 2 次循环 i = 2
+= 2<sup>1</sup>; 第 3 次循环 i = 4 = 2<sup>2</sup>; ... 第 x+1 次循环 i
+= 2<sup>x</sup>;</p>
+<p>假设第 x+1 次循环时，i &gt;=
+n，不满足条件，退出循环，得出不等式：</p>
+<p>2<sup>x</sup> &gt;= n</p>
+<p>解出：x &gt;= log<sub>2</sub>n</p>
+<p>第 log<sub>2</sub>n + 1 次循环时，i 正好等于
+n，退出了循环，这次不算，那么一共执行了 log<sub>2</sub>n
+次循环，每次循环时执行 2 个语句。</p>
+<p>T(n）= 2 * log<sub>2</sub>n；</p>
+<blockquote>
+<p>若循环次数不是整数，向上取整，如 2.321928 记作 3。</p>
+<p>对数：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0/91326">https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0/91326</a></p>
+<p>对数公式：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0%E5%85%AC%E5%BC%8F/5557846">https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0%E5%85%AC%E5%BC%8F/5557846</a></p>
+</blockquote>
+<p>求方法中输出语句的执行次数：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">m4</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"i="</span> <span class="token operator">+</span> i
+                <span class="token operator">+</span> <span class="token string">"，j="</span> <span class="token operator">+</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>外层 for 一共循环 n 次，里层 for 一共循环 n
+次，里面的输出语句被执行了 n * n 次。</p>
+<p>T(n）= n<sup>2</sup>；</p>
+<p>有了语句执行次数的函数，难道就能比较不同代码的运行时间吗？</p>
+<p>比如 T(n）= 100n + 1 与 T(n）= n<sup>2</sup> +
+7，依然无法清晰看出谁的运行时间更短，此时需要看运行时间如何随 n
+的增长而变化，选出增速最小的算法。</p>
+<p>引出渐进时间复杂度（asymptotic time complexity）这个概念：</p>
+<p><strong>渐进时间复杂度</strong></p>
+<p>简称时间复杂度，定义如下：</p>
+<p>代码执行语句次数记作 T(n）；存在函数 f(n），当 n 趋近无穷大时，T(n）/
+f(n）的比值为一个不等于 0 的常数，说明 f(n）与
+T(n）的增长率相同，是同一量级；如 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -1.601ex" xmlns="http://www.w3.org/2000/svg" width="10.091ex" height="3.567ex" role="img" focusable="false" viewBox="0 -868.9 4460.4 1576.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="munder"><g data-mml-node="mo" transform="translate(214.8,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(278,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(556,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(0,-600) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(1572,0)"><path data-c="221E" d="M55 217Q55 305 111 373T254 442Q342 442 419 381Q457 350 493 303L507 284L514 294Q618 442 747 442Q833 442 888 374T944 214Q944 128 889 59T743 -11Q657 -11 580 50Q542 81 506 128L492 147L485 137Q381 -11 252 -11Q166 -11 111 57T55 217ZM907 217Q907 285 869 341T761 397Q740 397 720 392T682 378T648 359T619 335T594 310T574 285T559 263T548 246L543 238L574 198Q605 158 622 138T664 94T714 61T765 51Q827 51 867 100T907 217ZM92 214Q92 145 131 89T239 33Q357 33 456 193L425 233Q364 312 334 337Q285 380 233 380Q171 380 132 331T92 214Z"></path></g></g></g><g data-mml-node="mfrac" transform="translate(1985.3,0)"><g data-mml-node="mrow" transform="translate(220,398) scale(0.707)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1100,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1878,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g><g data-mml-node="mi" transform="translate(1025.4,-345) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><rect width="2235.1" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span>
+= 2。</p>
+<p>记作 T(n）= O( f(n）），称 O(
+f(n））为代码的时间复杂度；时间复杂度描述了代码执行时间随数据量增长的变化趋势。</p>
+<p>如何推出 f(n）？</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">次数 n</th>
+<th style="text-align: center;">a：2n + 10</th>
+<th style="text-align: center;">a`：n</th>
+<th style="text-align: center;">b：2n<sup>2</sup> + 5</th>
+<th style="text-align: center;">b`：n<sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">210</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">20005</td>
+<td style="text-align: center;">10000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10000</td>
+<td style="text-align: center;">20010</td>
+<td style="text-align: center;">10000</td>
+<td style="text-align: center;">200000005</td>
+<td style="text-align: center;">100000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1000000</td>
+<td style="text-align: center;">2000010</td>
+<td style="text-align: center;">1000000</td>
+<td style="text-align: center;">2000000000005</td>
+<td style="text-align: center;">1000000000000</td>
+</tr>
+</tbody>
+</table>
+<p>当 n 越来越大时，常数、低次数项已经变得不太重要，如同 a
+再怎么努力，也追不上 b，因此被可以省略。</p>
+<ul>
+<li>如果函数是常数，使用 1 代替</li>
+<li>若不是常数，只保留最高次数的那一项，并去除最高次数的系数</li>
+</ul>
+<p>如 T(n）= 20，记作 T(n）= O(1）；</p>
+<p>T(n）= 2 * log<sub>2</sub>n + 98 = 2 * log<sub>2</sub>k *
+log<sub>k</sub>n + 98，只保留最高次数那项，且去掉系数，记作 T(n）=
+O(log<sub>k</sub>n）；</p>
+<blockquote>
+<p>设 k 为任意常数，由换底公式得：log<sub>2</sub>n = log<sub>2</sub>k *
+log<sub>k</sub>n</p>
+</blockquote>
+<p>T(n）= 2n<sup>2</sup> + 3n + 9，记作 T(n）= O(n<sup>2</sup>）。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/05/PWATt6ebQxlKcDk.png" alt="三种函数的增长趋势">
+<figcaption aria-hidden="true">三种函数的增长趋势</figcaption>
+</figure>
+<p>很明显随着 n
+的增大，O(n<sup>2</sup>）的时间复杂度（增长速度）远大于其它两个。</p>
+<p><strong>常见的时间复杂度</strong></p>
+<p>从小到大排（n 趋向无穷大时）：</p>
+<p>常数时间：O(1）</p>
+<p>对数时间：O(log<sub>k</sub>n）</p>
+<p>线性时间：O(n）</p>
+<p>线性对数时间：O(n * log<sub>k</sub>n）</p>
+<p>平方时间：O(n<sup>2</sup>）</p>
+<p>立方时间：O(n<sup>3</sup>）</p>
+<p>指数时间：O(2<sup>n</sup>）</p>
+<p>阶乘时间：O(n!）</p>
+<p>n 的 n 次方：O(n<sup>n</sup>）</p>
+<p>一般代码的时间复杂度为指数阶及以上，就不用考虑了，哪怕 n 只有
+10000，结果也是天大的数字，除非你确定 n 十分的小，将来也不会增加。</p>
+<p>计算 1 到 n 的数之和，来看看哪种算法时间效率高：</p>
+<p>普通人想到的是一个个累加，用代码描述：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span><span class="token comment">// 1</span>
+<span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">// 1</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// n + 1</span>
+    sum <span class="token operator">+=</span> i<span class="token punctuation">;</span><span class="token comment">// n</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>记录所有语句执行次数：2n + 4，时间复杂度：O(n）；</p>
+<blockquote>
+<p>前 n 次顺利通过 for 循环的判断条件，第 n + 1
+次时判断失败，没有进入。</p>
+</blockquote>
+<p>高斯想到的是首尾相加 * 个数 / 2：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span><span class="token comment">// 1</span>
+<span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> n<span class="token punctuation">)</span> <span class="token operator">*</span> n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">// 1</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>时间复杂度：O(1）；</p>
+<p>很明显高斯给出的算法效率更高；那么如果在某个程序中，需要解决求和问题，就可以选择此算法；而不是等到程序写好了，才掐着秒表，运行一下，一个个比哪个算法用的时间少。</p>
+<p>我们可以看到，执行的代码就算有再多行，但如果与 n 的取值无关，通通记为
+O(1），所以我只计算循环内某段语句的执行次数（受 n 影响），如 sum +=
+i，其外的忽略不计，这样方便点。</p>
+<p>算法优劣、数据的不同、数据量决定了程序的运行时间长短。</p>
+<blockquote>
+<p>当数据量很少时，如 n = 2，计算机运行速度很快的，时间差异几乎是
+0；使用事后计时的方法，是无法准确区分算法优劣的。</p>
+</blockquote>
+<p>备注，高斯思路描述如下：</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex"> sum =   1 +   2 + ... + 100
+ sum = 100 +  99 + ... +   1
+2sum = 101 + 101 + ... + 101
+	 = 101 * 100
+	 
+ sum = 101 * 50 = 5050<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="空间复杂度">6.3.2 空间复杂度</h3>
+<p>代码耗费的存储空间，记作 S(n），同样也有 S(n）= O( f(n）），O(
+f(n））记为空间复杂度。</p>
+<p>要求：记录一张 n * n 棋盘上的黑白棋子。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/05/qEYPx7gBM8dAroj.png" alt="棋盘">
+<figcaption aria-hidden="true">棋盘</figcaption>
+</figure>
+<p>代码 1：使用二维数组记录棋盘，空记为 0，黑记为 1，白记为 2；假设 n =
+9：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>数组所占空间：一个 int 类型是 4 个字节，S(n）= 4 *
+n<sup>2</sup>，空间复杂度为 O(n<sup>2</sup>）;</p>
+<p>想要获取第 row 行、第 column 列的信息：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">getState</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> row<span class="token punctuation">,</span> <span class="token keyword">int</span> column<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 注意下标从 0 开始，并不是 1，所以需要减去 1</span>
+    <span class="token comment">// 例：第 1 行第 1 列，即 arr[0][0]</span>
+    <span class="token keyword">int</span> data <span class="token operator">=</span> arr<span class="token punctuation">[</span>row <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>column <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第 "</span> <span class="token operator">+</span> row <span class="token operator">+</span> <span class="token string">" 行、第 "</span> <span class="token operator">+</span> column <span class="token operator">+</span> <span class="token string">" 列的棋子为："</span> <span class="token operator">+</span> <span class="token function">printChess</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">printChess</span><span class="token punctuation">(</span><span class="token keyword">int</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> state <span class="token operator">=</span> <span class="token string">"？"</span><span class="token punctuation">;</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token number">0</span> <span class="token operator">:</span>
+            state <span class="token operator">=</span> <span class="token string">"空"</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">1</span> <span class="token operator">:</span>
+            state <span class="token operator">=</span> <span class="token string">"黑"</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">2</span> <span class="token operator">:</span>
+            state <span class="token operator">=</span> <span class="token string">"白"</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span><span class="token operator">:</span>
+    <span class="token punctuation">}</span>
+	<span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>时间复杂度为 O(1）。</p>
+<p>代码 2：创建二维数组保存数据</p>
+<p>第一行记录数组一共 i 行 j 列，有 count 个棋子（目前是 9、9、5）；剩下
+count 行记录这些棋子的位置（下标从 0 开始）与保存的值；数组长度为 1 +
+count。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token comment">// 棋盘的总行、列数、棋子的个数</span>
+    <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token comment">// 第一个棋子的行数 - 1、列数 - 1、保存的值</span>
+    <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>count 的范围处于 [0, n<sup>2</sup>] 之间；</p>
+<p>如果棋盘上没有一个棋子，最好情况；只记录棋盘几行几列、棋子的个数为
+0，数组所占空间：S(n）= 4 * 3 = 12，空间复杂度为 O(1）；
+如果棋盘上放满了棋子，最差情况；需要记录 n<sup>2</sup>
+个棋子的位置，数组所占空间：S(n）= 4 * 3 * (n<sup>2</sup> + 1）=
+12n<sup>2</sup> + 12，空间复杂度为 O(n<sup>2</sup>）。</p>
+<p>获取第 row 行、第 column 列的信息，比如获取第 3 行第 6
+列的信息，如果棋子存在，那么二维数组中肯定记录了
+2、5、棋子保存的值。</p>
+<p>我们需要从头遍历，找到开头为 2、5
+的一维数组；如果找到，说明棋子存在，获取这个一维数组第 3
+个元素（保存的值）；</p>
+<p>如果没有找到，棋子不存在，记为空。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">getState</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> row<span class="token punctuation">,</span> <span class="token keyword">int</span> column<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> row <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> j <span class="token operator">=</span> column <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">int</span> data <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> m <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> m<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> i <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            data <span class="token operator">=</span> arr<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第 "</span> <span class="token operator">+</span> row <span class="token operator">+</span> <span class="token string">" 行、第 "</span> <span class="token operator">+</span> column <span class="token operator">+</span> <span class="token string">" 列的棋子为："</span> <span class="token operator">+</span> <span class="token function">printChess</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这种方式时间复杂度十分不稳定，最好情况 count =
+0，不需要遍历，得到结果为空，时间复杂度为 O(1）；最差情况 count =
+n<sup>2</sup>，且对应一维数组在最后一个，时间复杂度为
+O(n<sup>2</sup>）。</p>
+<p>当棋子较少时，使用代码 2 更节省空间；想要获取某行某列的信息，使用代码
+1 时间效率更高。到底是用空间换时间，还是用时间换空间，凭自己取舍。</p>
+<p>也可以组合：当用户下棋时，为了提升时间效率，用空间换时间，使用代码
+1；退出棋盘时并不需要获取某行某列的信息，只需记录棋盘位置，使用代码 2
+更节省空间。</p>
+<h3 id="冒泡排序">6.3.3 冒泡排序</h3>
+<p>规定从小到大排序，那么小的要在前面，否则就需要交换。</p>
+<p>Bubble Sort 算法思路：比较相邻元素，逆序就交换。</p>
+<p>以 5，6，74，2，36，7 为例，每次比较中，我会用灰色标记大数。</p>
+<p>第一轮：5，6，74，2，36，7</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">首先比较第 1 个与第 2 个元素的大小，5 &lt; 6，不需要交换；
+比较第 2 个与第 3 个，6 &lt; 74，不需要交换；
+比较第 3 个与第 4 个，74 &gt; 2，需要交换，交换后：5，6，2，74，36，7
+比较第 4 个与第 5 个，74 &gt; 36，需要交换，交换后：5，6，2，36，74，7
+比较第 5 个与第 6 个，74 &gt; 7，需要交换，交换后：5，6，2，36，7，74<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/06/hLZ3JAiBEa4gNwd.png" alt="第一轮">
+<figcaption aria-hidden="true">第一轮</figcaption>
+</figure>
+<p>可以看到第一轮只是把最大的数归位了，继续找出第二大数吧。</p>
+<p>第二轮：5，6，2，36，7，74</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 1 个与第 2 个，5 &lt; 6，不需要交换；
+比较第 2 个与第 3 个，6 &gt; 2，需要交换，交换后：5，2，6，36，7，74
+比较第 3 个与第 4 个，6 &lt; 36，不需要交换；
+比较第 4 个与第 5 个，36 &gt; 7，需要交换，交换后：5，2，6，7，36，74<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/06/Sr7zB8iQNwY69MH.png" alt="第二轮">
+<figcaption aria-hidden="true">第二轮</figcaption>
+</figure>
+<p>这一轮找出了第二大数 36。</p>
+<p>有人这时可能会问，需不需要比较第 5 个与第 6 个？</p>
+<p>要知道我们第一轮排序时，已经把最大的数放在了最后面，其它的数肯定不会大于最大数，所以没有必要进行比较了，剩下几轮同理，如下一轮只需比较到第
+3 个与第 4 个，找出第三大数。</p>
+<p>第三轮：5，2，6，7，36，74</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 1 个与第 2 个，5 &gt; 2，需要交换，交换后：2，5，6，7，36，74
+比较第 2 个与第 3 个，5 &lt; 6，不需要交换；
+比较第 3 个与第 4 个，6 &lt; 7，不需要交换；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>第三轮找出了第三大数 7。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/06/m3VYdB6xjZJRiuI.png" alt="第三轮">
+<figcaption aria-hidden="true">第三轮</figcaption>
+</figure>
+<p>第四轮：2，5，6，7，36，74</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 1 个与第 2 个，2 &lt; 5，不需要交换；
+比较第 2 个与第 3 个，5 &lt; 6，不需要交换；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/06/d8LmWIObx6VJhRA.png" alt="第四轮">
+<figcaption aria-hidden="true">第四轮</figcaption>
+</figure>
+<p>找出了第四大数 6。</p>
+<p>第五轮：2，5，6，7，36，74</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 1 个与第 2 个，2 &lt; 5，不需要交换；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/06/HdqQ82C4gnVTANG.png" alt="第五轮">
+<figcaption aria-hidden="true">第五轮</figcaption>
+</figure>
+<p>找出了第五大数 5，接下来就只剩
+2，没必要比了，到此结束。可以看出一个长度为 6 的数组，需要 5
+轮才能排好序，轮数正是数组长度 - 1。</p>
+<p>使用代码实现：</p>
+<blockquote>
+<p>之前在整数类型中讲过两数如何交换值，这里借助第三个变量 temp。</p>
+</blockquote>
+<p>注意下标从 0 开始，如第一轮，arr[0] 与 arr[1] 比较、arr[1] 与 arr[2]
+比较、...、arr[4] 与 arr[5] 比较，一共 5 次，那么定义一个变量从 0 到 4
+即可。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">74</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> temp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 第一轮</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果逆序就交换</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 5 次</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 第二轮</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 4 次</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+<span class="token comment">// 第三轮</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 3 次</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+<span class="token comment">// 第四轮</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 2 次</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+<span class="token comment">// 第五轮</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 1 次，即 arr[0] 与 arr[1]</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 遍历arr</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"，"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可是你发现了，每轮对应的 for 循环都几乎一模一样，只是判断条件从 j
+&lt; 5，j &lt; 4 ... 到 j &lt; 1，可以考虑使用外层循环将其包裹，定义一个
+i 从 5 到 1，让 j &lt; i，而这个 5 正是数组的长度 - 1。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>    
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>改进：</p>
+<p>可以发现第三轮时就已经排好序了，再也没有交换元素，剩下几轮都是无用功。可以定义一个
+boolean 变量，默认为 true。</p>
+<p>每次循环开始赋值 false；如果交换了，说明有逆序，需要继续循环，改为
+true；如果没有交换，证明已经排好序了，需要退出循环。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token comment">// flag 为 false 时，退出循环</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> flag<span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 逆序就交换</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+            <span class="token comment">// 还要继续循环</span>
+            flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>    
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>改进后，设参与排序的数组长度为 n；</p>
+<p>分析排序算法时，传统方式是衡量元素之间的比较和交换的次数。</p>
+<p>最坏情况：数组为逆序，每次比较都是逆序，需要交换，比较次数为：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -2.366ex" xmlns="http://www.w3.org/2000/svg" width="41.549ex" height="5.807ex" role="img" focusable="false" viewBox="0 -1520.9 18364.5 2566.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="munderover"><g data-mml-node="mo" transform="translate(136,0)"><path data-c="2211" d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z"></path></g><g data-mml-node="TeXAtom" transform="translate(90.2,-887.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(345,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(1123,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(0,950) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(1378,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="mi" transform="translate(1494.6,0)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(2117.4,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(3173.2,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(3895.4,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(4895.6,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(5395.6,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(6173.6,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(6618.3,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(7062.9,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(7507.6,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(8285.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(8674.6,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(9496.8,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(10497.1,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(10997.1,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(11663.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(12719.6,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(13541.8,0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="mo" transform="translate(14264.1,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(14653.1,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(15475.3,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(16475.5,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(16975.5,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(17364.5,0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></g></g><g data-mml-node="mn" transform="translate(17864.5,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></svg></mjx-container></span>，时间复杂度为 O(n<sup>2</sup>)；</p>
+<p>最好情况：数组为顺序，逆序数为 0，当 i = n - 1 时，进入外循环，里循环
+j 从 0 到 n - 2，一共 n - 1 次比较，没有进入 if 语句内，flag =
+false，下一次外循环直接退出。时间复杂度为 O(n）。</p>
+<p>平均情况：数组平均逆序数为最好与最坏的情况的一半：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.781ex" xmlns="http://www.w3.org/2000/svg" width="6.204ex" height="3.15ex" role="img" focusable="false" viewBox="0 -1047.1 2742.3 1392.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,516.8) scale(0.707)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(989,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1589,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(2367,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(2867,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g><g data-mml-node="mn" transform="translate(1194.4,-345) scale(0.707)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g><rect width="2502.3" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span>，每次交换最多减少一个逆序，至少需要
+O(n<sup>2</sup>) 次交换。</p>
+<p>空间复杂度为 O(1）。（temp 与 n 无关，记为 O(1））</p>
+<p>属于稳定排序。</p>
+<blockquote>
+<p>输入的数据如数组
+arr，只取决于问题本身，与算法无关，不计入空间复杂度，只需计入算法实现所用的辅助空间，如
+temp。</p>
+<p>包括输出数组的内容（查看数组是否已经排序好了），都不计入。</p>
+</blockquote>
+<p>稳定排序：对于相等的元素，排序前后的先后顺序不会变。</p>
+<p>举例，怕踢校园学生的数学成绩如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">庄库</th>
+<th style="text-align: center;">奶奶</th>
+<th style="text-align: center;">阿衰</th>
+<th style="text-align: center;">大脸妹</th>
+<th style="text-align: center;">小冲</th>
+<th style="text-align: center;">阿帅</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">100</td>
+</tr>
+</tbody>
+</table>
+<p>100 分成绩的同学的先后顺序：奶奶、大脸妹、阿帅。</p>
+<hr>
+<p>使用不稳定的排序得到结果如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">庄库</th>
+<th style="text-align: center;">阿衰</th>
+<th style="text-align: center;">小冲</th>
+<th style="text-align: center;">大脸妹</th>
+<th style="text-align: center;">奶奶</th>
+<th style="text-align: center;">阿帅</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+</tr>
+</tbody>
+</table>
+<p>100 分成绩的同学的先后顺序：大脸妹、奶奶、阿帅。</p>
+<hr>
+<p>使用稳定的排序得到结果如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">庄库</th>
+<th style="text-align: center;">阿衰</th>
+<th style="text-align: center;">小冲</th>
+<th style="text-align: center;">奶奶</th>
+<th style="text-align: center;">大脸妹</th>
+<th style="text-align: center;">阿帅</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">100</td>
+</tr>
+</tbody>
+</table>
+<p>100 分成绩的同学的先后顺序：奶奶、大脸妹、阿帅。</p>
+<h3 id="简单选择排序">6.3.4 简单选择排序</h3>
+<p>Simple Selection Sort 算法思路：找出小数，放在前面；第 i 轮找出第 i
+小数，放在第 i 个位置。</p>
+<blockquote>
+<p>小数：两数比较中，更小的数，我说的并不是 1.241 这种小数。</p>
+</blockquote>
+<p>以 {5，2，6，252，1} 为例；小数使用灰色标记。</p>
+<p>第一轮：5，2，6，252，1</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 1 个与第 2 个元素大小，5 &gt; 2，小数为第 2 个；
+比较第 2 个与第 3 个，2 &lt; 6，小数为第 2 个；
+比较第 2 个与第 4 个，2 &lt; 252，小数为第 2 个；
+比较第 2 个与第 5 个，2 &gt; 1，小数为第 5 个；结束。
+
+最小数在第 5 个位置上，应该放在第 1 个位置上。
+交换第 5 个与第 1 个元素位置后：1，2，6，252，5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/07/8NcB5lHOe7nAkQo.png" alt="第一轮">
+<figcaption aria-hidden="true">第一轮</figcaption>
+</figure>
+<p>第一轮，找出了最小数并放在了合适的位置，那么接着找第二小数。</p>
+<p>第二轮：1，2，6，252，5</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 2 个与第 3 个，2 &lt; 6，小数为第 2 个；
+比较第 2 个与第 4 个，2 &lt; 252，小数为第 2 个；
+比较第 2 个与第 5 个，2 &lt; 5，小数为第 2 个；结束。
+
+第二小数在第 2 个位置上，正好合适，不需要交换：1，2，6，252，5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/07/dZRy7kTiWsoOg6v.png" alt="第二轮">
+<figcaption aria-hidden="true">第二轮</figcaption>
+</figure>
+<p>不需要比较第 1 个与第 2 个，因为第 1
+个是最小数，但我们找的是第二小数，下面同理。</p>
+<p>第三轮：1，2，6，252，5</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 3 个与第 4 个，6 &lt; 252，小数为第 3 个；
+比较第 3 个与第 5 个，6 &gt; 5，小数为第 5 个；结束。
+
+第三小数在第 5 个位置上，应该放在第 3 个位置上。
+交换第 5 个与第 3 个元素位置：1，2，5，252，6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/07/LRGvr4jdciFytNC.png" alt="第三轮">
+<figcaption aria-hidden="true">第三轮</figcaption>
+</figure>
+<p>第四轮：1，2，5，252，6</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">比较第 4 个与第 5 个，252 &gt; 6，小数为第 5 个；结束。
+
+第四小数在第 5 个位置上，应该放在第 4 个位置上。
+交换第 5 个与第 4 个元素位置：1，2，5，6，252<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/07/R6ODwMZejAi2cyK.png" alt="第四轮">
+<figcaption aria-hidden="true">第四轮</figcaption>
+</figure>
+<p>5 个数，已经确定了 4 位，剩下一个数自动归位；轮数为数组长度 - 1。</p>
+<p>使用代码实现：</p>
+<p>我们可以看到每轮都是拿小数与其它数进行比较，所以需要定义变量如
+min，记录小数的下标；设数组长度为 n。</p>
+<p>如第 1 轮假设最小数下标也就是 min 为 0，然后让 arr[min]
+与剩下的数，即与下标为 1、2、3 ... n - 1
+的元素比较；期间，若发现更小数，将 min 替换为此数的下标，然后拿 arr[min]
+继续与其它数比较。</p>
+<p>第 2 轮设 min 为 1；</p>
+<p>第 3 轮设 min 为 2；</p>
+<p>...</p>
+<p>第 n - 1 轮设 min 为 n - 2。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">252</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span class="token comment">// n = 5</span>
+<span class="token keyword">int</span> temp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 第一轮：找最小数，假设最小数下标为 0</span>
+<span class="token keyword">int</span> min <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment">// 下标为 0 的数，与下标为 1、2、3、4 的元素进行比较</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// 比较过程中，发现有更小的，将 min 替换为此数下标，保证 min 一直记录的是最小数的下标</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 4 次</span>
+        min <span class="token operator">=</span> j<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 如果 min 不等于 0，证明最小数的下标不是 0，需要将最小数与下标为 0 的元素交换位置</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 第二轮：找出第二小数，假设第二小数下标为 1（因为下标为 0 的元素已经被确定为最小数，无需参与比较）</span>
+min <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment">// 下标为 1 的数，与下标为 2、3、4 的元素进行比较</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 3 次</span>
+        min <span class="token operator">=</span> j<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 第三轮</span>
+min <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 2 次</span>
+        min <span class="token operator">=</span> j<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 第四轮</span>
+min <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">// 比较 1 次</span>
+        min <span class="token operator">=</span> j<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 利用 Arrays 类的 toString 方法输出 arr 的内容</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>每轮对应的 for 循环几乎一致，观察每轮的变化之处：min = 0、1、2 ... n
+- 2，j = 1、2、3 ... n - 1。</p>
+<p>考虑外层 for，定义 i 从 0 到 n - 2，让 min = i，j = i + 1。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> min <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            min <span class="token operator">=</span> j<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">!=</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>简单选择排序，比较时没有交换元素，分开讨论：</p>
+<p>比较次数是固定的，一共为 1 + 2 + ... + (n - 1) = n * (n - 1) /
+2。</p>
+<p>交换次数，最好情况不用交换，次数为
+0；最坏情况，每次位置都不对，需要交换，次数为 n - 1。</p>
+<p>所以平均、最好、最坏时间复杂度都为 O(n<sup>2</sup>），空间复杂度为
+O(1），属于不稳定排序。</p>
+<hr>
+<p>备注：跳跃式交换的排序一般是不稳定的。以之前的数学成绩为例：</p>
+<p>第一轮选出庄库，不用交换；</p>
+<p>第二轮选出阿衰，与奶奶交换；</p>
+<p>第三轮选出小冲，与奶奶交换，这时相同成绩的同学先后顺序已被打乱；</p>
+<p>第四、五轮选出大脸妹、奶奶，不用交换；结束。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">【庄库：0】, 【奶奶：100】, 【阿衰：0】, 【大脸妹：100】, 【小冲：70】, 【阿帅：100】 
+【庄库：0】, 【阿衰：0】, 【奶奶：100】, 【大脸妹：100】, 【小冲：70】, 【阿帅：100】
+【庄库：0】, 【阿衰：0】, 【小冲：70】, 【大脸妹：100】, 【奶奶：100】, 【阿帅：100】<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>有兴趣的话，复制以下源码测下。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Person</span> as1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"阿衰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Person</span> zk <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"庄库"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Person</span> xc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">70</span><span class="token punctuation">,</span> <span class="token string">"小冲"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Person</span> dlm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">"大脸妹"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Person</span> as2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">"阿帅"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Person</span> nn <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">"奶奶"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token punctuation">]</span> persons <span class="token operator">=</span> <span class="token punctuation">{</span>zk<span class="token punctuation">,</span> nn<span class="token punctuation">,</span> as1<span class="token punctuation">,</span> dlm<span class="token punctuation">,</span> xc<span class="token punctuation">,</span> as2<span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"排序前："</span> <span class="token operator">+</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>persons<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">bubbleSort</span><span class="token punctuation">(</span>persons<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"冒泡排序后："</span> <span class="token operator">+</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>persons<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token punctuation">]</span> persons2 <span class="token operator">=</span> <span class="token punctuation">{</span>zk<span class="token punctuation">,</span> nn<span class="token punctuation">,</span> as1<span class="token punctuation">,</span> dlm<span class="token punctuation">,</span> xc<span class="token punctuation">,</span> as2<span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token function">selectionSort</span><span class="token punctuation">(</span>persons2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"选择排序后："</span> <span class="token operator">+</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>persons2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">selectionSort</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token class-name">Person</span> temp<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> min <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>scope <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">.</span>scope<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    min <span class="token operator">=</span> j<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">!=</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                arr<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">bubbleSort</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token class-name">Person</span> temp<span class="token punctuation">;</span>
+        <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token comment">// flag 为 false 时，退出循环</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> flag<span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 逆序就交换</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>scope <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>scope<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+                    <span class="token comment">// 还要继续循环</span>
+                    flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>    
+            <span class="token punctuation">}</span> 
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> scope<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token keyword">int</span> scope<span class="token punctuation">,</span> <span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>scope <span class="token operator">=</span> scope<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"{"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"："</span> <span class="token operator">+</span> scope <span class="token operator">+</span> <span class="token string">"}"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="直接插入排序">6.3.5 直接插入排序</h3>
+<p>Insertion Sort
+算法思路：新元素与前面已排序的元素进行比较，并将它插入到正确的位置。</p>
+<p>以 {25, 6, 50, 26}
+一共四个元素为例，灰色元素的集合代表有序序列，当所有元素都为灰色时代表已经排好序了。</p>
+<p>第一轮：25，6，50，26</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">arr[1] 与 arr[0] 比较，6 &lt; 25，逆序，需要交换，交换后：6，25，50，26<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/12/YwuvZj4hGBaWf1L.png" alt="第一轮">
+<figcaption aria-hidden="true">第一轮</figcaption>
+</figure>
+<p>那么前面两个元素已经排好序了。</p>
+<p>第二轮：6，25，50，26</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">arr[2] 与 arr[1] 比较，50 &gt; 25，顺序，不需要交换<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/12/Rt4ajI9OgeHSkKu.png" alt="第二轮">
+<figcaption aria-hidden="true">第二轮</figcaption>
+</figure>
+<p>arr[2] 不需要跟 arr[0] 比较，因为通过第一轮排序，确定了 arr[1] &gt;
+arr[0]，如果 arr[2] &gt; arr[1]，必然有 arr[2] &gt;
+arr[0]，大小已经确定，无需比较，下面同理。（如果后面的元素大于前面，不需要交换，说明顺序是对的，无需比较，直接终止操作）</p>
+<p>前面三个元素排好序了。</p>
+<p>第三轮：6，25，50，26</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">arr[3] 与 arr[2] 比较，26 &lt; 50，交换后：6，25，26，50
+arr[2] 与 arr[1] 比较，26 &gt; 25，不需要交换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/12/WxeUiDVPTSkac8g.png" alt="第三轮">
+<figcaption aria-hidden="true">第三轮</figcaption>
+</figure>
+<p>前面四个元素排好序了；到此为止，一共 arr.length - 1 轮。</p>
+<p>代码描述：</p>
+<p>只有后面元素小于前面元素才需要交换，否则就终止循环；在循环期间，需要保证后面元素即
+arr[j - 1] 不能越界，所以 j <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g></g></g></svg></mjx-container></span>
+1，注意 j 是整数，可以写成 j &gt; 0。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> temp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 第一轮</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 第二轮，最差情况比较 2 次。</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> j <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 第三轮</span>
+<span class="token comment">/*
+最差情况，比较 3 次；即 arr[3]、arr[2] 比较，arr[2]、arr[1] 比较，
+arr[1]、arr[0] 比较。
+*/</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> j <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>j 从 1 到 arr.length - 1，考虑定义外层 for 循环，i 从 1 到 arr.length
+- 1；让 j = i。</p>
+<p>结合：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最差情况：参与排序的数组为逆序，每次的新元素都比前面所有的元素小，需要移动到数组最前面，设数组长度为
+n，一共 n - 1 轮排序，比较次数为 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.781ex" xmlns="http://www.w3.org/2000/svg" width="27.803ex" height="3.15ex" role="img" focusable="false" viewBox="0 -1047.1 12288.8 1392.1"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(722.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1722.4,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(2222.4,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(3000.4,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(3445.1,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(3889.8,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(4334.4,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(5112.4,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(5501.4,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(6323.7,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(7323.9,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(7823.9,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(8490.7,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(9546.4,0)"><g data-mml-node="mrow" transform="translate(220,516.8) scale(0.707)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(989,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1589,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(2367,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(2867,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g><g data-mml-node="mn" transform="translate(1194.4,-345) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><rect width="2502.3" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span>；时间复杂度为
+O(n<sup>2</sup>）。</p>
+<p>最好情况：参与排序的数组为顺序，每次新元素都大于前面的元素，刚进入
+for 循环，比较结果为 false，直接退出循环；一共 n - 1 比较，交换次数为
+0，时间复杂度为 O(n）。</p>
+<p>平均：前面的元素有一半比新元素大，那么就是最差情况下的比较次数除以
+2，时间复杂度为 O(n<sup>2</sup>)。</p>
+<p>空间复杂度为 O(1），是稳定排序。</p>
+<p>在简单排序中，插入排序性能最好；一般待排序元素个数较少时，使用直接插入排序最快。</p>
+<hr>
+<p>变体：</p>
+<p>将新元素与前面的元素比较，获取新元素应该插入的位置，并把已有元素往后移，给新元素腾出一个空间。</p>
+<p>以 {6，3，5，7，1} 为例：</p>
+<p>第一轮：6，3，5，7，1</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">记录新元素的值：insertVal = arr[1] = 3
+insertVal 与 arr[0] 比较，3 &lt; 6，记录新元素应该插入的位置：insertIndex = 0
+将 arr[0] 后移腾出空间：6，6，5，7，1
+结束
+根据记录的下标插入新元素：arr[insertIndex] = arr[0] = insertVal = 3
+插入后：3，6，5，7，1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/13/PF6VS5yBdAcG4QH.png" alt="第一轮">
+<figcaption aria-hidden="true">第一轮</figcaption>
+</figure>
+<p>第二轮：3，6，5，7，1</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">记录 insertVal = arr[2] = 5
+insertVal 与 arr[1] 比较，5 &lt; 6，记录下标 1，将 arr[1] 后移：3，6，6，7，1
+insertVal 与 arr[0] 比较，5 &gt; 3，结束
+插入新元素，arr[1] = insertVal = 5
+3，5，6，7，1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/13/pT3tsLGufDnB6PZ.png" alt="第二轮">
+<figcaption aria-hidden="true">第二轮</figcaption>
+</figure>
+<p>第三轮：3，5，6，7，1</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">记录 insertVal = arr[3] = 7
+insertVal 与 arr[2] 比较，7 &gt; 6，结束<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/13/x85fIMWcr9Ejehd.png" alt="第三轮">
+<figcaption aria-hidden="true">第三轮</figcaption>
+</figure>
+<p>第四轮：3，5，6，7，1</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">记录 insertVal = arr[4] = 1
+insertVal 与 arr[3] 比较，1 &lt; 7，记录下标 3，将 arr[3] 往后移：3，5，6，7，7
+insertVal 与 arr[2] 比较，1 &lt; 6，记录下标 2，将 arr[2] 往后移：3，5，6，6，7
+insertVal 与 arr[1] 比较，1 &lt; 5，记录下标 1，将 arr[1] 往后移：3，5，5，6，7
+insertVal 与 arr[0] 比较，1 &lt; 3，记录下标 0，将 arr[0] 往后移：3，3，5，6，7
+结束
+arr[0] = insertVal = 1
+1，3，5，6，7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure>
+<img src="https://s2.loli.net/2022/04/13/Q9qYplLgG8Uo2Ah.png" alt="第四轮">
+<figcaption aria-hidden="true">第四轮</figcaption>
+</figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 记录下标</span>
+    <span class="token keyword">int</span> insertIndex <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token comment">// 新元素的值</span>
+    <span class="token keyword">int</span> insertVal <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 拿新元素与之前的元素比较</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span> j <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> insertVal <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 记录新元素应该插入的下标</span>
+        insertIndex <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// 将 arr[j - 1] 后移，即让 arr[j] 保存 arr[j - 1] 的值</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> insertIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>insertIndex<span class="token punctuation">]</span> <span class="token operator">=</span> insertVal<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>代码的第 16 行说明：insertIndex 默认为 i（新元素的下标），经过循环后
+insertIndex 如果还是 i，说明新元素的位置正合适，不用变动。</p>
+<p>这种实现比第一种方式，由于交换次数的减少，稍微快一点点。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">cqh</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ccqqhh.github.io/2022/05/01/1.1.6-shu-zu/1.1.6.3-jian-dan-pai-xu/">https://ccqqhh.github.io/2022/05/01/1.1.6-shu-zu/1.1.6.3-jian-dan-pai-xu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">cqh</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">1.1 语法入门</span>
+                                </a>
+                            
+                                <a href="/tags/1-JavaSE/">
+                                    <span class="chip bg-color">1. JavaSE</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">心意我领了，谢谢您</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/05/01/1.1.6-shu-zu/1.1.6.4-jian-dan-cha-zhao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="1.1.6.4 简单查找">
+                        
+                        <span class="card-title">1.1.6.4 简单查找</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-6-%E6%95%B0%E7%BB%84/" class="post-category">
+                                    1.1.6 数组
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/01/1.1.6-shu-zu/1.1.6.x-zong-jie-hui-gu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/33.jpg" class="responsive-img" alt="1.1.6.x 总结回顾">
+                        
+                        <span class="card-title">1.1.6.x 总结回顾</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-6-%E6%95%B0%E7%BB%84/" class="post-category">
+                                    1.1.6 数组
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">1.1 语法入门</span>
+                    </a>
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: cqh<br />'
+            + '文章作者: cqh<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，转载请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">cqh</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">85.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="https://github.com/ccqqhh" class="tooltipped" target="_blank" data-tooltip="访问我的 GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2675385031@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2675385031" class="tooltipped" target="_blank" data-tooltip="QQ 联系我: 2675385031" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
