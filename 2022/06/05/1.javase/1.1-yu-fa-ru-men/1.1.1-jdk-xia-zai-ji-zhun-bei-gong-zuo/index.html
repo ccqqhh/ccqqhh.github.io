@@ -1,0 +1,3191 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="1.1.1 JDK 下载及准备工作, Java">
+    <meta name="description" content="目前分享的内容是 Java 相关内容">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>1.1.1 JDK 下载及准备工作 | cqh</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1328f3b279d23f6c7b036c50a5338b0e141c1677.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653204287&t=cae11edf73cb8d93e3cfdea085643e0a);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+				<div>
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">cqh</span>
+				</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">cqh</div>
+        <div class="logo-desc">
+            
+            目前分享的内容是 Java 相关内容
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ccqqhh" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>请给我留言
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ccqqhh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="请给我留言" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/54.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">1.1.1 JDK 下载及准备工作</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/1-JavaSE/">
+                                <span class="chip bg-color">1. JavaSE</span>
+                            </a>
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
+                                1.1 语法入门
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-06-05
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    18.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    67 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第一章-jdk-下载及准备工作">第一章 JDK 下载及准备工作</h1>
+<p>内容导视：</p>
+<ul>
+<li>Java 介绍</li>
+<li>JDK 下载</li>
+<li>编写代码前的准备</li>
+<li>Typora 软件简单使用</li>
+<li>常用的 DOS 命令</li>
+<li>Jopin 使用</li>
+<li>MarkText 使用</li>
+</ul>
+<h2 id="java-介绍">1.1 Java 介绍</h2>
+<p>内容导视：</p>
+<ul>
+<li>Java 简介</li>
+<li>Java 技术体系</li>
+<li>前后端的工作内容</li>
+<li>Java 语言特性</li>
+<li>Java 用途</li>
+</ul>
+<p>看不懂就跳过，这里不是重头戏，说实话，挺无聊的，我也不是很懂，这根本不是初学者应该考虑的，直接跳过也没问题，但又不能不讲，否则感觉缺了点啥。其次我一直孤军奋战，没有评判体系，只能靠自己甄别好坏，难免有些遗漏。</p>
+<p>但其实这也是一种好处；如果一切都是可以被量化的，如分数、金钱，人变成了数字化的商品，那么不是前几名的人，那种付出、比较后的失落与无力感；就彷佛看小说变成了只看评分前几名的一样，一切都在往上赶，时时刻刻都在提醒你所处的位置，被时代裹挟不得不拼命增加自己的评分与排名获得显露被青睐的机会；如此一来，这个混沌的、可以躲藏的空间显得极为重要，说起来好像是自欺欺人，就是不看一样。</p>
+<h3 id="java-简介">1.1.1 Java 简介</h3>
+<p>Java 最早是由 SUN 公司（已被 Oracle 收购）的 James
+Gosling（詹姆斯·高斯林）在 1992 年开发的一种编程语言，最初被命名为
+Oak，目标是针对小型家电设备的嵌入式应用，结果市场没啥反响。谁料到互联网的崛起，让
+Oak 重新焕发了生机，于是 SUN 公司改造了 Oak，在 1995 年以 Java
+的名称正式发布，原因是 Oak 已经被人注册了，因此 SUN 注册了 Java
+这个商标。随着互联网的高速发展，Java 逐渐成为最重要的网络编程语言。</p>
+<p>有兴趣查看以下文章，了解 Java 发展历史</p>
+<ul>
+<li>作者：<a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/jmcui/">JMCui</a>，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jmcui/p/11796303.html">https://www.cnblogs.com/jmcui/p/11796303.html</a></li>
+<li>作者：<a target="_blank" rel="noopener" href="https://author.baidu.com/home?from=bjh_article&amp;app_id=1711489012880566">苗子说全栈</a>，<a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1714823765201515049">https://baijiahao.baidu.com/s?id=1714823765201515049</a></li>
+</ul>
+<p>此外 JDK1.5 与 JDK5
+是一样的意思。因为比之前版本的变化大，以此作为区分，表示与众不同。就像美猴王自封齐天大圣，都是一个人(猴)。</p>
+<p>此外还有 J2EE 、JavaEE，只是叫法不同，不必纠结。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">正式发行名称</th>
+<th style="text-align: center;">昵称</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">JDK 1.0.x</td>
+<td style="text-align: center;">Java 1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">JDK 1.1.x</td>
+<td style="text-align: center;">Java 1.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Java 2 Platform，Standard
+Edition，v1.2</td>
+<td style="text-align: center;">Java 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Java 2 Platform，Standard
+Edition，v1.3</td>
+<td style="text-align: center;">Java 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Java 2 Platform，Standard
+Edition，v1.4</td>
+<td style="text-align: center;">Java 4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Java 2 Platform，Standard
+Edition，v5.0</td>
+<td style="text-align: center;">Java 5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Java Platform，Standard Edition 6</td>
+<td style="text-align: center;">Java 6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Java Platform，Standard Edition 7</td>
+<td style="text-align: center;">Java 7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Java Platform，Standard Edition 8</td>
+<td style="text-align: center;">Java 8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="java-技术体系">1.1.2 Java 技术体系</h3>
+<p>分成了三个技术体系</p>
+<p>（以前被称为 J2SE、J2EE、J2ME）</p>
+<p><strong>JavaSE（Java Standard Edition）</strong>：Java
+标准版，包含核心的类库，主要开发桌面应用（如 Windows
+下的应用程序）。允许您在桌面和服务器上开发和部署 Java 应用程序。JavaSE
+和组件技术提供了当今应用程序所需要的丰富的用户界面、性能、多功能性、可移植性和安全性，并为
+JavaEE 提供基础。</p>
+<p><strong>JavaEE（Java Enterprise Edition）</strong>：Java
+企业版，为开发企业环境下的应用程序提供的一套解决方案，包括 Web
+网站后台开发等。该技术体系包含的技术：Servlet、JSP
+等。企业版本帮助开发和部署可移植、健壮、可伸缩且安全的服务端Java
+应用。JavaEE 是在 JavaSE 的基础上构建的提供 Web
+服务、组建模型、管理和通信 API。</p>
+<p><strong>JavaME（Java Platform Micro Edition）</strong>：Java
+微型版，JavaSE 的瘦身版。主要做嵌入式开发。 JavaME
+是专门为资源受限的设备设计的，如为
+M2M、工业控制、智能电网基础设施、环境传感器和跟踪等的无线模块、手机、PDA、电视机顶盒和打印机上运行的应用程序提供一个健壮且灵活的环境。自从安卓系统出来后，
+JavaME 就用的比较少了。</p>
+<p>JavaSE 是整个 Java 平台的核心，做 Java 后端先学 JavaSE。</p>
+<h3 id="前后端的工作内容">1.1.3 前后端的工作内容</h3>
+<p><strong>前端</strong></p>
+<p>编写 html
+代码搭建一个框架展现网页内容，如图片、文字、视频...，打开浏览器的任意网页，按下
+F12 可以看到网页对应的 html 文件</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/qTvujOhNMVG5tBI.png" alt="浏览器按下 F12 后展开的页面">
+<figcaption aria-hidden="true">浏览器按下 F12 后展开的页面</figcaption>
+</figure>
+<p>用 CSS 技术美化页面，指定 html 标签的位置、样式等；</p>
+<p>用 JavaScript
+语言控制与用户的交互，比如网页弹窗、动态改变网页内容、验证登录信息、跳转页面等。</p>
+<p>例：点击登录页面，输入用户名与密码，按下回车，会触发事件执行
+JavaScript 代码，给用户响应（登录失败或成功）。</p>
+<p>可以说前端相当于前台，是可以看的见的内容。</p>
+<p><strong>后端</strong></p>
+<p>接收从前端页面或其他后端服务传递过来的请求，处理业务逻辑，对数据库中的数据增删改查
+CRUD。</p>
+<p>给调用者一个响应，如把数据返回给调用者、操作是否失败、返回对应的 html
+代码等，用户是看不见的。</p>
+<p>例：接收到前端传过来的用户名与密码，查询数据库中是否存在，若不存在返回用户不存在。前端接收到后，改变页面信息给用户提示。</p>
+<p>不限于使用哪种编程语言，只要能把正确的数据返回给调用者即可。</p>
+<p>要保证访问量很大时（同一时间内能够处理尽可能多的请求）而服务器不宕机、响应时间短不至于用户长时间等待、多个用户访问时保证数据的一致性等。（高可用、高并发、分布式、自动化）</p>
+<h3 id="java-语言特性">1.1.4 Java 语言特性</h3>
+<p>Java 是一门编程语言，特性如下：</p>
+<p><strong>1、面向对象</strong></p>
+<p>Java
+以类为结构组织代码，对对象、继承、封装、多态、接口、包等均有很好的支持。为了简单起见，Java
+只支持类之间的单继承，但是可以使用接口来实现多继承。使用 Java
+语言开发程序，需要采用面向对象的思想设计程序和编写代码。</p>
+<p>如果不想使用此特性，Java 也可以写出面向过程的代码。</p>
+<p><strong>2、平台无关性</strong></p>
+<p>一次编写，到处运行（Write Once，Run any Where）。因此采用 Java
+语言编写的程序具有很好的可移植性，而保证这一点的正是 Java
+虚拟机。在引入虚拟机之后，编译后的 <mark>class
+文件可以在不同的平台上运行</mark>，不需要重新编译。</p>
+<p><strong>3、简单性</strong></p>
+<p>Java 语言的语法与 C 语言和 C++
+语言很相近，使得很多程序员学起来很容易。对 Java 来说，它舍弃了很多 C++
+中难以理解的特性，如操作符的重载和多继承等，而且 Java
+语言不使用指针，加入了垃圾回收机制，解决了程序员需要管理内存的问题，使编程变得更加简单。</p>
+<p><strong>4、解释执行</strong></p>
+<p>Java 程序在 Java
+平台运行时会被编译成字节码文件，字节码与所在平台无关，可以在有 Java
+环境的操作系统上运行。在运行文件时，Java
+的解释器对这些字节码进行解释执行，执行过程中需要加入的类在连接阶段被载入到运行环境中。</p>
+<p>解释型的转换工具称为解释器，程序在运行时使用解释器。每翻译一句，就执行一句，效率低，但跨平台性能好。</p>
+<p>编译型的转换工具称为编译器，事先把源代码交给编译器，它一下子全部翻译，得到编译后的代码，可以直接被机器执行。</p>
+<p>例如 JavaScript 语言有编译型的转换工具，如 chrome 的 V8
+引擎，也有解释型的转换工具如 Netscape Navigator 的 JS 引擎。</p>
+<p><strong>5、多线程</strong></p>
+<p>Java 语言是多线程的，这也是 Java 语言的一大特性，它必须由 Thread
+类和它的子类来创建。Java
+支持多个线程同时执行，并提供多线程之间的同步机制。任何一个线程都有自己的
+run() 方法，要执行的方法就写在 run() 方法体内。</p>
+<p><strong>6、分布式</strong></p>
+<p>Java 语言支持 Internet 应用的开发，在 Java
+的基本应用编程接口中就有一个网络应用编程接口，它提供了网络应用编程的类库，包括
+URL、URLConnection、Socket 等。Java 的 RIM
+机制也是开发分布式应用的重要手段。</p>
+<p><strong>7、健壮性</strong></p>
+<p>Java 的强类型机制、异常处理、垃圾回收机制等都是 Java
+健壮性的重要保证。对指针的丢弃是 Java 的一大进步。另外，Java
+的异常机制也是健壮性的一大体现。</p>
+<p><strong>8、高性能</strong></p>
+<p>Java 的高性能主要是相对其他高级脚本语言来说的，随着 JIT（Just in
+Time）的发展，Java 的运行速度也越来越高。</p>
+<p><strong>9、安全性</strong></p>
+<p>Java 通常被用在网络环境中，为此，Java
+提供了一个安全机制以防止恶意代码的攻击。除了 Java
+语言具有许多的安全特性以外，Java
+还对通过网络下载的类增加一个安全防范机制，分配不同的名字空间以防替代本地的同名类，并包含安全管理机制。</p>
+<h3 id="java-用途">1.1.5 Java 用途</h3>
+<p><strong>1、Android 应用</strong></p>
+<p>许多的 Android 应用都是由 Java 程序员开发者开发。虽然 Android
+运用了不同的 JVM 以及不同的封装方式，但是代码还是用 Java
+语言所编写。相当一部分的手机中都支持 Java
+游戏，这就使很多非编程人员都认识了 Java。</p>
+<p><strong>2、在金融业应用的服务器程序</strong></p>
+<p>Java
+在金融服务业的应用非常广泛，很多第三方交易系统、银行、金融机构都选择用
+Java 开发，因为相对而言，Java 较安全 。大型跨国投资银行用 Java
+来编写前台和后台的电子交易系统，结算和确认系统，数据处理项目以及其他项目。</p>
+<p><strong>3、网站</strong></p>
+<p>Java
+在电子商务领域以及网站开发领域占据了一定的席位。开发人员可以运用许多不同的框架来创建
+Web 项目，如 MyBatis、Spring 全家桶。</p>
+<p><strong>4、嵌入式领域</strong></p>
+<p>Java
+在嵌入式领域发展空间很大。是指各种小型设备上的应用，包括机顶盒、车载的大屏影音娱乐设备、POS
+机等。在这个平台上，只需 130KB 就能够使用 Java
+技术。（在智能卡或者传感器上）</p>
+<p><strong>5、大数据技术</strong></p>
+<p>Hadoop 以及其他大数据处理技术很多都是用 Java，例如 Apache 的基于 Java
+的 HBase 和 Accumulo 以及 ElasticSearchas。</p>
+<p><strong>6、框架</strong></p>
+<p>解决企业应用开发的复杂性，让开发更加方便。</p>
+<p><strong>7、软件</strong></p>
+<p>制作小游戏、开发工具 IDE 。</p>
+<h2 id="jdk-下载">1.2 JDK 下载</h2>
+<p>内容导视：</p>
+<ul>
+<li>JDK 与 JRE 的区别</li>
+<li>JDK 下载与安装</li>
+<li>如何卸载</li>
+<li>如何禁止 JDK 检查更新</li>
+</ul>
+<p>即使编写了 Java 源代码，系统也无法直接执行，需要 JDK 提供编译和运行
+Java 程序的环境，将代码解释为系统可识别的机器码。</p>
+<h3 id="jdk-与-jre-的区别">1.2.1 JDK 与 JRE 的区别</h3>
+<p><strong>JRE（Java Runtime Enviroment）</strong>：是 <mark>Java
+的运行环境</mark>。面向 Java 程序的使用者，而不是开发者。</p>
+<p>如果你仅下载并安装了 JRE，那么你的系统只能运行 Java 程序。JRE 是运行
+Java 程序所必需环境的集合。它包括 JVM（虚拟机）、Java 平台核心类库（如
+rt.jar）和支持文件。它不包含开发工具（编译器、调试器等）。</p>
+<p><strong>JVM（Java Virtual Machine）</strong>：Java 虚拟机。是整个
+Java 实现跨平台的最核心的部分，能够<mark>运行以 Java
+语言编写的程序。</mark>其中的虚拟机屏蔽了底层运行平台的差别。</p>
+<p><strong>JDK（Java Development Kit）</strong>：是 <mark>Java
+开发工具包</mark>，它提供了 Java 的开发环境（提供了编译器 javac.exe
+等工具，用于将 java 文件编译为 class 文件）和运行环境（提供了 JVM 和
+rt.jar 即 Runtime 辅助包，用于解析 class 文件使其得到运行）。</p>
+<p>如果你下载并安装了 JDK，那么你不仅可以开发 Java
+程序，也同时拥有了运行 Java 程序的平台。JDK 是整个 Java 的核心，包括了
+JRE 和 开发工具 jar 包，如 tools.jar。</p>
+<p><strong>核心类库</strong>：主要是开发经常使用的类库，避免重复造轮子。如
+java.lang 下的 String、包装类等，已经被编译成了 .class
+文件，需要时直接拿来用，不用自己重新写一份。</p>
+<p>JDK &gt; JRE &gt; JVM</p>
+<p>如果你只是想运行 Java 程序，就只安装 JRE 即可。</p>
+<h3 id="jdk-下载与安装">1.2.2 JDK 下载与安装</h3>
+<p>JDK 下载地址：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</a></p>
+<p>有 JDK7、8、11，通常使用的是
+JDK8、11，因为它们是长期支持版本，一般的版本支持半年就不再显示。此时的你点开链接，说不定已经看不到
+JDK7 了。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/K7NTIMrtV8BWzH3.png" alt="不同版本有效期">
+<figcaption aria-hidden="true">不同版本有效期</figcaption>
+</figure>
+<p>LTS 代表长期支持的版本。</p>
+<p>Oracle 产品支持的三个策略：<a target="_blank" rel="noopener" href="https://blog.csdn.net/iteye_21199/article/details/82305640">https://blog.csdn.net/iteye_21199/article/details/82305640</a></p>
+<p>版本的有效时间：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/java-se-support-roadmap.html">https://www.oracle.com/java/technologies/java-se-support-roadmap.html</a></p>
+<p>JDK8 扩展支持到 2030 年，Oracle
+将每三年指定一个版本作为长期支持版本。</p>
+<p><strong>查看自己电脑位数</strong></p>
+<p>x86 是 32 位，x64 是 64 位。</p>
+<p>打开文件资源管理器，右键此电脑属性查看系统类型是 64 位操作系统，还是
+32 位。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/J3ISzFERXyb5VvC.png" alt="系统类型">
+<figcaption aria-hidden="true">系统类型</figcaption>
+</figure>
+<p><strong>根据自己的系统、位数决定下哪个</strong></p>
+<p>比如我的电脑是 windows 系统 64 位，我使用的是 JDK8，按图选。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/X79MWrfsvpUch8z.png" alt="JDK 下载地址">
+<figcaption aria-hidden="true">JDK 下载地址</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/TzBiRGEIlNbhM95.jpg" alt="下载地址">
+<figcaption aria-hidden="true">下载地址</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/4CIU72Lga8RzqvV.jpg" alt="下载地址">
+<figcaption aria-hidden="true">下载地址</figcaption>
+</figure>
+<p><strong>特别说明</strong></p>
+<p>需要自己创建账户，若不想可在网上搜索 JDK8
+下载，或下载最新版本，此时是 JDK16，下载 zip 和 exe
+格式的都行。我将网盘链接放在了资源地址这章中，需要自取。</p>
+<p><strong>安装</strong></p>
+<p>如果下载的是 exe
+文件，直接双击，指定安装目录，一直下一步，就安装成功了；</p>
+<p><img src="https://s2.loli.net/2022/04/23/tLz2j7aeiVskHnh.png" alt="安装界面"> <img src="https://s2.loli.net/2022/04/23/yWNGatjRwbnL841.png" alt="更改安装目录"></p>
+<p>（安装后我又卸了，使用了 zip，所以地址前后不一致）</p>
+<p>是 zip
+解压即可，点击解压后的文件夹，地址栏上显示的就是安装目录，要看到 bin
+和其它目录，如图：</p>
+<p>认为安装目录是 D:\cqh_environment\Java 就错了。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/aCdcgU6QxFvOIkD.png" alt="JDK 的家">
+<figcaption aria-hidden="true">JDK 的家</figcaption>
+</figure>
+<p><strong>记住 JDK 的安装目录，配置环境变量要用</strong></p>
+<p>安装好后，看看目录：</p>
+<p>bin 目录存放命令，如常用的
+javac.exe、java.exe，用于编译，运行程序。</p>
+<p>lib 存放着 jar 包，如 dt.jar 是运行环境类库，存放了 Swing
+组件；tools.jar 是工具类库，用来编译与运行 java 文件。</p>
+<p>src.zip 存放着 Java 源代码压缩文件。</p>
+<p>rt.jar 在 jre\lib 中。</p>
+<p><strong>解释</strong></p>
+<p>我们编写源代码使用的文件后缀为 .java，这种 .java 文件经过编译生成
+.class 文件，多个.class 打包放在 .jar 包中。</p>
+<h3 id="卸载">1.2.3 卸载</h3>
+<p>呃，这只是教你如何卸载，并不是现在让你卸载...</p>
+<p>打开控制面板/卸载程序，找到 Java。</p>
+<p>或者打开 Windows
+设置/应用/应用和功能，单击要删除的软件，会弹出卸载字样。</p>
+<p>如果你不知道如何打开它们，请用百度搜索，如<code>如何打开 Windows 设置</code>；其实由很多问题都已经得到回答，没必要重复造轮子。学会使用搜索，对自学很有帮助。</p>
+<p>卸载成功后，所有目录名带 Java、Sun、Oracle 的一律删掉，如：</p>
+<p>删除安装 JDK 的目录、删除
+<code>C:\Program Files (x86)\Common Files</code> 和
+<code>C:\Program Files</code> 下的的 Java 和 Oracle
+目录、<code>C:\Users\用户名\AppData\LocalLow</code> 下的 Oracle 和 Sun
+目录、<code>C:\Users\用户名\AppData\Roaming\Sun</code>。</p>
+<h3 id="禁止-jdk-检查更新">1.2.4 禁止 JDK 检查更新</h3>
+<p>这是可选项，不是必须要做的，因为我觉得时不时弹出来像牛皮癣一样挺烦。</p>
+<p>打开控制面板/程序/Java，取消勾选自动检查更新，不检查；</p>
+<p>高级/应用程序安装/从不安装。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/rETIMBW29xaFncL.png" alt="Java 控制面板">
+<figcaption aria-hidden="true">Java 控制面板</figcaption>
+</figure>
+<h2 id="编写代码前的准备工作">1.3 编写代码前的准备工作</h2>
+<p>如果你是什么都不懂的新手，请别慌着写代码，还有如下几件事要做：</p>
+<p>内容导视：</p>
+<ul>
+<li>为何要写笔记</li>
+<li>使用什么软件编写源代码</li>
+<li>练习双手打字</li>
+<li>Windows 10 系统常用的快捷键</li>
+<li>给初学者的一点建议</li>
+</ul>
+<h3 id="为何要写笔记">1.3.1 为何要写笔记</h3>
+<p>为了对抗遗忘，可以快速回顾、促进理解、加深记忆，将知识有条不紊地归类，提炼反思应用。</p>
+<p>不建议使用纸质的笔记，记录麻烦，不方便携带，有老化被撕毁的风险，摘抄代码时不能
+Ctrl + C 快速复制粘贴。</p>
+<p>推荐使用 Typora 软件、博客、等各大网站记录。</p>
+<h3 id="编写源代码使用的记事本">1.3.2 编写源代码使用的记事本</h3>
+<p>工欲善其事必先利其器，使用系统自带记事本编写程序，按下 Tab
+缩进一大节，逼得我每次使用 4
+个空格，回退也难；关键字没有颜色，不易于识别与查看。</p>
+<p>下面介绍几个更好的工具，安装后，右键文件选择打开方式即可。</p>
+<p><strong>EditPlus</strong></p>
+<p>建议网上搜下汉化版的，下面是官方的收费的。</p>
+<p>下载页面：<a target="_blank" rel="noopener" href="https://www.editplus.com/download.html">https://www.editplus.com/download.html</a></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/vLsiNpcyoReMr3C.png" alt="EditPlus 下载地址">
+<figcaption aria-hidden="true">EditPlus 下载地址</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/tKSBio59jL2VlW6.png" alt="EditPuls 安装目录">
+<figcaption aria-hidden="true">EditPuls 安装目录</figcaption>
+</figure>
+<p>有 30 天的试用期，过后要购买许可证。</p>
+<p><strong>Notepad++</strong></p>
+<p>下载页面：<a target="_blank" rel="noopener" href="https://notepad-plus.en.softonic.com/download">https://notepad-plus.en.softonic.com/download</a></p>
+<p>Download 就是下载的意思。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/PBeG64RorkOqQy5.png" alt="Notepad++ 下载地址">
+<figcaption aria-hidden="true">Notepad++ 下载地址</figcaption>
+</figure>
+<p><strong>如何设置主题</strong></p>
+<p>设置/语言格式设置/选择主题，此外还可以根据不同语言设置样式。</p>
+<figure>
+<img src="https://s2.loli.net/2022/03/14/DObj5S6BtvImslz.png" alt="设置主题">
+<figcaption aria-hidden="true">设置主题</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/03/14/Qm2T5wYeRt8qIyr.png" alt="更改背景色">
+<figcaption aria-hidden="true">更改背景色</figcaption>
+</figure>
+<p><strong>Sublime Text</strong></p>
+<p>官网：<a target="_blank" rel="noopener" href="https://www.sublimetext.com/">https://www.sublimetext.com/</a></p>
+<p><strong>Visual Studio Code</strong></p>
+<p>官网：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p><strong>Atom</strong></p>
+<p>官网：<a target="_blank" rel="noopener" href="https://atom.io/">https://atom.io/</a></p>
+<p>不能指定安装目录；这种是以项目的方式管理文件。</p>
+<figure>
+<img src="https://s2.loli.net/2022/03/15/CxX2S7MvOWa9n3k.png" alt="Atom">
+<figcaption aria-hidden="true">Atom</figcaption>
+</figure>
+<p>也可以搜索一下其他的文本编辑器，看哪款适合你。</p>
+<p><strong>编写代码</strong></p>
+<p>打开刚刚下好的软件，输入源代码，最后 Ctrl + S 保存，另存为
+First.java。但是现在还不到写代码的时候，下一章好吗？</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/2HmXhyMRKYSWsgl.png" alt="Hello World 代码">
+<figcaption aria-hidden="true">Hello World 代码</figcaption>
+</figure>
+<h3 id="练习双手打字">1.3.3 练习双手打字</h3>
+<p>一个指头敲字，一边看键盘，一边看输入的代码，很容易出差错。</p>
+<p>既然选择了在电脑上打字，就要提高自己的指法速度，敲代码和写笔记才会快，两只手共同配合。</p>
+<p>不用担心，我也这么走过来的，虽然一开始没有单只手指头快，但坚持下来，不看键盘，手势正确，打字速度会有明显的提升。</p>
+<p>推荐使用金山打字通。</p>
+<p>下载页面：<a target="_blank" rel="noopener" href="http://www.51dzt.com/">http://www.51dzt.com/</a></p>
+<p>从第一步，跟着图中手势位置慢慢打，差不多跟着<strong>敲一个星期</strong>，就基本实现盲打了。</p>
+<p>页面上有金山打字通的下载，点击下载。</p>
+<p>下载好后，双击执行 exe
+文件，安装界面会跳出是否安装其它软件，根据自己需要确认是否勾选。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/TgHX5FkKAOUWLES.png" alt="金山打字通安装界面">
+<figcaption aria-hidden="true">金山打字通安装界面</figcaption>
+</figure>
+<p>安装好后点击新手入门，练到不用看键盘，打字速度超过 30 ~ 60
+字/分钟差不多够用了。（只需练习英文部分即可）</p>
+<h3 id="windows10-系统常用快捷">1.3.4 Windows10 系统常用快捷</h3>
+<p>掌握常用的快捷键，能够极大地提升效率，节省时间。</p>
+<p>如果是有触摸板的笔记本电脑。单击是鼠标左键，双击是鼠标右键。</p>
+<p>请打开 windows 设置/设备/触摸板查看：（Windows + i 打开设置）</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/gNIUnjek17ECZBa.png" alt="笔记本触摸板">
+<figcaption aria-hidden="true">笔记本触摸板</figcaption>
+</figure>
+<p>下面是我总结的常用几个快捷键。如 Ctrl +
+A，在电脑键盘上找到这两个键，同时按下去即可触发全选操作。</p>
+<p>如果打不出中文，怀疑是按 Caps Lock 开启了大写或者连续按下 Shift
+启动了粘滞键，再次按下此键即可恢复。</p>
+<p>提前说明：</p>
+<p>Ctrl + + 指同时按下 Ctrl、+ 这个键，别看见两个加号就懵了。</p>
+<p><strong>文本相关</strong></p>
+<p>先选中文字，Windows 键是 Alt 左边的<img src="https://s2.loli.net/2022/04/23/LpYG5sWHX9MqZf4.png" alt="Windows 键">。</p>
+<p>内容如下：</p>
+<ul>
+<li>常用的粘贴、选中、删除文字的快捷键</li>
+<li>翻页、浏览文字的快捷键</li>
+<li>切换输入法、中英转换</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>操作</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>跳过单词</td>
+<td>Ctrl + 左右箭头，可配合 Shift 使用选中文字</td>
+</tr>
+<tr class="even">
+<td>选中文字</td>
+<td>Shift + 箭头、Shift + Home/End/Pgup/Pgdnd</td>
+</tr>
+<tr class="odd">
+<td>复制</td>
+<td>Ctrl + C</td>
+</tr>
+<tr class="even">
+<td>粘贴</td>
+<td>Ctrl + V</td>
+</tr>
+<tr class="odd">
+<td>全选</td>
+<td>Ctrl + A</td>
+</tr>
+<tr class="even">
+<td>撤销</td>
+<td>Ctrl + Z</td>
+</tr>
+<tr class="odd">
+<td>查找</td>
+<td>Ctrl + F</td>
+</tr>
+<tr class="even">
+<td>替换</td>
+<td>Ctrl + H</td>
+</tr>
+<tr class="odd">
+<td>删除文字</td>
+<td>Del、Backspace</td>
+</tr>
+<tr class="even">
+<td>上翻</td>
+<td>Pgup Pause</td>
+</tr>
+<tr class="odd">
+<td>下翻</td>
+<td>Pgdn Break</td>
+</tr>
+<tr class="even">
+<td>行首</td>
+<td>Home</td>
+</tr>
+<tr class="odd">
+<td>行尾</td>
+<td>End</td>
+</tr>
+<tr class="even">
+<td>页首</td>
+<td>Ctrl + Home</td>
+</tr>
+<tr class="odd">
+<td>页尾</td>
+<td>Ctrl + End</td>
+</tr>
+<tr class="even">
+<td>切换当前语言下的输入法</td>
+<td>Shift + Ctrl</td>
+</tr>
+<tr class="odd">
+<td>切换输入法</td>
+<td>Windows + 空格</td>
+</tr>
+<tr class="even">
+<td>中英文切换</td>
+<td>Shift、Ctrl + 空格</td>
+</tr>
+<tr class="odd">
+<td>切换语言</td>
+<td>Shift + Alt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>热键相关</strong></p>
+<p>若桌面崩了，使用快捷键打开任务管理器，运行新任务，输入 explorer
+后回车。</p>
+<p>内容如下：</p>
+<ul>
+<li>创建文件、查看文件属性</li>
+<li>切换窗口，窗口最大化、最小化</li>
+<li>切换桌面，查看桌面</li>
+<li>截屏</li>
+<li>放大镜</li>
+<li>快捷方式打开应用、资源管理器</li>
+</ul>
+<p>有的快捷键按下去时讲究先后顺序。</p>
+<p>例：如 Alt + Tab ，先按住 Alt 键不要松，再按
+Tab，有先后顺序（同时按也行），自己试试就知道我在讲什么了。</p>
+<p>← 指的是左箭头。</p>
+<p>说实话我向来很反感背知识，随用即取就行。但是那面试题人人都背，你不看看，万一被难倒了怎么办？算了不考虑这些，下面这些快捷键你只看看经常使用的即可。</p>
+<table>
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>操作</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>改变桌面图标大小</td>
+<td>按住 Ctrl + 鼠标滑轮滚动、触摸板两指缩放</td>
+</tr>
+<tr class="even">
+<td>将文件放入回收站</td>
+<td>Ctrl + D 、 Del</td>
+</tr>
+<tr class="odd">
+<td>永久删除文件</td>
+<td>Shift + Del</td>
+</tr>
+<tr class="even">
+<td>创建文件夹</td>
+<td>Alt + 2</td>
+</tr>
+<tr class="odd">
+<td>查看当前文件属性</td>
+<td>Alt + 1</td>
+</tr>
+<tr class="even">
+<td>所有窗口最小化</td>
+<td>Windows + D 、 Windows + M 、三指下滑</td>
+</tr>
+<tr class="odd">
+<td>所有窗口最小化又还原</td>
+<td>双击 Windows + D 、三指下滑又上滑</td>
+</tr>
+<tr class="even">
+<td>当前窗口最小化</td>
+<td>Windows + ↓</td>
+</tr>
+<tr class="odd">
+<td>当前窗口还原、最大化</td>
+<td>Windows + ↑</td>
+</tr>
+<tr class="even">
+<td>查找文件</td>
+<td>Alt +空格</td>
+</tr>
+<tr class="odd">
+<td>浏览器打开新的标签页</td>
+<td>Ctrl + T</td>
+</tr>
+<tr class="even">
+<td>浏览器查看下载文件</td>
+<td>Ctrl + J</td>
+</tr>
+<tr class="odd">
+<td>浏览器当前页面静音</td>
+<td>Ctrl + M</td>
+</tr>
+<tr class="even">
+<td>浏览器切换页面</td>
+<td>Ctrl + 数字、 Ctrl + Tab +（Shift）、 Ctrl + Pgup 和 Pgdn</td>
+</tr>
+<tr class="odd">
+<td>打开新的窗口</td>
+<td>Ctrl + N</td>
+</tr>
+<tr class="even">
+<td>使当前窗口失去焦点，图层置于底下</td>
+<td>Alt + Esc</td>
+</tr>
+<tr class="odd">
+<td>打开任务管理器</td>
+<td>Ctrl + Shift + Esc</td>
+</tr>
+<tr class="even">
+<td>锁屏</td>
+<td>Windows + L</td>
+</tr>
+<tr class="odd">
+<td>关闭文件</td>
+<td>Ctrl + W</td>
+</tr>
+<tr class="even">
+<td>强制关闭文件</td>
+<td>Alt + F4</td>
+</tr>
+<tr class="odd">
+<td>关机</td>
+<td>Alt + F4</td>
+</tr>
+<tr class="even">
+<td>打开文件资源管理器</td>
+<td>Windows + E</td>
+</tr>
+<tr class="odd">
+<td>将焦点定位到地址栏</td>
+<td>Alt + D 、 F4</td>
+</tr>
+<tr class="even">
+<td>后退</td>
+<td>Alt + ←、 Backspace</td>
+</tr>
+<tr class="odd">
+<td>前进</td>
+<td>Alt + →</td>
+</tr>
+<tr class="even">
+<td>返回上一级</td>
+<td>Alt + ↑</td>
+</tr>
+<tr class="odd">
+<td>在窗格、功能区域之间切换</td>
+<td>F6</td>
+</tr>
+<tr class="even">
+<td>重命名</td>
+<td>F2</td>
+</tr>
+<tr class="odd">
+<td>切换至下一个，配合 F2 有奇效</td>
+<td>Tab</td>
+</tr>
+<tr class="even">
+<td>有些快捷键再加上此键，实现逆向选择</td>
+<td>如 Shift + Tab</td>
+</tr>
+<tr class="odd">
+<td>即时切换应用</td>
+<td>按住 Alt 不要松开单击 Tab 、三指左右滑动</td>
+</tr>
+<tr class="even">
+<td>来回切换引用</td>
+<td>同时按下 Alt + Tab</td>
+</tr>
+<tr class="odd">
+<td>切换应用</td>
+<td>Alt + Ctrl + Tab 松开，单击 Tab 选择应用后回车</td>
+</tr>
+<tr class="even">
+<td>刷新</td>
+<td>F5 、 Ctrl + R 、 Ctrl + F5</td>
+</tr>
+<tr class="odd">
+<td>同一应用不同窗口切换</td>
+<td>Ctrl + Tab</td>
+</tr>
+<tr class="even">
+<td>浏览器不同窗口切换</td>
+<td>Ctrl + Pgup Pause 、 Ctrl + Pgdn Break</td>
+</tr>
+<tr class="odd">
+<td>创建新桌面</td>
+<td>Ctrl + Windows + D</td>
+</tr>
+<tr class="even">
+<td>关闭新桌面</td>
+<td>Ctrl + Windows + F4</td>
+</tr>
+<tr class="odd">
+<td>查看已有桌面</td>
+<td>Windows + Tab （再按还原）、三指上滑（下滑还原）</td>
+</tr>
+<tr class="even">
+<td>切换桌面</td>
+<td>Windows + Ctrl + 左右箭头</td>
+</tr>
+<tr class="odd">
+<td>两个应用分屏</td>
+<td>Windows + ←、 Windows + →</td>
+</tr>
+<tr class="even">
+<td>放大缩小屏幕</td>
+<td>Windows 加 +/-</td>
+</tr>
+<tr class="odd">
+<td>浏览器放大缩小</td>
+<td>Ctrl 加 +/-</td>
+</tr>
+<tr class="even">
+<td>打开/关闭管理通知</td>
+<td>Windows + A</td>
+</tr>
+<tr class="odd">
+<td>打开 Windows 设置</td>
+<td>Windows + i</td>
+</tr>
+<tr class="even">
+<td>锁定、切换用户、注销、打开任务管理器</td>
+<td>Ctrl + Alt + Del</td>
+</tr>
+</tbody>
+</table>
+<p><strong>截屏</strong></p>
+<p>1）快捷键打开截全屏的工具</p>
+<p><code>Windows + W</code></p>
+<p>2）区域截屏</p>
+<p><code>Windows + Shift + S</code></p>
+<p>若点击了截图，照片会在
+<code>C:\Users\你的用户名\AppData\Local\Packages\Microsoft.ScreenSketch_8wekyb3d8bbwe\TempState</code>
+下保存。</p>
+<p>3）截全屏</p>
+<p><code>Windows + PrtScSysRq</code></p>
+<p>PrtScSysRq 键在 F12 右边，保存的图片在
+<code>C:\Users\自己的用户名\Pictures\Screenshots</code> 下。</p>
+<p><code>PrtScSysRq</code></p>
+<p>打开画图工具，Ctrl + V 将截屏捕捉。</p>
+<p>4）截屏，范围限制在当前工作页面（得到焦点的页面）</p>
+<p>解释，比如你打开了 QQ，正在使用它聊天，按下了这个快捷键，只会截 QQ
+界面。</p>
+<p><code>Windows + Alt + PytScSysRq</code></p>
+<p>5）录屏，范围限制在当前工作页面</p>
+<p><code>Windows + Alt + R</code></p>
+<p>捕获的图片和视频在 <code>C:\Users\用户名\Videos\Captures</code>
+里。</p>
+<p>6）游戏栏工具</p>
+<p><code>Windows + G</code></p>
+<p><strong>Alt</strong></p>
+<p>打开软件，按一下 Alt
+，会有字符提示，并且将焦点定位到菜单栏，此时可按左右键切换功能区，上下（不行就
+Enter 回车）键打开功能区。</p>
+<p>字符提示会显示出功能的快捷键，例：文件功能区会显示出 F ，代表只需要
+Alt + F
+就可以打开此功能，弹出的下拉列表一般也有字母提示，按下对应字母即可。（有时需同时按下
+Alt ）</p>
+<p>总结： Alt + 划下划线的字母，可以快速打开菜单。</p>
+<p><strong>快速启动任务栏上的软件</strong></p>
+<p>你看看你的任务栏（屏幕的最下方），打开应用后可以右击任务栏上的应用图标，将其固定到任务栏，下次直接单击此图标就可以打开应用。或者
+Windows键 + 数字，比如</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/eOHtJ3dNf7vWkKC.png" alt="Windows 10 系统的任务栏">
+<figcaption aria-hidden="true">Windows 10 系统的任务栏</figcaption>
+</figure>
+<p>浏览器在任务栏的第 1 个位置，只需 Windows + 1 就可以打开。或者
+Windows + T，左右箭头选择后回车。</p>
+<h3 id="给初学者的一点建议">1.3.5 给初学者的一点建议</h3>
+<p>我希望你能后来居上，分享你的经验让我开开眼界。</p>
+<p>下面是本人经过大量时间总结的经验，但你可以不看，因为没有什么规则可以量身定制。</p>
+<p><strong>1、约束好奇心，停止收藏资源</strong></p>
+<p>我直接说，你是学到死都学不完的。</p>
+<p>资源无穷尽也。不要看到什么都想学，什么都想买，一直在搜，知识太多，你学不过来的。你先在网上搜索，比如后端的整套知识点，按顺序来，一心一意，<strong>一套教程为主，有疑惑的再去别的地方比对</strong>。不要没事就搜索一大堆资料收藏，又不开始，资料一定要精简，那些看上去有用的知识但短期用不上的，直接取消收藏（也包括我）。等你到了这步，再找资源，别做松鼠。</p>
+<p>关于难度高的，可以先跳过，记录下来，后面再补上，比如数据结构、JVM
+底层、多线程与高并发、GUI
+等等...别把初学时间浪费在这上面，这些东西都是唬人放弃的。</p>
+<p>不要背代码，要掌握原理，方法可以到 API
+文档上查。之前基本都是概念上的东西，理解就好了，但学到集合、IO、常用类如
+String，只背方法名一定会消灭你学习的兴趣。</p>
+<p>这东西是一回生二回熟，第一遍不要想着要弄的多明白，简单过一下即可。下次复习的时候，无师自通，我敢说人就是最强的智能机器人。</p>
+<p>至于看视频还是阅读书籍，我感悟如下：</p>
+<p>视频时间看完所需时间更长，但可以一步步来，如果章节内容划分合理，每个视频时长合适，学习者更轻松完成每个目标，掌握自己的进度。适合初学者。</p>
+<p>书籍花费时间较少，但经常有断节之处，初学者搞不明白缺少哪一个环节，看着晦涩难懂的文字，翻不了几页就草草放弃，适合耐得住性子的人。</p>
+<p><strong>2、管理好精力</strong></p>
+<p>人一天能够利用的时间极其有限，所以要学会合理分配精力。学习并不是生活的全部，要参与家务，如果你整天扑到学习上，只会感动自己。随着精力的消耗，自控力的减弱，一定会在某天突然崩掉，开始变得什么都没有兴趣，行动力拉到最低，即使强迫在学，也只是枯坐原地，享受着左耳进右耳出的枯燥感。</p>
+<p>早起别熬夜，每天一定留至少 30 分钟的时间午睡，为了第 2
+天的精神良好。学习时推荐使用番茄钟，每过半小时就休息一小会，合理分配精力。（休息时不要看电子产品与动脑筋，要适当远眺）</p>
+<p><strong>3、学会分享</strong></p>
+<p>不要闭门造车，要敢于发在各大网站上分享，Markdown
+语法我会在下节中讲到，你学会了，注册个号，把笔记直接复制粘贴，发在博客网上；不要觉得自己技术菜。理由如下：</p>
+<ol type="1">
+<li><p>人人都有开始，你发出来了，别人才能纠正你的错误，避免成为井底之蛙。</p></li>
+<li><p>你又开始自耗了，不停地在脑海天人交战，一顿脑补：会不会万一发出来被人嘲笑怎么办？...于是藏着掖着，生怕别人知道，出丑；事情还未做，就想一系列的后果，别人有多可恶。我觉得世上还是好心人多，当然不要被零星几个恶评就忽略了大多数支持你的人，这么大的林子总会有几个脑残。</p></li>
+<li><p>百分之 99.9 的人根本刷不到你的文章，或者一下就 ×
+过去了，即使刷到了，那还有 9.9
+成人浏览刷的一下就关了，评论的那是少之又少，凤毛麟角。</p></li>
+<li><p>对于四处搜索资源的人，是没有精力留下痕迹的，没有用的直接毙掉，有用的看完理解后也直接毙掉；这么快节奏的生活，没人关心你是谁，最多充当局外客。当你还在纠结别人的看法时，纠结要不要做时，别人根本记都不记得你。我们在网络时代那是十分渺小，沧海一粟，很快被淹没，就算有弄潮儿掀起了几朵浪花，也会很快平息，所以别再纠结丢不丢脸了。</p></li>
+<li><p>帮助别人就是帮助自己。虽然这个地球少了谁都能转动，但我愿意相信天生我材必有用，自己的不可替代性。</p></li>
+<li><p>你已经落后别人太多了，得到的都不是最新的知识；不要求自己跑的更快，但是也要有行动的勇气吧，就算有
+1000
+个人从众笑你、反对你，我也不会笑你，只会支持你，为你的敢于行动喝彩。</p></li>
+<li><p>或者你担心教会了徒弟饿死了师傅，认为自己凭什么白白让别人分享自己的辛苦所得，让那些白嫖怪轻而易举获取到所有。</p>
+<p>呃，我也不反对你，曾经的我认为那些动不动说要分享，文章标题、内容弄得很吸引人；结果在文章底部放了个二维码，说要关注才能获取验证码与资源，我一向嗤之以鼻，这不就是引流吗，能赚多少钱啊？但是现在觉得别人有权力这么做，没有人必须无偿满足你，因为用爱发电，得不到利益，很容易让人寒心。既然付不了金钱，就只能搭进时间和人脉，等价交换而已。</p>
+<p>对于那些开源的人，要不是他们的分享，让我窥见一斑，那我现在应该不在家，而是进厂做流水线去了，是不会发文章的，或许抱怨这个世界不公平。所以再次感谢开源的人，感谢你们的无私奉献，你们就是一道光，照亮被淘汰看不见希望的我，至于我的信念就从此转变为萤火虫也可与日月争辉。（不禁想起了一句话：为众人抱薪者，不可使其冻毙于风雪；为大众谋福利者，不可使其孤军奋战；为自由开路者，不可使其困顿于荆棘）很抱歉我现在捉襟见肘，无法回馈你们。</p>
+<p>说实话，现在当我使用手机、电脑、冰箱、自来水等一切产品时，都会惴惴不安，一是因为怕现在习惯了离不开了，但是不了解底层原理，要是他们以后技术垄断，坐地起价...；二是当我还在感叹新技术新发展新气象，日新月异，这些东西如此方便快捷，被制作被运送，傻瓜都能轻松使用。但是到底以牺牲了多少人的自由空暇为代价，令他们如同机械一般麻木，我们却理所当然，嘻嘻哈哈，嘲笑着都是因为不努力，教导下一辈不要学他们，要成为人上人...扪心自问，真的能够心安理得使用吗？平等或许只是伪命题。</p></li>
+</ol>
+<p><strong>4、承认自己的不完美</strong></p>
+<p>人无完人，总有顾及不到，犯错的时候。想做就直接放手干，不要计划地那么周全，稍微一有变动，就放弃目标，想明天再做。是吧，别觉得只有从容不迫、不慌不忙、按部就班地才叫做事，而达不到自己的心理预期就不做了，大多数人都是计划赶不上变化，被搞得灰头土脸的。</p>
+<p>人是一种很奇怪的生物，我把人称为石头，有 1 就有
+2。当难度设定太高，有一次累了没去执行，那么最后结局就是放弃。我就改变思路，将难度设定为合适、简单。还是如此，不管之前坚持了多少天，只要有一次意外，没做，结局还是放弃。</p>
+<p>结论：没有外力时，一直滚动；有外力一碰，就停了；结论：维持当前状态，会被外力改变。</p>
+<p>但是在滚动的过程中，会磨去棱角，那么下一次进入相同的环境，会很容易滚落下去，很难控制。所以每一次尝试，都是为下一次作铺垫，不要认为失败就是无用功。</p>
+<p><strong>5、调整心态</strong>（找准目标）</p>
+<p>如果你学这个只是为了找工作，那么你一定会很痛苦。为了以后不再工作而工作，为了以后享福而选择现在吃苦（为了不再吃苦而吃苦），为了将来而牺牲现在；这种矛盾的做法，并且大部分人实现不了财务自由，如果你只靠出卖自己的时间换来金钱的话。</p>
+<p>你想得又得不到，或追赶不上前面的事物，你会处于十分焦虑的状态。你真想财务自由，那么就要垄断其他人的时间，给自己带来利益（用金钱换他们的时间，创造价值收入囊中），或者搭上顺风车。</p>
+<p>但我不一样，我写这个，并不奢求得到回报，因为我写这个同时，我就很满足了。</p>
+<p>但也不要担忧，如果企业家全都使用机器人或者雇很少的人，短时间的确能够让利润增加，因为减少了给员工那一项的支出；但是员工既是生产者也是消费者，如果他们没有时间买或者没有钱买，就算降低商品的价格，但为了有利润可赚，员工的工资也会降，那就更没有钱买，继续降低商品价格...如此反复，就倒闭了；所以他们是不会让穷人更穷的。</p>
+<p>（我只是安慰你，这些玩意早被研究透了，说不定命运都被安排的明明白白）</p>
+<p><strong>6、相信自己</strong></p>
+<p>可你也与我有着同一样的感受，为什么这些大佬如此牛逼，而自己什么都看不懂，不能理解，沮丧睡不着觉。我觉得这不是你的问题，而是每个人的必经之路。希望你能够坚持下来，即使在人生最黑暗的时候也能与本心融为一体，认同自己，一起冲向光明；最后祝你学业有成，找个好饭碗。</p>
+<p><strong>7、选择城市</strong></p>
+<p>之前聊天时，问到了这个问题：去大城市还是小城市发展？然后又说小城市容不下灵魂、大城市容不下肉身。其实我都没有工作，村里人都知道我是游民，我给不了什么实质性的意见。</p>
+<p>哈哈，没关系，任何一个选择都有得有失，你看看代价与风险是否自己能够承受：是接受安稳，被人看扁；还是避开喧嚣之地，舍命一拼，打下一片未来；就看你怎么选了。</p>
+<p>说到底，被人欺，与老不老实无关，而是与实力相关；假如你不讨喜，没有什么朋友，与他人的联系几乎没有，有你没你一个样，未来也不可期；你无法变现自己的价值，别人凭什么要帮你，给你留一点蛋糕？另外一点，别人也无法以你为桥，认识更多有价值的人，那么纯粹是浪费时间。</p>
+<p>当出现不是让所有人都满意的结果时，别人权衡利弊后觉得你很好欺负，得罪你的代价可以承受，你没有价值，削去你的利益，事卡着不给你办，或者祸水东引，反正你也掀不起大浪。</p>
+<p>实力不够，人间处处是地狱。不想融入阻扰了别人利益，被排外，没有晋升的机会。你佯装融入，等你实力终于够了，你也已经同化成其中一员，将曾经的憋屈发泄，迫害如同当年的像你一样的人，十分地爽，开始心安理得，阻扰那些想要发声的人，觉得凭什么我受而你们不用受，心理不平衡，主动维护旧有秩序。</p>
+<p><strong>8、没有绝对正确的理论</strong></p>
+<p>给出一个貌似符合常理的结论，有人举出反例，然后结论被推翻，再重新给出符合此反例的新的结论，不停周而复始...</p>
+<p>如果这个结论目前还未被推翻，就暂时当作正确的吧，不需要怀疑一切，那样会很累的；我的知识体系到处东拼西凑，别人说什么如果验证不出来，就分不清真假，只能暂时当成对的。</p>
+<h2 id="typora-软件使用">1.4 Typora 软件使用</h2>
+<p>简洁、功能强大、实时预览的 md 编辑器。</p>
+<h3 id="下载与安装">1.4.1 下载与安装</h3>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.typora.io">https://www.typora.io</a></p>
+<p>往下翻，点击 Windows（我的是 Windows 系统 64 位），点击 Donwload
+Beta（x64），就会自动下载；</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/vgrTx8u7R2FOVUD.png" alt="Typora 下载">
+<figcaption aria-hidden="true">Typora 下载</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/8UVisvOaqYZx9LT.png" alt="目前 Typora 网站已访问不了">
+<figcaption aria-hidden="true">目前 Typora 网站已访问不了</figcaption>
+</figure>
+<p>双击下载好的 .exe，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/wboODYk1vLh3tAd.png" alt="Typora 安装界面">
+<figcaption aria-hidden="true">Typora 安装界面</figcaption>
+</figure>
+<p>指定安装位置，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/BpMjPLrACKWfTkI.png" alt="让电脑上所有用户共享此应用">
+<figcaption aria-hidden="true">让电脑上所有用户共享此应用</figcaption>
+</figure>
+<p>下一步 next，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/T1LbQk3WpEg9OMK.png" alt="指定安装目录">
+<figcaption aria-hidden="true">指定安装目录</figcaption>
+</figure>
+<p>选中复选框代表创建桌面快捷方式。</p>
+<h3 id="如何创建-markdown-文件">1.4.2 如何创建 Markdown 文件</h3>
+<p>创建以 .md 结尾的文件，如
+test.md，鼠标右键新建/文本文档，双击打开发现怎么还是记事本？</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/jCGgFhSmf9BOabP.png" alt="记事本">
+<figcaption aria-hidden="true">记事本</figcaption>
+</figure>
+<p>打开文件资源管理器，把文件扩展名和隐藏的项目打上对勾，就可以看到隐藏的后缀和文件夹如
+AppData；</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/TfGSN18zxAJKLyl.png" alt="被隐藏的文件扩展名">
+<figcaption aria-hidden="true">被隐藏的文件扩展名</figcaption>
+</figure>
+<p>此时刚刚创建的文件显露真身，原来还是 txt 文件；右键重命名，把 .txt
+去掉，再双击点进去。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/MBOFWSqbRuc851T.png" alt="显示的文件扩展名 .txt">
+<figcaption aria-hidden="true">显示的文件扩展名 .txt</figcaption>
+</figure>
+<h3 id="常用的-markdown-语法">1.4.3 常用的 Markdown 语法</h3>
+<p>此软件使用的是 Markdown
+语法，一种纯文本格式的轻量级标记语言。通过简单的标记语法,它可以使普通文本内容具有一定的格式。</p>
+<p>md 语法的出现不是为了替代 html，而是更方便书写。如果让我写那么多的
+&lt;&gt;，不停思索如何嵌套，写一大堆长长的 css，我会疯掉的。</p>
+<p>这款软件它可以你更加关注内容，而不是注意怎么摆弄格式。Word
+是边写边在上面的边栏调字体大小、颜色、格式，很不方便。</p>
+<p>内容如下：</p>
+<ul>
+<li>字体格式：如标题、斜体、加粗</li>
+<li>跳转链接：如超链接与图片</li>
+<li>内容排列：如表格、有序无序列表、各种图表、分割线</li>
+</ul>
+<p><strong>标题</strong></p>
+<p>一个 # + 空格，跟上标题内容即可。（Ctrl + 1
+是一级标题，以此类推）</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex"># 我是什么人
+## 我是第2种人<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>一个 # 是一级标题，两个 # 是二级标题，依此类推，直到 6
+级标题。（越来越小）</p>
+<p><strong>复选框</strong></p>
+<p>一个减号 + 空格 + [ ] + 空格</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">- [ ] 锻炼<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul class="task-list">
+<li><input type="checkbox" disabled="">
+锻炼，可以点击就能打上对勾。</li>
+</ul>
+<p><strong>粗、斜、斜加粗等字体</strong></p>
+<p>1、被两个星号包裹的字自动变粗（Ctrl + B）；</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">**我是粗**<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>我是粗</strong></p>
+<p>2、被一个星号包裹的字是斜体（Ctrl + i）；</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">*我是斜*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><em>我是斜</em></p>
+<p>3、被 3 个星号包裹的字是粗斜；</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">***粗斜体***<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong><em>粗斜体</em></strong></p>
+<p>4、Tab 上面有一个键，按住 Shift，再按住它，可以打出 ~。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">~~废弃~~<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><del>废弃</del></p>
+<p><strong>引用</strong></p>
+<p>大于号 + 空格 + 内容</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">&gt; 摘抄自大文豪张三的一句话<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>摘抄自大文豪张三的一句话</p>
+</blockquote>
+<p><strong>键盘风格</strong></p>
+<p>被成对的 kbd 标签的内容。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">&lt;kbd&gt;ctrl&lt;/kbd&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><kbd>ctrl</kbd>+<kbd>c</kbd>是复制</p>
+<p><strong>超链接和图片</strong></p>
+<p>这些地址就是网址。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">![图片名](图片地址)
+[超链接名](超链接地址)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com">百度</a>（右击打开链接或按住
+Ctrl，再单击此链接）</p>
+<p><strong>表格</strong></p>
+<p>Ctrl + T 快捷键创建表格，Ctrl + Enter 添加新行，Shift + Ctrl + Del
+删除一行。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">名称|性别|生日
+--|--|--
+赵三|男|1213.2.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>名称</th>
+<th>性别</th>
+<th>生日</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>赵三</td>
+<td>男</td>
+<td>1213.2.1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>代码</strong></p>
+<p>单行使用 `，多行三个 `，指定代码语言：</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">`单行代码`
+```java
+多行代码
+```
+```javascript
+//实际写法var foo = 'bar';
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>单行代码</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">多行代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//实际写法var foo = 'bar';</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>列表</strong></p>
+<p>1、无序列表</p>
+<p>单个星号 + 空格 + 内容</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">* 语文
+* 数学
+* 英语<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>语文</li>
+<li>数学</li>
+<li>英语</li>
+</ul>
+<p>2、有序列表</p>
+<p>数字. + 空格 + 内容</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">1. 起床
+2. 刷牙
+3. 吃饭<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol type="1">
+<li>起床</li>
+<li>刷牙</li>
+<li>吃饭</li>
+</ol>
+<p>3、列表套列表</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">* 起床  
+    * 睁开眼睛  
+    * 我是沙福林
+* 刷牙<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>起床
+<ul>
+<li>睁开眼睛</li>
+<li>我是沙福林</li>
+</ul></li>
+<li>刷牙</li>
+</ul>
+<p><strong>大纲</strong></p>
+<p>可以把标题列出来，即 # 后的内容。</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">[TOC]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>分割线</strong></p>
+<p>三个减号+回车（Enter）</p>
+<hr>
+<p>以下内容不需要了解，几乎不用，有很多网站不支持这种语法。</p>
+<p><strong>甘特图</strong></p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">```mermaid
+gantt
+        dateFormat  YYYY-MM-DD
+        title 这是标题，上面是日期格式年月日
+        section 计划表
+        准备行李（已完成）               :done,    des1, 2014-01-06,2014-01-08
+        买机票（进行中）               :active,  des2, 2014-01-09, 3d
+        拍照（计划）               :         des3, after des2, 5d
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">gantt</span>
+        dateFormat  YYYY-MM-DD
+        title 这是标题，上面是日期格式年月日
+        section 计划表
+        准备行李（已完成）               <span class="token operator">:</span>done,    des1, 2014-01-06,2014-01-08
+        买机票（进行中）               <span class="token operator">:</span>active,  des2, 2014-01-09, 3d
+        拍照（计划）               <span class="token operator">:</span>         des3, after des2, 5d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>UML图表</strong></p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">```mermaid
+sequenceDiagram
+张三-&gt;&gt; 李四: 你好！李四, 最近怎么样?
+李四--&gt;&gt;王五: 你最近怎么样，王五？
+李四--x 张三: 我很好，谢谢!
+李四-x 王五: 我很好，谢谢!
+
+李四--&gt;&gt;张三: 打量着王五...
+张三-&gt;&gt;王五: 很好... 王五, 你怎么样?
+王五-&gt;&gt;张三: 不好
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">sequenceDiagram</span>
+张三<span class="token arrow operator">-&gt;&gt;</span> 李四<span class="token operator">:</span> 你好！李四, 最近怎么样?
+李四<span class="token arrow operator">--&gt;&gt;</span>王五<span class="token operator">:</span> 你最近怎么样，王五？
+李四<span class="token arrow operator">--x</span> 张三<span class="token operator">:</span> 我很好，谢谢!
+李四<span class="token arrow operator">-x</span> 王五<span class="token operator">:</span> 我很好，谢谢!
+
+李四<span class="token arrow operator">--&gt;&gt;</span>张三<span class="token operator">:</span> 打量着王五...
+张三<span class="token arrow operator">-&gt;&gt;</span>王五<span class="token operator">:</span> 很好... 王五, 你怎么样?
+王五<span class="token arrow operator">-&gt;&gt;</span>张三<span class="token operator">:</span> 不好<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>流程图</strong></p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">```mermaid
+graph LR
+A[长方形] -- 链接 --&gt; B((圆))
+A --&gt; C(圆角长方形)
+B --&gt; D{菱形}
+C --&gt; D
+```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">graph</span> LR
+A<span class="token text string">[长方形]</span> <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">链接</span> <span class="token arrow operator">--&gt;</span></span> B<span class="token text string">((圆))</span>
+A <span class="token arrow operator">--&gt;</span> C<span class="token text string">(圆角长方形)</span>
+B <span class="token arrow operator">--&gt;</span> D<span class="token text string">{菱形}</span>
+C <span class="token arrow operator">--&gt;</span> D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="常用的设置">1.4.4 常用的设置</h3>
+<p>内容如下：</p>
+<ul>
+<li>常用的快捷键：如加粗、标题、表格等</li>
+<li>更改风格：如字体颜色、样式，显示代码行号</li>
+<li>将笔记导入导出</li>
+<li>支持数学符号</li>
+</ul>
+<p>因为都是中文，只讲一点点，剩下的自己在菜单栏上研究吧。</p>
+<p><strong>快捷键</strong></p>
+<p>直接点击菜单栏，查看快捷方式，如点击视图、段落，上面显示了快捷方式更方便触发；或者按住
+Alt + O，即可打开格式：如 Ctrl + B 是加粗的快捷键，Ctrl + \
+是清除样式，Ctrl + T 是创建表格的快捷方式，Ctrl + /
+是查看源代码，Windows + 句号是表情符号、视图可以放大、缩小...</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/xj4LVWfCd8GJhya.png" alt="常见的快捷键">
+<figcaption aria-hidden="true">常见的快捷键</figcaption>
+</figure>
+<p>段落/YAML Front Matter（前言），有些博客需要这些属性值获取信息。</p>
+<p><strong>主题</strong></p>
+<p>Alt + T 选择自己想要的主题。</p>
+<p><strong>偏好设置</strong></p>
+<p>Ctrl + ,</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/7Azmlu26Iq1hRWU.png" alt="偏好设置">
+<figcaption aria-hidden="true">偏好设置</figcaption>
+</figure>
+<p>如通用的自动保存选上，每次修改自动保存，不用按下 Ctrl + S。</p>
+<p>高级模式选中调试模式，关闭文件后重新打开，右键检查元素（或 Shift +
+F12），会发现此软件就是一个浏览器，（浏览器按住 F12
+键，会打开开发者模式，与这差不多）我们看到的笔记，实际是 md
+语法被解析后生成的 HTML 标签与 CSS 相配合展现的页面；现在你再看看 md
+语法到底有多方便了吧，这些标签要你自己写该多麻烦。</p>
+<p><strong>代码块显示行号</strong></p>
+<p>Markdown，将显示行号复选框勾选。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/brL3VMOp5lYkSTz.png" alt="代码块显示行号">
+<figcaption aria-hidden="true">代码块显示行号</figcaption>
+</figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">你看左边的<span class="token number">1</span>
+你看左边的<span class="token number">2</span>    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>更换主题</strong></p>
+<p>学了 CSS 后，再来。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/3RFCpSY2Zu4mhU9.png" alt="自定义主题">
+<figcaption aria-hidden="true">自定义主题</figcaption>
+</figure>
+<p>之前创建 md 文件时，给隐藏的项目了打上对勾，代表显示隐藏的项目。其中
+AppData 就是隐藏的项目，一般存放软件的配置文件。</p>
+<p><code>C:\Users\你的用户名\AppData\Roaming\Typora\themes</code>
+下的几个 CSS 文件代表着不同的主题，如果不满意页面样式，可以修改对应主题
+CSS（记得留个备份）或自定义 CSS，重新打开笔记后，可以在主题中看到你的
+CSS，随便更换。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/U2VpxT7gjMSblfr.png" alt="选择主题">
+<figcaption aria-hidden="true">选择主题</figcaption>
+</figure>
+<p>补丁：蓝色背景下的 gif 动图字体会模糊，必须在纯色红或白色背景下，gif
+动图字体才会清晰，所以取消动图的使用。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/KgfDFMRZL8i4GbX.png" alt="不兼容 gif">
+<figcaption aria-hidden="true">不兼容 gif</figcaption>
+</figure>
+<p><strong>将笔记转成其他类型的文件</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/8CSAQgvRLEwdmna.png" alt="导出">
+<figcaption aria-hidden="true">导出</figcaption>
+</figure>
+<p>文件/导出，</p>
+<p>PDF、HTML 等类型的都行，（without styles 是不带样式即没有 CSS
+修饰，自己试试就知道区别了)</p>
+<p>或者打开浏览器，使用打印功能（Ctrl + P），无渲染与解析，很差劲。</p>
+<p><strong>支持数学公式</strong></p>
+<p>按下 <code>Ctrl + ,</code> 快捷键打开偏好设置/Markdown/Markdown
+扩展语法/勾选内联公式，再用 <code>$某字母$</code>
+显示常用的数学符号。（当内联公式过多，可以考虑使用
+<code>$$某字母$$</code>） </p><pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">$$
+\in
+$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p></p>
+<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.09ex" xmlns="http://www.w3.org/2000/svg" width="1.509ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 667 580"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path></g></g></g></svg></mjx-container></span></p>
+<p>常用的的数学符号写法：</p>
+<ul>
+<li>作者：<a target="_blank" rel="noopener" href="https://blog.csdn.net/happyday_d">DaneAI</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/happyday_d/article/details/83715440">https://blog.csdn.net/happyday_d/article/details/83715440</a></li>
+<li>作者：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38228254">韩湘</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38228254/article/details/78515800">https://blog.csdn.net/qq_38228254/article/details/78515800</a></li>
+<li>作者：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43444930">白白旧维</a>，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/1024th/p/11623258.html">https://www.cnblogs.com/1024th/p/11623258.html</a></li>
+<li>作者：<a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/1024th/">樱花赞</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43444930/article/details/119791074">https://blog.csdn.net/weixin_43444930/article/details/119791074</a></li>
+</ul>
+<p><strong>恢复未保存的文件</strong></p>
+<p>打开偏好设置，点击恢复未保存的草稿。</p>
+<figure>
+<img src="https://s2.loli.net/2022/03/14/GyEuv5d1MKLcHYa.png" alt="恢复未保存的草稿">
+<figcaption aria-hidden="true">恢复未保存的草稿</figcaption>
+</figure>
+<h3 id="官网打不开的原因">1.4.5 官网打不开的原因</h3>
+<p>它升级到了 1.0 版本了！收费了。</p>
+<p>不要惊讶，能够开源一定要有其它稳定的收入作为支撑；否则没钱，功能不会太强大，作者都快饿死了，当然没有功夫贡献自己的力量，进行频繁更新，跟上时代。</p>
+<p>Typora 代理商：<a target="_blank" rel="noopener" href="https://typoraio.cn/">https://typoraio.cn/</a></p>
+<p>最后一个免费版，分享者：王炳明，<a target="_blank" rel="noopener" href="https://wwe.lanzoui.com/i8PP3wzahrg">https://wwe.lanzoui.com/i8PP3wzahrg</a></p>
+<p>其实从来都没有说过免费，之前只是 Beta
+测试版，类似于游戏中的公测吧，也不知道免费版什么时候就“关服”了。</p>
+<p>作为一个即时渲染，所见即所得，按下 Ctrl + /
+就可以看源码，简洁实用，早已习惯，离不开它了。其它的软件花里胡哨，什么功能都往里面加，试图想代替其它同类型的软件，结果搞得不伦不类，十分臃肿。</p>
+<p>像其它 md
+编辑器，大部分都是双栏丑丑的大屏幕，十分占空间，并且滚动内容时，左右视图不一致，还得分心同时看两边，真的是种折磨。应该让软件配合人，而不是让人记住软件的用法，主次关系要分清；真希望以后能够统一，有个规范，其它软件实现就可以了。</p>
+<p>如果下载的是收费版，记得打开偏好设置/通用，将 Typora
+服务器使用国内服务器复选框勾选一下，怕连不上服务器，激活不了此软件。</p>
+<h3 id="自动上传图片">1.4.6 自动上传图片</h3>
+<p>你如果使用久了，经常在网上发布文章，一定会遇见这个问题。</p>
+<p>把写好的 md
+文件，复制粘贴到博客园中。结果你发现图片加载不出来，一看地址，<code>C:\Users\自己的用户名\AppData\Roaming\Typora\typora-user-images\xxx</code>。</p>
+<p>这才知道原来图片被保存到了本地中，也难怪网上读取不到。那么你发现了，将图片直接拖拽到博客园的编辑页面，会自动生成网络上的
+URL，可以在全网都能访问到。</p>
+<p>但是时间长了，一张、一张拖拽也不是事啊。这时就需要图床替我们自动保存图片。下面介绍两种方式；</p>
+<p><strong>命令行上传图片</strong></p>
+<p>打开偏好设置/图像，</p>
+<figure>
+<img src="https://s2.loli.net/2022/03/14/FXS7oTtjIQefqsL.png" alt="上传图片">
+<figcaption aria-hidden="true">上传图片</figcaption>
+</figure>
+<p>意思是当本地图片被你拖进 md 文件中，会自动上传图片。</p>
+<p>点击下载或更新，下好了后会出现打开配置文件按钮，点击弹出 JSON
+文件，将以下代码粘贴到这个文件中。</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"picBed"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"uploader"</span><span class="token operator">:</span> <span class="token string">"smms"</span><span class="token punctuation">,</span><span class="token comment">//代表当前的默认上传图床为 SM.MS</span>
+    <span class="token property">"smms"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">"LFJLSJljlfaoFJOLAF"</span><span class="token comment">//这里面的token换成自己生成的token，一定要换</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"picgoPlugins"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//为插件预留</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个 token 如何填？</p>
+<p>打开 SM.MS 图床：<a target="_blank" rel="noopener" href="https://sm.ms/register">https://sm.ms/register</a></p>
+<p>自己注册账号后，再登陆：<a target="_blank" rel="noopener" href="https://sm.ms/login">https://sm.ms/login</a></p>
+<p>点击 User/Dashboard/API Token，进入：<a target="_blank" rel="noopener" href="https://sm.ms/home/apitoken">https://sm.ms/home/apitoken</a></p>
+<p>点击 Generate Secret Token 按钮生成 token，将其填入 JSON 文件。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/waFKojW8vVTbPrX.png" alt="smms Token">
+<figcaption aria-hidden="true">smms Token</figcaption>
+</figure>
+<p>填完后，保存 JSON 文件。将图片拖拽 md 文件时，如有 Uploading
+字样，就成功了。</p>
+<p>在 Pictures 可以管理或删除这些文件，可惜根本没法根据 URL
+找到图片，时间长了，定位删除图片还是不方便。</p>
+<p>说实话我很担心，手贱全删了，导致 md
+文件图片全部失效，还是放在博客园中保险些，真可惜我的硬盘不能作为服务器。</p>
+<p><strong>PicGo app 上传图片</strong></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/tags">https://github.com/Molunerfinn/PicGo/tags</a></p>
+<p>选择一个版本点击，下翻，在 Assets 中选择 exe
+文件下载，安装后直接运行。</p>
+<p>但无论怎么双击就是不会显示窗口，看看电脑右下角，点击蓝色图标：<img src="https://s2.loli.net/2022/04/09/Wk8ix9tfAbFEDZr.png" alt="Windows 系统想要运行需要双击右下角的蓝色图标"></p>
+<p>图片上传区：图片上传 - SM.MS</p>
+<p>图床设置/SM.MS，填入 Token 后确定，设为默认图床。</p>
+<p>Typora 软件，偏好/图像，按图设置</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/shrWV5Rcq7YQePC.png" alt="上传服务选择 PicGO app">
+<figcaption aria-hidden="true">上传服务选择 PicGO app</figcaption>
+</figure>
+<p>在 PicGo 的安装目录下有个 PicGo.exe，PicGo 路径就选择此 exe
+的绝对路径。</p>
+<h2 id="常用的-dos-命令">1.5 常用的 DOS 命令</h2>
+<p>内容导视：</p>
+<ul>
+<li><p>打开 DOS 窗口的几种方式</p></li>
+<li><p>进入目录内：使用绝对路径与相对路径演示</p></li>
+<li><p>常见的 DOS 命令</p></li>
+</ul>
+<p>写出来的 Java
+代码，需要在命令窗口中执行编译与运行命令，需要知道如何打开此黑窗口（Disk
+Operating System）。</p>
+<h3 id="打开-dos-窗口的几种方式">1.5.1 打开 DOS 窗口的几种方式</h3>
+<ol type="1">
+<li>屏幕最左下方，右击 <strong>Windows图标</strong>，点击 Windows
+PowerShell，管理员权限更高，可以修改系统关键文件。</li>
+<li>点击 Windows 图标，往下翻在所有程序中找到 Windows
+系统，<strong>点击命令提示符</strong>。（可以右键以管理员权限运行）</li>
+<li><strong>Windows + R</strong> 输入 cmd
+回车。（<mark>最常用</mark>）</li>
+<li>打开文件夹资源管理器，在地址栏输入 cmd
+回车。（<mark>其次常用</mark>）</li>
+<li><strong>按住 Shift 别松，鼠标右击</strong>，在此处打开
+PowerShell（S）。</li>
+</ol>
+<h3 id="进入目录内使用绝对路径与相对路径演示">1.5.2
+进入目录内：使用绝对路径与相对路径演示</h3>
+<blockquote>
+<p>下面说的目录和文件夹是一个意思。 输入命令后按下回车才能执行，回车键是
+Enter。</p>
+</blockquote>
+<p>由于不是可视化界面，不能像之前一样，点到哪里就跳到哪个文件夹下，需要使用
+<strong>cd 命令</strong>，跳转到某路径下。</p>
+<p>路径分为<mark>绝对路径</mark>和<mark>相对路径</mark>。</p>
+<p>打开文件资源管理器（Windows +
+E），随便打开某盘下的文件夹，可以看到地址栏上的路径。假如以 D: 开头，D:
+称为盘符，显示的路径称为<strong>绝对路径</strong>，<code>D:\</code> 称为
+D 盘的根目录（最上一级，不能再上了）。</p>
+<p><strong>绝对路径</strong>：从盘符开始的路径，能够完整的描述文件位置的路径就是绝对路径。（唯一确定资源位置）
+如路径 <code>D:\cqh_environment</code>，指向 D 盘下的
+<code>cqh_environment</code> 文件。</p>
+<p>而<strong>相对路径</strong>，是以当前路径作为出发点的路径，比如进入当前路径的
+a 目录。</p>
+<p>首先打开 DOS 窗口，切换盘符。</p>
+<p>例：想要到 E 盘下，就输入 <code>E:</code> 后回车，输入
+<code>dir</code>
+回车查看当前路径下有那些子文件（没有就在该盘手动创建文件夹），使用
+<code>cd 文件夹名称</code> 进入此文件夹。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/lPRM3boTUG6IO85.png" alt="cd 命令">
+<figcaption aria-hidden="true">cd 命令</figcaption>
+</figure>
+<p>使用 <code>cd a</code> 时，单看这个
+a，鬼才知道这是哪个地方的文件夹，在哪里才能找到它，需要结合当前路径
+E:&nbsp;才能知道，原来是要到 E 盘下去找 a，那么这个 a 就是相对路径。</p>
+<p>可以这么理解，我说北京市某某地址的小区，你马上理解了要在哪去找，这是绝对路径；但我说我家旁边的一家店，你必须先知道我家在哪，再根据我家的位置确定这家店的位置，这就是相对路径。</p>
+<hr>
+<p><code>..</code>：上级目录</p>
+<p><code>.</code>：当前目录</p>
+<p>现在回到上级目录，使用<code>cd ..</code>，现在演示一下绝对路径，<code>cd 绝对路径</code>，使用绝对路径时，必须是当前所在盘下的路径。</p>
+<p>注意：<mark>路径必须存在</mark>，你需要把目录创建出来，才能使用 cd
+命令进去。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/uCz76JTDKiM1PYn.png" alt="返回上级目录">
+<figcaption aria-hidden="true">返回上级目录</figcaption>
+</figure>
+<p>如果使用相对路径，先切换到根目录，再执行
+<code>cd a\b\c\d</code>。</p>
+<p>怎么回到根目录？使用 <code>cd E:\</code> 吗？或者
+<code>cd ..\..\..\..</code>?</p>
+<p>还有一种简单的方式 <code>cd \</code> 即可</p>
+<hr>
+<p>一个 <code>cd ..</code> 是回到上级目录， <code>cd ..\..</code>
+是回到上上级目录。</p>
+<hr>
+<p>若文件名太长记不住，可以打出首字母，再按下 Tab
+键，也可上下键切换已经输入过的命令，或者你直接将文件拖入这个黑窗口，地址就出来了。</p>
+<p>通过刚才的例子，发现跳转路径时，必须是当前盘下的路径，那么还不如使用相对路径，反正盘名写其它盘也没用。解决办法：加个参数
+/d 即可。</p>
+<p>例：现在在 C 盘下，我要直接到 <code>E:\a\b\c\d</code>，输入
+<code>cd /d E:\a\b\c\d</code> 即可。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/23/PkW6SsAqno9XNGY.png" alt="更换盘目录">
+<figcaption aria-hidden="true">更换盘目录</figcaption>
+</figure>
+<h3 id="常用的-dos-命令-1">1.5.3 常用的 DOS 命令</h3>
+<p>内容如下：</p>
+<ul>
+<li>进入目录、返回上级目录</li>
+<li>打开常用的软件</li>
+<li>清空屏幕</li>
+<li>新建、删除文件</li>
+<li>查看系统变量</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#切换盘符 C:</span>
+<span class="token comment">#查看当前目录下的文件 dir</span>
+<span class="token comment">#改变目录 cd /d C:\a\b\c</span>
+<span class="token comment">#返回上一级 cd..</span>
+<span class="token comment">#直接回到根目录 cd \</span>
+<span class="token comment">#进入子目录 cd 文件夹名称</span>
+<span class="token comment">#清空屏幕 cls</span>
+<span class="token comment">#退出 exit</span>
+<span class="token comment">#查看ip ipconfig</span>
+<span class="token comment">#查看ip详细 ipconfig/all</span>
+
+<span class="token comment">#打开软件</span>
+<span class="token comment">#打开计算器 calc</span>
+<span class="token comment">#打开绘图 mspaint</span>
+<span class="token comment">#打开记事本 notepad</span>
+
+<span class="token comment">#查看网络 ping www.baidu.com</span>
+<span class="token comment">#网络诊断 ping www.baidu.com -t</span>
+<span class="token comment">#终止 Ctrl + C</span>
+
+<span class="token comment">#新建文件夹 md 文件夹名</span>
+<span class="token comment">#新建文件 cd&gt;文件名.后缀</span>
+<span class="token comment">#删除文件 del 文件名.后缀（可带*，*表示任意，小心别把所有东西删了）</span>
+<span class="token comment">#删除文件夹 rd 文件夹名</span>
+<span class="token comment">#打开文件 文件名.后缀</span>
+
+<span class="token comment">#打包</span>
+<span class="token comment">#把当前的路径下所有打包进a.jar</span>
+jar cvf a.jar <span class="token builtin class-name">.</span>
+<span class="token comment">#把当前的路径下所有打包进b.war</span>
+jar cvf b.war <span class="token builtin class-name">.</span>
+<span class="token comment">#可以使用绝对路径</span>
+jar cvf E:<span class="token punctuation">\</span>cqh<span class="token punctuation">\</span>b.war <span class="token builtin class-name">.</span>
+
+<span class="token comment">#查看系统变量的值,如第一个是C:\Windows</span>
+<span class="token builtin class-name">echo</span> %SystemRoot%
+<span class="token builtin class-name">echo</span> %ProgramFiles%
+<span class="token builtin class-name">echo</span> %Path%
+
+<span class="token comment">#咳咳，你打开环境变量（网上搜，下节也有），左边是变量，右边是值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="joplin-使用">1.6 Joplin 使用</h2>
+<p>与其说是 Markdown
+编辑器，倒不如说它是一个同步小云盘、整理目录的大师，不与 Typora
+冲突。整个页面布局（左中上下）：目录树、笔记列表、笔记标题、笔记正文。</p>
+<p>由于可以设置中文，只讲一点点。</p>
+<p>菜单栏的 Tools/Options/General，右边的
+Language，下拉列表，选择中文（简体）。</p>
+<p>Alt + ？打开对应的菜单栏：</p>
+<hr>
+<p>F：文件 E：编辑 V：视图 G：跳转 B：笔记笔记本 N：笔记 T：工具
+H：帮助</p>
+<hr>
+<p>Ctrl + Q：退出。</p>
+<h3 id="下载地址">1.6.1 下载地址</h3>
+<p>官网：<a target="_blank" rel="noopener" href="https://joplinapp.org">https://joplinapp.org</a></p>
+<p>github下载地址：<a target="_blank" rel="noopener" href="https://github.com/laurent22/joplin/releases">https://github.com/laurent22/joplin/releases</a></p>
+<p>往下翻，选择一个版本，点击 Assets 选择 exe 文件下载。</p>
+<h3 id="常用设置">1.6.2 常用设置</h3>
+<p><strong>导入 md 文件</strong></p>
+<p>文件/导入，选择导入的是 Markdown
+文件还是目录。（不要选带文章前言的，导出时会自动在文章前面加标题、创建和修改日期、时间，即
+YAML Front matter）</p>
+<p><strong>把文件同步到本地</strong></p>
+<p>工具/选项，同步，同步目标设为 File
+system，设置同步目录。（当然你也可以花钱存云）</p>
+<p><strong>给同步目标上的备份文件加密</strong></p>
+<p>工具/选项，加密，启动加密；这样的话，如果把同步文件上传到云端，也不怕别人偷看。</p>
+<hr>
+<p>如果删除了同步目标的文件，为了安全（故障保护默认开启），不会删除本地文件。</p>
+<p>如果删除了本地文件，同步时间一到，同步目标的文件也会被删除。
+可以趁着这时间差，从同步目标导入数据到本地。</p>
+<p>同步/显示高级选项，自己重新上传数据到同步目标或删除本地数据并从同步目标导入数据</p>
+<hr>
+<p>如果两个终端数据不一样（同时修改一个文件，为不同内容），会把冲突的文件移到新创建的"冲突"笔记本中，等你处理。</p>
+<p><strong>使用外部 md 编辑器</strong></p>
+<p>使用自己的 Markdown
+编辑器：工具/选项/通用选项，右边的文本编辑器命令，选一个能够打开 md
+文件的 exe 命令，如 Typora.exe。（你还记得此软件的安装目录吗？）</p>
+<p>在 Joplin 上任意选一个笔记，按下 Ctrl +
+E，自动转用外部编辑器编写文件。</p>
+<p><strong>自定义笔记本图标</strong></p>
+<p>笔记本右击/编辑，图标/Select emoji，选一个表情。</p>
+<p><strong>网页剪藏器</strong></p>
+<p>知识太多了，短时间内是看不完的，如果收藏，也有链接失效的风险，需要将文章内容复制下来。</p>
+<p>工具：Chrome 浏览器。</p>
+<p>由于插件市场打不开，点击：<a target="_blank" rel="noopener" href="https://www.extfans.com/">https://www.extfans.com/</a></p>
+<p>搜索 Joplin Web
+Clipper，需要关注公众号，获取验证码后下载。下载后解压，里面有个 crx
+文件，打开谷歌浏览器，地址栏输入：chrome://extensions/</p>
+<p>把 crx 文件直接拖入此页面，添加扩展程序</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/MwmN2VxK58cqhYL.png" alt="扩展程序">
+<figcaption aria-hidden="true">扩展程序</figcaption>
+</figure>
+<p>Joplin 软件，工具/选项，网页剪辑器，启动网页剪辑器。</p>
+<p>使用：</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/xqWK95JUHmfcnpX.png" alt="网页剪藏">
+<figcaption aria-hidden="true">网页剪藏</figcaption>
+</figure>
+<p>Clip simplified page：简化后的页面</p>
+<p>Clip complete page：完整页面</p>
+<p>In notebook：保存在哪个笔记本</p>
+<p>Title：文件名</p>
+<p><strong>同步到手机</strong></p>
+<p>把自己电脑当作服务器，同步到手机，教程：<a target="_blank" rel="noopener" href="https://lightzhan.xyz/index.php/2020/11/15/joplin-webdav/">https://lightzhan.xyz/index.php/2020/11/15/joplin-webdav/</a></p>
+<p>作者：lightzhan，密码：h3mu，WebDAV 小秘：<a target="_blank" rel="noopener" href="https://lightzhan.lanzoui.com/b015wjsri">https://lightzhan.lanzoui.com/b015wjsri</a></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/iAvsBPugMqKSHLQ.png" alt="WebDAV 小秘">
+<figcaption aria-hidden="true">WebDAV 小秘</figcaption>
+</figure>
+<p>打开 DOS 窗口，输入 ipconfig 命令，IPv4
+地址对应的就是主机地址；用户名与密码自己设置。</p>
+<pre class="line-numbers language-basic" data-language="basic"><code class="language-basic">无线局域网适配器 WLAN<span class="token punctuation">:</span>
+
+   连接特定的 DNS 后缀 . . . . . . . <span class="token punctuation">:</span>
+   本地链接 IPv6 地址. . . . . . . . <span class="token punctuation">:</span> fe10<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">209</span>
+   IPv4 地址 . . . . . . . . . . . . <span class="token punctuation">:</span> <span class="token number">192.168</span><span class="token number">.1</span><span class="token number">.1</span>
+   子网掩码  . . . . . . . . . . . . <span class="token punctuation">:</span> <span class="token number">289.2</span><span class="token number">.52</span><span class="token number">.2</span>
+   默认网关. . . . . . . . . . . . . <span class="token punctuation">:</span> fu81<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">22</span>l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>手机上自己搜索 Joplin app
+吧，因为谷歌你们可能访问不了，我总不能把如何翻墙写在这吧。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/TAvnR3yqb47tdPm.png" alt="手机同步配置">
+<figcaption aria-hidden="true">手机同步配置</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/sInLw32WZVMJGi1.png" alt="输入 URL">
+<figcaption aria-hidden="true">输入 URL</figcaption>
+</figure>
+<p>WebDAV URL：http://主机地址:端口号</p>
+<p>填入自己电脑上设置的用户名与密码，然后检查同步配置，如果显示“成功！同步配置看起来没问题。”就
+OK。</p>
+<p>如果成功后依然没有开始同步，一直转圈，退出软件重新进入。</p>
+<p><strong>扩展语法</strong></p>
+<p>打开扩展语法，在工具/选项/Markdown，根据需要勾选，详细请看：<a target="_blank" rel="noopener" href="https://lightzhan.xyz/index.php/2020/03/31/joplin-extension-usage/">https://lightzhan.xyz/index.php/2020/03/31/joplin-extension-usage/</a></p>
+<p>如勾选启用 typographer
+支持，让我试下：使用<code>(c)</code>，©著作权所有人</p>
+<h2 id="marktext-使用">1.7 MarkText 使用</h2>
+<p>是 Typora 的同类型产品，开源免费，略微有些小 bug。</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://marktext.app/">https://marktext.app/</a></p>
+<p>有时候可能打不开，从 github 下载：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/tags">https://github.com/marktext/marktext/tags</a></p>
+<p>选择版本后，Assets 下点击 exe 文件进行下载。</p>
+<p>由于作者计划 v1.0.0
+以后支持其它语言（国际化），英语不好的，可以搜下汉化版。</p>
+<p>如果 git 下载太慢：（慎用！！！）</p>
+<p>作者：<a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/ziyue7575/">紫月java</a>，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ziyue7575/p/14157952.html">https://www.cnblogs.com/ziyue7575/p/14157952.html</a></p>
+<ul>
+<li><p>安装用户脚本管理器：<a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/help/installing-user-scripts">https://greasyfork.org/zh-CN/help/installing-user-scripts</a></p></li>
+<li><p>加速脚本：<a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/397419-fastgithub-%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE-%E5%85%8B%E9%9A%86%E5%92%8C%E4%B8%8B%E8%BD%BD">https://greasyfork.org/zh-CN/scripts/397419-fastgithub-%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE-%E5%85%8B%E9%9A%86%E5%92%8C%E4%B8%8B%E8%BD%BD</a></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/09/Lfp5RcKoQEYuAy7.png" alt="添加新脚本">
+<figcaption aria-hidden="true">添加新脚本</figcaption>
+</figure>
+<p>将 js 文件拖入其中，刷新页面，效果如图：</p></li>
+</ul>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/vxqZDl7ebO6IKoL.png" alt="使用加速">
+<figcaption aria-hidden="true">使用加速</figcaption>
+</figure>
+<p>随便点击，开始下载吧。</p>
+<p>英文 OK 的同学可以跳过以下内容...</p>
+<hr>
+<h3 id="编辑区域">1.7.1 编辑区域</h3>
+<p><strong>查看源代码：Ctrl + E</strong></p>
+<p><strong>整体布局</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/gkKYX3AGeqfNw28.png" alt="编辑区域">
+<figcaption aria-hidden="true">编辑区域</figcaption>
+</figure>
+<p>正上方是 md 文件的绝对路径；</p>
+<p>左上角 A 是总字符个数；点击可以切换。</p>
+<ul>
+<li>Words：单词个数（一个汉字算一个单词）</li>
+<li>Characters：可见字符个数</li>
+<li>Paragraphs：段落个数</li>
+</ul>
+<p><strong>右键标签栏</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/4nlGS5CgtpUs3q1.png" alt="弹出的选项">
+<figcaption aria-hidden="true">弹出的选项</figcaption>
+</figure>
+<p>Close：关闭文件（未 Ctrl + S 保存会弹出提示）</p>
+<p>Close others：关闭其它文件</p>
+<p>Close saved tabs：关闭已保存的文件</p>
+<p>Close all tabs：关闭所有文件</p>
+<p>Rename：重命名文件</p>
+<p>Copy path：复制文件的绝对路径</p>
+<p>Show in folder：打开文件所在目录</p>
+<p><strong>段落快捷操作</strong></p>
+<p>当你每次移动光标时，当前段落对应的图标（最左边）就会显示，点击</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/uodWe2zh1GfZsCQ.png" alt="段落快捷操作">
+<figcaption aria-hidden="true">段落快捷操作</figcaption>
+</figure>
+<p>Duplicate：向下复制当前段落</p>
+<p>Turn Into：变成？</p>
+<ul>
+<li>Paragraph（Ctrl + 0）：段落</li>
+<li>Header 1（Ctrl + 1）：h1 标题</li>
+<li>Display Math（Alt + Ctrl + M）：内联公式块</li>
+<li>HTML Block（Alt + Ctrl + J）：div 标签</li>
+<li>Code Block（Alt + Ctrl + C）：代码块</li>
+<li>Quote Block（Alt + Ctrl + Q）：引用</li>
+<li>Order List（Alt + Ctrl + O）：有序列表</li>
+<li>Bullet List（Alt + Ctrl + U）：无序列表</li>
+<li>To-do List（Alt + Ctrl + X）：任务复选框</li>
+</ul>
+<p>New Paragraph：创建新的段落</p>
+<p>Delete：删除当前段落</p>
+<p><strong>选中文字</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/8gpyh2dRI3lqbVs.png" alt="格式变换">
+<figcaption aria-hidden="true">格式变换</figcaption>
+</figure>
+<p>从左至右依次是：粗（Ctrl + B）、斜（Ctrl + I）、下划线（Ctrl +
+U）、删除线（Ctrl + D）、高亮（Ctrl + H）、代码块（Ctrl +
+`）、内联公式（Ctrl + M）、超链接（Ctrl + L）、插入图片（Ctrl + Shift +
+I）、清除格式（Ctrl + Shift + R）</p>
+<p><strong>插入表情</strong></p>
+<p>Windows + 句号，或者 <code>:a:</code>，两个冒号跟一个字母</p>
+<h3 id="偏好设置">1.7.2 偏好设置</h3>
+<p>Ctrl + 逗号</p>
+<p><strong>General</strong></p>
+<p><strong>自动保存</strong></p>
+<p>Auto Save：</p>
+<ul>
+<li>Automatically save document changes：更改时自动保存</li>
+<li>Delay following document edit before automatically saving：延迟 ?ms
+后保存</li>
+</ul>
+<p><strong>更改菜单栏位置</strong></p>
+<p>Window：</p>
+<p>Title bar style：</p>
+<ul>
+<li>Custom：左上角</li>
+<li>Native：正上方</li>
+</ul>
+<p><strong>Editor</strong></p>
+<p><strong>字体样式</strong></p>
+<p>Text editor settings：文本编辑设置</p>
+<ul>
+<li>Font size：字体大小</li>
+<li>Line height：行距</li>
+<li>Font family：字体样式</li>
+<li>Maximum width of text
+editor：编辑器最大宽度，单位有：ch、px、%，例：输入
+100px；输入错误会报红。</li>
+</ul>
+<p><strong>Markdown</strong></p>
+<p><strong>支持上下标</strong></p>
+<p>Markdown extensions：扩展语法</p>
+<p>启用 Enable Pandoc-style superscript and subscript</p>
+<ul>
+<li><code>5^3^</code>：5<sup>3</sup></li>
+<li><code>5~3~</code>：5<sub>3</sub></li>
+</ul>
+<p><strong>Spelling</strong></p>
+<p>Enable spell checker：开启拼写检查</p>
+<p>Default language for spell checker：检查器的默认语言</p>
+<p><strong>Key Binding</strong></p>
+<p><strong>更改操作的快捷键方式</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/4h3QWx2prdMOPen.png" alt="操作快捷方式">
+<figcaption aria-hidden="true">操作快捷方式</figcaption>
+</figure>
+<p>修改，重置，删除</p>
+<p>每次修改后，需要翻到最下面保存</p>
+<ul>
+<li>Save：保存</li>
+<li>Restore default key bindings：恢复默认快捷键</li>
+</ul>
+<h3 id="图片上传">1.7.3 图片上传</h3>
+<p>偏好设置/Image,</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/fsTA7yxPiUm632L.png" alt="图片上传">
+<figcaption aria-hidden="true">图片上传</figcaption>
+</figure>
+<p>Default action after an image is inserted from local folder or
+clipboard：插入图片后的操作（只支持 macOS 和 Windows 系统）</p>
+<ul>
+<li><p>Keep original location：保存在原位置</p></li>
+<li><p>Copy image to designated relative assets or global local
+folder：复制图片至指定位置（绝对或相对路径）</p></li>
+<li><p>Upload image to cloud using selected uploader（must be configured
+below）：上传至云端</p></li>
+</ul>
+<p>Global or relative image folder：指定图片保存的绝对路径</p>
+<p>Prefer relative assets folder：...相对路径，开启后，图片会放在与 md
+文件的同级目录下</p>
+<ul>
+<li>Relative image folder name：目录名称，即图片会放在此目录下</li>
+</ul>
+<p>说一下历程吧。</p>
+<p>之前不是使用 Typora 软件时下载了 <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/tags">PicGo app</a>
+嘛，但是提示检查不出来，说不存在；试着使用命令行方式吧（github
+方式将来会废弃），下拉列表切换为 Command line script，提示要安装
+PicGo-Core，于是先安装 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">Node.js</a>，打开 DOS
+窗口，输入 <code>npm install picgo -g</code>
+命令，安装位置：<code>C:\Users\自己的用户名\AppData\Roaming\npm\node_modules</code></p>
+<p>在 <code>C:\Users\你的用户名\.picgo</code> 下创建了 config.json
+文件，复制了如下：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"picBed"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"uploader"</span><span class="token operator">:</span> <span class="token string">"smms"</span><span class="token punctuation">,</span> <span class="token comment">// 代表当前的默认上传图床为 SM.MS,</span>
+    <span class="token property">"smms"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">""</span> <span class="token comment">// 从 https://sm.ms/home/apitoken 获取的 token</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"picgoPlugins"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 为插件预留</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>PicGo-Core 指南：<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90">https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90</a></p>
+<p>用法：<a target="_blank" rel="noopener" href="https://github.com/PicGo/PicGo-Core">https://github.com/PicGo/PicGo-Core</a></p>
+<p>如上传文件：<code>picgo upload 文件的绝对路径</code></p>
+<p>于是学了一下 Shell
+脚本的语法，提示说输入的唯一参数是图片路径，要求输出图片的 url
+路径；于是上网搜，如何接收第一个参数、输出，分别是
+$1、echo；尝试过程中发现路径必须以 <code>/</code> 分隔，而不是
+<code>\</code>。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span><span class="token string">"en_US.UTF-8"</span>
+
+<span class="token assign-left variable">str</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>picgo upload $1<span class="token variable">)</span></span>
+<span class="token assign-left variable">img</span><span class="token operator">=</span><span class="token variable">${str<span class="token operator">#</span>*"<span class="token punctuation">[</span>PicGo SUCCESS<span class="token punctuation">]</span><span class="token operator">:</span> "}</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$img</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>测试中发现运行不了，需要环境，接着下载了 <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a>，打开 bash 窗口使用
+./xxx.sh 命令运行此文件。</p>
+<p>正以为大功告成，可 MarkText 保存不了此 Shell
+脚本的绝对路径。没有办法，下载了 v0.16.3 版本覆盖安装，偏好设置里 Image
+下多了一项 <code>Image Uploader</code>，</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/ElkeQWOj1GNShs5.png" alt="旧版本">
+<figcaption aria-hidden="true">旧版本</figcaption>
+</figure>
+<p>选择，点击 Set as default，默认图片上传至 sm.ms。</p>
+<p>然后下载新版本，再覆盖安装一次，打开</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/L78OKNSv3G1HzQb.png" alt="新版本">
+<figcaption aria-hidden="true">新版本</figcaption>
+</figure>
+<p>下拉框改为 Picgo 即可。</p>
+<p>拖入图片到窗口时，必须拖到当前段落（会显示一条绿线），才会成功。</p>
+<figure>
+<img src="https://s2.loli.net/2022/04/10/CfUobvlHAt7B4kR.png" alt="如何上传图片">
+<figcaption aria-hidden="true">如何上传图片</figcaption>
+</figure>
+<p>点击此图片，可以修改图片（查看是否为网络 URL）以及位置。</p>
+<blockquote>
+<p>脚本：解释性语言，且是文本格式。</p>
+</blockquote>
+<h3 id="file">1.7.4 File</h3>
+<p>英语不好，又没有安装汉化版的...下面是菜单栏的各项，先从 File
+开始：</p>
+<p>New Tab（Ctrl + T）：新建文件</p>
+<p>New Window（Ctrl + N）：生成新窗口</p>
+<p>Open File（Ctrl + O）：打开文件（可以直接将 md 文件拖入此窗口）</p>
+<p>Open Folder（Ctrl + Shift + O）：打开目录（显示目录下的 md
+文件、查找、显示文章中的标题）</p>
+<p>Open Recent：打开最近文件</p>
+<ul>
+<li>Clear Recently Used：清空最近文件（只是清除记录）</li>
+</ul>
+<p>Save（Ctrl + S）：保存</p>
+<p>Save As（Ctrl + Shift + S）：另存</p>
+<p>Auto Save：退出文件前自动保存</p>
+<p>Move To：将文件移动至...</p>
+<p>Rename：重命名</p>
+<p>Export：导出为</p>
+<p>HTML</p>
+<ul>
+<li><p>Page：设置页面标题（title 标签里的文本）</p></li>
+<li><p>Style</p>
+<ul>
+<li><p>Overwrite theme font settings：更改字体样式、大小、行距</p></li>
+<li><p>Auto numbering headings：自动为 h1 以下级别的标题编号</p></li>
+<li><p>Show front matter：显示前言</p></li>
+</ul></li>
+<li><p>Theme：选择主题</p></li>
+<li><p>Table of Contents：目录列表</p></li>
+</ul>
+<p>PDF</p>
+<ul>
+<li><p>Page</p>
+<ul>
+<li><p>Page size：设置纸张大小</p></li>
+<li><p>Landscape orientation：是否横向</p></li>
+<li><p>Page margin：页边距（毫米）</p>
+<ul>
+<li><p>Top/Bottom：上下边距</p></li>
+<li><p>Left/Right：左右边距</p></li>
+</ul></li>
+<li><p>Header &amp; Footer：页眉页脚</p>
+<ul>
+<li><p>Header type：页眉类型</p>
+<ul>
+<li><p>Single cell：单（中间）</p></li>
+<li><p>None：无</p></li>
+<li><p>Three cells：三（左中右）</p></li>
+</ul></li>
+<li><p>Customize style：定制风格</p>
+<ul>
+<li>Header and footer font size：页眉页脚字体大小</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Preferences（Ctrl + 逗号）：偏好设置</p></li>
+<li><p>Close Tab（Ctrl + W）：关闭文件</p></li>
+<li><p>Close Window（Ctrl + Shift + W）：关闭窗口</p></li>
+<li><p>Quit（Ctrl + Q）：关闭所有窗口</p></li>
+</ul>
+<p>导出时新增主题：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/develop/docs/EXPORT_THEMES.md">https://github.com/marktext/marktext/blob/develop/docs/EXPORT_THEMES.md</a></p>
+<h3 id="edit">1.7.5 Edit</h3>
+<p>Undo（Ctrl + Z）：撤销</p>
+<p>Redo（Ctrl + Shift + Z）：反撤销</p>
+<p>Cut（Ctrl + X）：剪切</p>
+<p>Copy（Ctrl + C）：复制</p>
+<p>Paste（Ctrl + V）：粘贴</p>
+<p>Copy as Markdown（Ctrl + Shift + C）：以 Markdown 形式复制</p>
+<p>Copy as HTML：以 HTML 标签形式复制</p>
+<p>Paste as Plain Text（Ctrl + Shift + V）：纯文本粘贴</p>
+<p>Select All（Ctrl + A）：选中所有</p>
+<p>Duplicate（Alt + Ctrl + D）：向下复制一行</p>
+<p>Create Paragraph（Ctrl + Shift + N）：创建新的段落</p>
+<p>Delete Paragraph（Ctrl + Shift + D）：删除当前段落</p>
+<p>Find（Ctrl + F）：查找</p>
+<ul>
+<li>Case Sensitive：区分大小写</li>
+<li>Select whole word：选择整个单词，如查找 a，不会出现包含 a 的单词如
+puba，而是只有单独的 a。</li>
+<li>Use query as RegEx：使用正则表达式</li>
+<li>Find Next（F3）：往下找</li>
+<li>Find Previous（Shift + F3）：往上找</li>
+</ul>
+<p>Replace（Ctrl + R）：替换所有、一个个替换</p>
+<p>Find in Folder（Ctrl + Shift + F）：在目录下的文件中查找（首先得 Open
+Folder 打开目录）</p>
+<p>Line Ending：换行方式</p>
+<ul>
+<li><p>Carriage return and line feed（CRLF）：Windows 换行方式，即
+<code>\r\n</code></p></li>
+<li><p>Line feed（LF）：Linux换行方式，即 <code>\n</code></p></li>
+</ul>
+<h3 id="paragraph">1.7.6 Paragraph</h3>
+<p>Heading 1、2、...、6 为 H1、H2、...、H6 标题</p>
+<p>Promote Heading（Ctrl + Shift + =、Ctrl + 加号）：提升标题等级</p>
+<p>Demote Heading（Ctrl + -）：降低标题等级</p>
+<p>Table（Ctrl + Shift + T）：创建表格</p>
+<p>Code Fences（Ctrl + Shift + K）：代码块</p>
+<p>Quote Block（Ctrl + Shift + Q）：引用</p>
+<p>Math Block（Alt + Ctrl + N）：内联公式块</p>
+<p>HTML Block（Alt + Ctrl + H）：HTML 标签</p>
+<p>Ordered List（Ctrl + G）：有序列表</p>
+<p>Bullet List（Ctrl + H）：无序列表</p>
+<p>Task List（Alt + Ctrl + X）：复选框</p>
+<p>Loose List Item（Alt + Ctrl + L）：增加列表之间的距离</p>
+<p>Paragraph（Ctrl + Shift + 0）：段落</p>
+<p>Horizontal Rule（Ctrl + Shift + U）：分隔线</p>
+<p>Front Matter（Alt + Ctrl + Y）：前言</p>
+<h3 id="format">1.7.7 Format</h3>
+<p>Bold（Ctrl + B）：粗体</p>
+<p>Italic（Ctrl + I）：斜体</p>
+<p>Underline（Ctrl + U）：下划线</p>
+<p>Superscript：上标</p>
+<p>Subscript：下标</p>
+<p>Highlight（Ctrl + Shift + H）: 黄色高亮</p>
+<p>Inline Code（Ctrl + `）：单行代码块</p>
+<p>Inline Math（Ctrl + Shift + M）：单行内联公式</p>
+<p>Strikethrough（Ctrl + D）：删除线</p>
+<p>Hyperlink（Ctrl + L）：超链接</p>
+<p>Image（Ctrl + Shift + I）：图片链接</p>
+<p>Clear Formatting（Ctrl + Shift + R）：清除格式</p>
+<h3 id="window">1.7.8 Window</h3>
+<p>Minimize（Ctrl + M）：窗口最小化</p>
+<p>Always on Top：总是显示在最上层</p>
+<p>Zoom In：放大</p>
+<p>Zoom Out：缩小</p>
+<p>Show in Full Screen（F11）：全屏显示</p>
+<h3 id="view">1.7.9 View</h3>
+<p>Command Palette（Ctrl + Shift + P）：查看操作的快捷方式</p>
+<p>Source Code Mode（Ctrl + E）：查看源代码</p>
+<p>Typewriter Mode（Ctrl + Shift +
+G）：打字机模式，保证光标在屏幕中间</p>
+<p>Focus Mode（Ctrl + Shift + J）：焦点模式，只关注当前输入行</p>
+<p>Show Sidebar（Ctrl + J）：显示侧边栏（目录树、查找、文章标题）</p>
+<p>Show Tab Bar（Ctrl + Shift + B）：显示标签栏（md 文件名）</p>
+<p>Toggle Table of Contents（Ctrl + K）：跳转至对应的 H
+标题位置（点击左边侧边栏显示的标题）</p>
+<p>Reload Images（F5）：重新加载图片</p>
+<h3 id="help">1.7.10 Help</h3>
+<p>Quick Start：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/docs/README.md">快速开始</a></p>
+<p>Markdown Reference：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/docs/MARKDOWN_SYNTAX.md">Markdown
+语法</a></p>
+<p>Changelog：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/.github/CHANGELOG.md">更新日志</a></p>
+<p><a target="_blank" rel="noopener" href="https://opencollective.com/marktext">Donate via Open
+Collective</a>：赞助</p>
+<p>Feedback via Twitter：反馈（使用推特）</p>
+<p>Report Issue or Request Feature：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/issues">报告问题或请求功能</a></p>
+<p>Website：<a target="_blank" rel="noopener" href="https://marktext.app/">网站</a></p>
+<p>Watch on GitHub：<a target="_blank" rel="noopener" href="https://marktext.app/">查看 Github
+项目</a></p>
+<p>Follow us on GitHub：<a target="_blank" rel="noopener" href="https://github.com/Jocs">关注我们（GitHub）</a></p>
+<p>Follow us on Twitter：关注我们（Twitter）</p>
+<p>License：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/blob/master/LICENSE">许可证</a></p>
+<p>Check for updates：检查更新</p>
+<p>About MarkText：关于 MarkText</p>
+<h2 id="x-总结回顾">1.x 总结回顾</h2>
+<p>（不要惊讶怎么这么少，我说过别把大脑当成硬盘，记一个 cd
+命令就足够了，记得看完后休息一会，欲速则不达）</p>
+<p><strong>Java 介绍与下载</strong></p>
+<p>Java是最早由 SUN 公司的 James Gosling 开发的编程语言。</p>
+<p>SUN 在 2009 年被 Oracle 收购；2014 年 3 月 19 日发布了 JDK8。</p>
+<p><strong>常用的 DOS 命令</strong></p>
+<p><code>cd 当前目录下的文件夹名</code> 进入目录</p>
+<h2 id="y-脑海练习">1.y 脑海练习</h2>
+<p>1.1 JDK 和 JRE 的区别？</p>
+<p>1.2 什么是编程？</p>
+<p>1.3 Swing 组件是什么？</p>
+<p>1.4 JAR 包是什么？</p>
+<p>1.5 软件与程序指的是什么？</p>
+<p>1.6 什么是编译型语言和解释型语言？</p>
+<p>1.7 Java 语言特性？</p>
+<p>1.8 能说下 JavaSE、JavaEE、JavaME 吗？</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">cqh</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ccqqhh.github.io/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/">https://ccqqhh.github.io/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.1-jdk-xia-zai-ji-zhun-bei-gong-zuo/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">cqh</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/1-JavaSE/">
+                                    <span class="chip bg-color">1. JavaSE</span>
+                                </a>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">心意我领了，谢谢您</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.2-bian-xie-di-yi-ge-cheng-xu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/68.jpg" class="responsive-img" alt="1.1.2 编写第一个程序">
+                        
+                        <span class="card-title">1.1.2 编写第一个程序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
+                                    1.1 语法入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.0-shuo-zai-qian-mian-de-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="1.1.0 说在前面的话">
+                        
+                        <span class="card-title">1.1.0 说在前面的话</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
+                                    1.1 语法入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: cqh<br />'
+            + '文章作者: cqh<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，转载请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">cqh</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">168.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="https://github.com/ccqqhh" class="tooltipped" target="_blank" data-tooltip="访问我的 GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2675385031@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2675385031" class="tooltipped" target="_blank" data-tooltip="QQ 联系我: 2675385031" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

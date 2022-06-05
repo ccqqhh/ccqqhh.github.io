@@ -1,0 +1,2907 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="1.1.9 IntelliJ IDEA 使用, Java">
+    <meta name="description" content="目前分享的内容是 Java 相关内容">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>1.1.9 IntelliJ IDEA 使用 | cqh</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1328f3b279d23f6c7b036c50a5338b0e141c1677.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653204287&t=cae11edf73cb8d93e3cfdea085643e0a);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+				<div>
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">cqh</span>
+				</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">cqh</div>
+        <div class="logo-desc">
+            
+            目前分享的内容是 Java 相关内容
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ccqqhh" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>请给我留言
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ccqqhh" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="请给我留言" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/39.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">1.1.9 IntelliJ IDEA 使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/1-JavaSE/">
+                                <span class="chip bg-color">1. JavaSE</span>
+                            </a>
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
+                                1.1 语法入门
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-06-05
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    34 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="第九章-intellij-idea-使用">第九章 IntelliJ IDEA 使用</h1>
+<p>内容导视：</p>
+<ul>
+<li>介绍</li>
+<li>创建普通 JavaSE 项目</li>
+<li>常用的设置</li>
+<li>常用快捷键</li>
+<li>自定义模板</li>
+<li>断点调试</li>
+<li>其它</li>
+</ul>
+<h2 id="介绍">9.1 介绍</h2>
+<p>内容导视：</p>
+<ul>
+<li>介绍</li>
+<li>下载与安装</li>
+<li>卸载</li>
+<li>详细的教程</li>
+</ul>
+<h3 id="介绍-1">9.1.1 介绍</h3>
+<p>IDE 即<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/集成开发环境/298524">集成开发环境</a>，可以把编写代码、组织项目、编译、运行、调试放在一个环境下，极大提高开发效率。</p>
+<p>有快捷键一键生成代码与注释；写代码会有自动提示补全方法名；会自动检查代码中有误的地方并给出提示选择方案修改错误；查看类与类的关系、此类的所有方法和字段等。</p>
+<p>目前最流行用于 Java 开发的 IDE 是 IntelliJ
+IDEA，因为确实好用，整合主流框架十分轻松，极大提升开发代码的效率。</p>
+<p><strong>介绍</strong></p>
+<p>IDEA 是 JetBrain 公司的其中一款产品，官网：<a target="_blank" rel="noopener" href="https://www.jetbrains.com">https://www.jetbrains.com</a></p>
+<p>其它产品如 WebStorm 用于开发 JavaScript、HTML5、CSS3 等前端技术。</p>
+<p>IDEA 全称 IntelliJ IDEA，是 Java
+语言的集成开发环境，在业界被公认为是最好的 java
+开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE
+支持、Ant、JUnit、CVS 整合、代码审查、创新的 GUI
+设计等方面的功能可以说是超常的。</p>
+<p>IDEA 也支持主流的技术与框架，擅长企业应用、移动应用和 WEB
+工具的开发。</p>
+<p><strong>相比 Eclipse 的优势</strong></p>
+<ul>
+<li>强大的整合能力，比如 Git、Maven、Spring 等</li>
+<li>提示功能的快速、便捷</li>
+<li>提示功能的范围广</li>
+<li>好用的快捷键与代码模板</li>
+<li>精准搜索</li>
+</ul>
+<h3 id="下载与安装">9.1.2 下载与安装</h3>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/idea/download/#section=windows">https://www.jetbrains.com/idea/download/#section=windows</a></p>
+<p>有 Ultimate 旗舰版和 Community
+社区版，社区版是免费的，旗舰版支持的功能更多，如协同远程开发、数据库工具、前端语言、JavaEE
+等，两个版本的详细对比：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/products/compare/?product=idea&amp;product=idea-ce">JetBrains
+Products Comparison</a>，需要付费，可以先试用一个月，选择其一点击
+Download 下载，.exe 与 .zip 随意（exe 直接双击，zip 需要解压缩）</p>
+<p>您不需要安装 Java 来运行 IntelliJ IDEA，因为 JetBrains 运行时与 IDE
+捆绑在一起（基于 JRE 11）。但是，如果要开发 Java
+应用程序，还需要一个独立的 JDK。</p>
+<p>安装方法：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/along-technology/p/14767535.html">IDEA
+的安装 - 阿龙er</a>、<a target="_blank" rel="noopener" href="https://zhile.io/">知了（zhile.io)</a>、<a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/2769545b-0eec-44f7-a035-4de147736f6a?#">【汇总】Jetbrains
+全家桶</a></p>
+<p><font style="color:red">请勿无限制重置，有能力请支持正版！本文中资源全部收集整理于网络并无偿提供，仅可用于个人学习交流；请勿转载、售卖或商用；侵权删！</font></p>
+<p>汉化：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35067322/article/details/105429832">https://blog.csdn.net/qq_35067322/article/details/105429832</a></p>
+<p>目录结构</p>
+<ul>
+<li>bin：启动文件、虚拟机配置信息等</li>
+<li>help：帮助文档</li>
+<li>jbr：自带的 jre</li>
+<li>lib：依赖的类库</li>
+<li>license：插件的许可信息</li>
+<li>plugins：插件</li>
+</ul>
+<p>bin 目录下的 idea64.exe.vmoptions 文件是虚拟机的配置信息</p>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">-Xmx750m// 最大内存，将数值调大可以提高程序性能
+-Xms128m// 初始内存
+-XX:ReservedCodeCacheSize=512m// 保留代码的缓存大小
+-XX:+UseG1GC// 垃圾优先收集器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font style="color:red">请勿添加注释</font></p>
+<p><code>C:\Users\用户名\AppData\Local\JetBrains\IntelliJIdea2021.2</code>
+存放（system）系统临时、缓存、本地历史文件等</p>
+<p><code>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2021.2</code>
+存放（config）插件、文件模板、快捷键等文件</p>
+<h3 id="卸载">9.1.3 卸载</h3>
+<p>控制面板/卸载程序，或 Windows 设置/应用</p>
+<p>点击要卸载的应用；且手动删除内容如下：软件的安装目录、system 与
+config、代码存放目录。</p>
+<p>一个 project 项目就是一个工作窗口，一个项目可以有多个 module
+模块，每个模块里面都有 src 目录存放着 *.java
+源文件；除了创建空项目，每个项目都自带一个模块。</p>
+<h3 id="详细的教程">9.1.4 详细的教程</h3>
+<p>官方详细使用文档：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/installation-guide.html#standalone">https://www.jetbrains.com/help/idea/installation-guide.html#standalone</a></p>
+<p>IntelliJ IDEA使用教程：<a target="_blank" rel="noopener" href="https://lixuekai.blog.csdn.net/article/details/77449117">https://lixuekai.blog.csdn.net/article/details/77449117</a>，作者：请叫我大师兄</p>
+<h2 id="创建普通-javase-项目">9.2 创建普通 JavaSE 项目</h2>
+<p>内容导视：</p>
+<ul>
+<li>创建普通项目</li>
+<li>切换项目</li>
+<li>删除项目、模块</li>
+<li>窗口结构</li>
+<li>可能会遇见的错误</li>
+<li>创建 Java 源文件</li>
+</ul>
+<h3 id="创建普通项目">9.2.1 创建普通项目</h3>
+<p>创建一个新项目：Projects/New Project/java</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/dnMTeuQBkla2riC.png" alt="New Project">
+<figcaption aria-hidden="true">New Project</figcaption>
+</figure>
+<p>如果没有配置 JAVA_HOME 环境变量，就不会显示 SDK，需要 Add JDK... 指定
+JDK 的安装目录；</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/jX48zatin7KPGuq.png" alt="下一步 next">
+<figcaption aria-hidden="true">下一步 next</figcaption>
+</figure>
+<p>Project name 是项目名，Project location 是此项目的路径，Finish
+即可。</p>
+<p><strong>创建空项目</strong></p>
+<p>还可以创建一个空项目，模块由自己手动创建。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/IpbFudq6Pl4aHQV.png" alt="空项目">
+<figcaption aria-hidden="true">空项目</figcaption>
+</figure>
+<p>会弹出一个 Project Structure 窗口，点击 New Module 创建模块。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/V4CPKuk9jfIdUTi.png" alt="New Module">
+<figcaption aria-hidden="true">New Module</figcaption>
+</figure>
+<p>或者 Alt + F 快捷键选择 New 可以创建 Module，或项目右键 New
+Module，或 Ctrl + Shift + Alt + S 打开 Project Structure/Modules 按下 +
+号，点击 New Module。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/uRJX4bfpGNeSmqK.png" alt="File/New/Module...">
+<figcaption aria-hidden="true">File/New/Module...</figcaption>
+</figure>
+<h3 id="切换项目">9.2.2 切换项目</h3>
+<p>在多个项目之间切换是 Open Recent，关闭项目 Close Project；</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/PZrK1wkRopgSIAq.png" alt="项目之间切换">
+<figcaption aria-hidden="true">项目之间切换</figcaption>
+</figure>
+<h3 id="删除项目模块">9.2.3 删除项目、模块</h3>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/o7p3Muk1dyfRUWB.png" alt="关闭项目后的界面">
+<figcaption aria-hidden="true">关闭项目后的界面</figcaption>
+</figure>
+<p>可以单击想要操作的项目即可进入或者点击 Open Selected。</p>
+<p>Show in Explorer 可以打开文件资源管理器的项目所在目录；Remove from
+Recent Projects
+是删除此项目，但硬盘上还在；删除此项目后把文件资源管理器对应的项目选中按下
+Shift + Del 快捷键永久删除。</p>
+<p>而删除模块有两个步骤，右键模块 Remove
+Module，可以看到模块右下角的蓝色方块消失，意味着它变成了普通目录，再次右键
+Delete（Del 是普通删除，Alt + Del 是安全删除）即可删除。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/IjeKYgaGsBl3qmR.png" alt="删除模块">
+<figcaption aria-hidden="true">删除模块</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/oQIy5acFh9CHDmO.png" alt="再次 Delete">
+<figcaption aria-hidden="true">再次 Delete</figcaption>
+</figure>
+<h3 id="窗口结构">9.2.4 窗口结构</h3>
+<p>分为菜单栏、工作列表、编辑区域、快捷栏。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/nwBp6Xq3QAacNYr.png" alt="窗口结构">
+<figcaption aria-hidden="true">窗口结构</figcaption>
+</figure>
+<p>在编辑区域编写源代码，按下 Ctrl + Shift + F10 即可运行 main
+方法。</p>
+<h3 id="可能会遇见的错误">9.2.5 可能会遇见的错误</h3>
+<p><strong>Java 版本问题</strong></p>
+<p>打开项目结构，或快捷键 Ctrl + Alt + Shift + S</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/b81IeBsXfd9LQmR.png" alt="打开 Project Structure">
+<figcaption aria-hidden="true">打开 Project Structure</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/J6ueAVc7m8RPBCQ.png" alt="第 2 种打开方式">
+<figcaption aria-hidden="true">第 2 种打开方式</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/Fqjrk6UCOi7HX1D.png" alt="Project">
+<figcaption aria-hidden="true">Project</figcaption>
+</figure>
+<p>这个地方没设置会出错无法运行代码。</p>
+<p>Project name：当前项目的名字</p>
+<p>Project SDK：控制项目使用的 JDK 版本</p>
+<p>Project language level：项目语言级别</p>
+<p>当使用的新特性所在版本超过设定的 JDK 版本，就会报错。</p>
+<p>例：在 JDK7
+版本，新增了一个特性：自动类型推断机制（钻石表达式），使用泛型 new
+对象时后面的 <code>&lt;&gt;</code> 中可以省略数据类型，会通过前面
+<code>&lt;&gt;</code> 的内容自动推断类型。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/hfuXt5SZYKmL97N.png" alt="创建集合实例">
+<figcaption aria-hidden="true">创建集合实例</figcaption>
+</figure>
+<p>一旦设置 level 为小于 7，如 level 6 就会报错：</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/G9gUdLeCZo6m4Ru.png" alt="level 6">
+<figcaption aria-hidden="true">level 6</figcaption>
+</figure>
+<p>Project language level 是编译时检查源码是否符合指定版本的语法。如果
+level 设置为 6，则代码使用的 JDK7 和 JDK8
+版本的新特性会被认为是语法错误。</p>
+<p>一般 level 等级与 JDK 版本一致即可，但如果自己开发使用的 JDK
+版本大于部署时服务器的 JDK 版本，可以把 level 往下调至服务器的 JDK
+版本，且不使用高版本的新特性。</p>
+<blockquote>
+<p>JDK8 新增了 Lambda 表达式、函数式接口等新特性；特性只能往下兼容，如
+JDK8 版本可以使用 JDK7、JDK6 ... 的特性，而不能使用 JDK9 的特性。</p>
+</blockquote>
+<p>Project compiler output：用于指定项目中的 java 源文件编译后生成的这些
+*.class 文件存放的根目录</p>
+<p>修改成如下即可，记得修改后点击 Apply 或 OK，否则不生效。如 01-module
+模块的 class 文件会在 out/production/01-module 下。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/OvrnmdJVeBLi9hl.png" alt="常规设置">
+<figcaption aria-hidden="true">常规设置</figcaption>
+</figure>
+<h3 id="创建-java-源文件">9.2.6 创建 Java 源文件</h3>
+<p>module 下有个蓝色的 src 文件夹，用于存放源文件，src 右键/new/Java
+Class</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/gsE3IXHYTPjbpvf.png" alt="New Java Class">
+<figcaption aria-hidden="true">New Java Class</figcaption>
+</figure>
+<p>或按下 Alt + Ins scrlk 快捷键，此键在 Backspace 退格键的上面。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/R57DKfUPqhZwcti.png" alt="快捷方式">
+<figcaption aria-hidden="true">快捷方式</figcaption>
+</figure>
+<p>通过上下左右箭头定位到 Java Class 然后回车或点击 Java
+Class，输入源文件名后回车。（不用写后缀 <code>.java</code>）</p>
+<p><strong>导入其它模块的类</strong></p>
+<p>在类中使用其它模块的类时，在错误处（将光标定位到红色波浪处）按下 Alt
++ Enter，选择 Add dependency on module '模块名' 后回车。</p>
+<blockquote>
+<p>实际在模块下的 iml 文件中添加了
+<code>&lt;orderEntry type="module" module-name="模块名" /&gt;</code>
+标签。</p>
+</blockquote>
+<h2 id="常用的设置">9.3 常用的设置</h2>
+<p>内容导视：</p>
+<ul>
+<li>Appearance &amp; Behavior</li>
+<li>Editor</li>
+<li>Build，Execution，Deployment</li>
+<li>其它</li>
+</ul>
+<p>首先打开设置 File/Settings（快捷键：Ctrl + Alt + S）</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/08/vrjmoPe6BXHtJLu.png" alt="Settings">
+<figcaption aria-hidden="true">Settings</figcaption>
+</figure>
+<p>从上至下依次为：外观与行为、快捷键、编辑、插件、版本控制、构建执行部署、语言和框架、工具、高级设置</p>
+<p>依次介绍：</p>
+<h3 id="appearance-behavior">9.3.1 Appearance &amp; Behavior</h3>
+<p><strong>设置主题</strong></p>
+<p>Appearance/Theme</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/V3L1ZcJINRsYntj.png" alt="设置主题">
+<figcaption aria-hidden="true">设置主题</figcaption>
+</figure>
+<p><strong>设置菜单栏字体大小</strong></p>
+<p>Appearance/Size</p>
+<p>如果觉得菜单项或设置中的字体太小，Size 可以往上调，一般设置为
+12。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/4NEGxvSApIbZk6P.png" alt="设置字体大小">
+<figcaption aria-hidden="true">设置字体大小</figcaption>
+</figure>
+<p>重新启动项目时，如何打开一个项目</p>
+<ul>
+<li>New window：新创建一个窗口</li>
+<li>Current window：使用当前窗口</li>
+<li>Ask：总是询问</li>
+</ul>
+<figure>
+<img src="https://s2.loli.net/2022/05/12/o629CidIzfFAYvW.png" alt="屏幕截图 2022-03-13 171254">
+<figcaption aria-hidden="true">屏幕截图 2022-03-13 171254</figcaption>
+</figure>
+<h3 id="editor">9.3.2 Editor</h3>
+<p>内容如下：</p>
+<ul>
+<li>设置使用鼠标滚轮调节字体大小</li>
+<li>自动导包</li>
+<li>行号与分隔符</li>
+<li>显示方法参数信息</li>
+<li>忽略大小写提示</li>
+<li>取消单行显示文件标签</li>
+<li>设置悬浮提示</li>
+<li>设置编辑区域字体</li>
+<li>单独设置控制台字体</li>
+<li>设置文档注释的字体颜色</li>
+<li>添加文件头部信息</li>
+<li>设置项目文件字符编码</li>
+</ul>
+<p><strong>设置使用鼠标滚轮调节字体大小</strong></p>
+<p>General/Mouse Control，勾上 Change font size with Ctrl + Mouse
+Wheel，回到编辑页面按住 Ctrl 同时滚动鼠标滚轮即可调整字体大小。</p>
+<p>Move code fragments with
+drag-and-drop：可以拖拽选中的代码片段到别的位置</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/QkCluVozSiIqTY9.png" alt="调节编辑区域字体大小">
+<figcaption aria-hidden="true">调节编辑区域字体大小</figcaption>
+</figure>
+<p><strong>自动导包</strong></p>
+<p>General/Auto Import</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="">
+Add unambiguous imports on the
+fly：编写代码时，写的简单类名是唯一的，自动添加 import 导入该类</li>
+<li><input type="checkbox" disabled="" checked="">
+Optimize imports on the fly：当 import 导入的类没用上时，自动删去该
+import</li>
+</ul>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/CUp1SATgP5aWR42.png" alt="自动导包">
+<figcaption aria-hidden="true">自动导包</figcaption>
+</figure>
+<p>Insert imports on
+paste（在粘贴时导入），Always：总是，Never：从不，Ask：询问</p>
+<p>如想使用 Date 类，但有多个简单类名为 Date，需要 Alt + Enter 键 import
+class 选择一个。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/spIMU5ZG9WQ4bfl.png" alt="例">
+<figcaption aria-hidden="true">例</figcaption>
+</figure>
+<p>输入 DateFormat，类名唯一，会自动在首行添加
+<code>import 此类的完整类名</code>；删去 DateFormat 会自动删除首行的
+import 导入语句。</p>
+<p><strong>行号与分隔符</strong></p>
+<p>General/Appearance，勾选 Show method
+separators，显示方法之间的分隔符；勾选 Show line numbers 显示行号。</p>
+<p><strong>关闭文档弹窗</strong></p>
+<p>General/Code Completion 取消勾选 Show the documentation popup
+in...</p>
+<p><strong>显示方法参数信息</strong></p>
+<p>General/Code Completion 勾选 Show the paramerter info...</p>
+<p>Show parameter name hints...：提示方法参数名称和类型</p>
+<p>Show the paramerter info...：弹出方法参数名和类型</p>
+<p>Show full method signatures：弹出完整的方法签名</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/me9xTJn8poZaEUM.png" alt="显示方法参数信息">
+<figcaption aria-hidden="true">显示方法参数信息</figcaption>
+</figure>
+<p><strong>忽略大小写提示</strong></p>
+<p>General/Code Completion</p>
+<p>老版将 Case sensitive completion 改为 None；</p>
+<p>新版取消勾选 Match case（区分大小写）</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/m8LCBHqUrwnSPOK.png" alt="忽略大小写">
+<figcaption aria-hidden="true">忽略大小写</figcaption>
+</figure>
+<p>First letter only：仅首字母区分大小写，如 String 等同于 STRing</p>
+<p>All letters：所有都区分大小写，String 不等同于 string</p>
+<p><strong>取消单行显示文件标签</strong></p>
+<p>如果设置单行显示，当编辑区即代码书写区域，编辑了或者浏览很多文件，可以看到
+Number.java、Object.java ...这样展示不下的文件就会被隐藏。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/RZKyQYcgiGxTACv.png" alt="多出来的 Number.java ...">
+<figcaption aria-hidden="true">多出来的 Number.java ...</figcaption>
+</figure>
+<p>General/Editor Tabs 取消勾选 Show tabs in one
+row（在同一行显示，可能会造成文件名显示不完全）</p>
+<p>Hide tabs if there is no space：如果空间不足就隐藏标签</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/k8DSbJrMaReTn9z.png" alt="显示标签">
+<figcaption aria-hidden="true">显示标签</figcaption>
+</figure>
+<p><strong>设置悬浮提示</strong></p>
+<p>当指针停在方法或某处时，会自动显示对应的文档注释信息。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/HmwiWAyfTJ7qLV2.png" alt="悬浮提示">
+<figcaption aria-hidden="true">悬浮提示</figcaption>
+</figure>
+<p>Code Editing 勾选 Show quick documentation on hover</p>
+<p>翻到最下面，Editor Tooltips/Tooltip delay：500，延迟 500
+毫秒后再提示。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/nqsOD3KMLaWEd1Q.png" alt="悬停 500ms 后才会显示">
+<figcaption aria-hidden="true">悬停 500ms 后才会显示</figcaption>
+</figure>
+<p><strong>设置编辑区域字体</strong></p>
+<p>Font/Size</p>
+<p>font 可以选择喜欢的字体，size 是字体大小，line height
+是每行间距。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/OFWxQNK8DJIl7HL.png" alt="设置字体">
+<figcaption aria-hidden="true">设置字体</figcaption>
+</figure>
+<p><strong>设置编辑区域主题</strong></p>
+<p>Color Scheme/Scheme</p>
+<p>Scheme 与整体主题风格一致即可，下面就不太搭。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/MEqQ4XCZasUnISu.png" alt="风格不搭，世界白给">
+<figcaption aria-hidden="true">风格不搭，世界白给</figcaption>
+</figure>
+<p>除了 Font/size 可以设置字体外，通过 Color Scheme/Color Scheme
+Font，勾选 Use color scheme font instead of the，也可以设置。</p>
+<p><strong>单独设置控制台字体</strong></p>
+<p>Color Scheme/Console Font 勾选 Usb console font instead of the</p>
+<p><strong>设置文档注释的字体颜色</strong></p>
+<p>Color Scheme/Language Defaults，Comments/Doc comment/Text</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/fLbCdae2JH9uSzW.png" alt="绿色很健">
+<figcaption aria-hidden="true">绿色很健</figcaption>
+</figure>
+<p><strong>同一个包下超过指定个数的 import 会自动转为 </strong>*</p>
+<p>Code Style/java/Imports</p>
+<p>Class count to use import with '*'：5，导入同一个包的类累计 5
+次时，自动转为 *</p>
+<p>Names count to use static import with
+'*'：3，导入同一个包下静态的类累次 3 次时，自动转为 *</p>
+<p>例：导入 5 个 java.util 包下的类会转为
+<code>import java.util.*;</code></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/uDfigJFbjAN6Myl.png" alt="* 是通配符，指代一切">
+<figcaption aria-hidden="true">* 是通配符，指代一切</figcaption>
+</figure>
+<p><strong>添加文件头部信息</strong></p>
+<p>File and Code Templates/Includes/File Header
+写入信息，每当创建文件时，自动在头部加入这段文字，在
+<code>Description:</code> 中有各个变量的含义，如 ${DATE}
+是当前系统日期。</p>
+<p>我习惯在 java 源文件头部添加文档注释；作者处可以使用 ${USER}
+替代。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/bmf3qL2z6djYSIO.png" alt="文件头部">
+<figcaption aria-hidden="true">文件头部</figcaption>
+</figure>
+<p><strong>设置项目文件字符编码</strong></p>
+<p>File Encodings/Global Encoding 等为 UTF-8（统一编码才不会乱码，UTF-8
+是全球通用的）</p>
+<p>勾选 Transparent native-to-ascii conversion：将 properties
+文件输入的所有字符转换成 ASCII 序列码保存</p>
+<p>UTF-8 BOM 又叫 UTF-8 签名。（BOM：byte order mark）</p>
+<p>UTF-8 的 BOM 是为了支援 UTF-16、UTF-32；BOM
+签名的意思就是告诉编辑器当前文件采用何种编码，方便编辑器识别。BOM
+虽然在编辑器中不显示，但是会产生输出，就像多了一个空行。</p>
+<p>有很多软件不能识别 BOM，也会被当作编码的一部分造成乱码，所以最好选择
+with NO BOM。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/YCsAzbU2Ftvxd7j.png" alt="File Encodings">
+<figcaption aria-hidden="true">File Encodings</figcaption>
+</figure>
+<p><strong>取消方法形参名提示</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/sgn8RGXtIAMPqeh.png" alt="取消方法形参名提示">
+<figcaption aria-hidden="true">取消方法形参名提示</figcaption>
+</figure>
+<p>想要取消显示 second:、minute:、hour:</p>
+<p>Inlay Hints，将 java 取消勾选，确定保存。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/RrkC7yQsKMWjnap.png" alt="取消形参提示">
+<figcaption aria-hidden="true">取消形参提示</figcaption>
+</figure>
+<p>或者右键 Disable Hints</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/SJlYNQAsdrzCyEH.png" alt="隐藏提示">
+<figcaption aria-hidden="true">隐藏提示</figcaption>
+</figure>
+<p>若想重新显示提示，Inlay Hinst/java，Parameter hints，勾上 Show
+parameter hints for</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/ZUFOqjPCpeEa6zc.png" alt="参数提示">
+<figcaption aria-hidden="true">参数提示</figcaption>
+</figure>
+<h3 id="buildexecutiondeployment">9.3.3
+Build，Execution，Deployment</h3>
+<p><strong>自动编译</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/yYEtL4j6fsaRveP.png" alt="自动编译">
+<figcaption aria-hidden="true">自动编译</figcaption>
+</figure>
+<p>Build project automatically：项目自动编译</p>
+<p>Compile independent modules in parallel：多个模块并行编译</p>
+<h3 id="其它">9.3.4 其它</h3>
+<p>内容导视：</p>
+<ul>
+<li>省电模式</li>
+<li>文件的显示位置</li>
+<li>保存及导入原有配置</li>
+</ul>
+<p><strong>省电模式</strong></p>
+<p>File/Power Save Mode会关闭代码检查与提示等功能</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/FUyLP3AmnI9KRCZ.png" alt="节电模式">
+<figcaption aria-hidden="true">节电模式</figcaption>
+</figure>
+<blockquote>
+<p>如果没有了提示功能，可以看看是否误点了</p>
+</blockquote>
+<p><strong>文件的显示位置</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/LATrF8to59wsER3.png" alt="分隔在右边">
+<figcaption aria-hidden="true">分隔在右边</figcaption>
+</figure>
+<p>Split Right：将文件在右边分屏</p>
+<p>Split and Move Right：将文件移到右边分屏</p>
+<p>Split Down：将文件在下边分屏</p>
+<p>Split and Move Down：将文件移到下边分屏</p>
+<p><strong>设置单个文件的字符编码</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/3lnLusUfYm8wZpV.png" alt="设置单个文件的字符编码">
+<figcaption aria-hidden="true">设置单个文件的字符编码</figcaption>
+</figure>
+<p>编辑区右下角修改文件编码</p>
+<p>Reload：暂时改成 xxx 编码显示，但文件还是原来的编码</p>
+<p>Convert：真正的转换</p>
+<p><strong>保存及导入原有配置</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/TrspMhJ8QyaxgNj.png" alt="File/Manage IDE Settings">
+<figcaption aria-hidden="true">File/Manage IDE Settings</figcaption>
+</figure>
+<p>File/Manage IDE Settings，Export Settings 导出设置；以后 Import
+Settings 导入，恢复原本设置。</p>
+<h2 id="常用快捷键">9.4 常用快捷键</h2>
+<p>内容导视：</p>
+<ul>
+<li>文本编辑</li>
+<li>查找浏览</li>
+<li>修改快捷键</li>
+<li>常见问题</li>
+</ul>
+<p>的确很便捷对吧。up、down、left、right 分别对应上下左右箭头。</p>
+<h3 id="文本编辑">9.4.1 文本编辑</h3>
+<table>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">选择要粘贴的内容</th>
+<th style="text-align: center;">Ctrl + Shift + V</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">粘贴带包名的类名</td>
+<td style="text-align: center;">先 Ctrl + Shift + Alt + C 复制类名，再
+Ctrl + Shift + Alt + V 粘贴</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">撤销</td>
+<td style="text-align: center;">Ctrl + Z</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">反撤销</td>
+<td style="text-align: center;">Ctrl + Shift + Z</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">逐渐选中区域</td>
+<td style="text-align: center;">Ctrl + W</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">删除一行（Delete Line）</td>
+<td style="text-align: center;">Ctrl + Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">向下复制一行（Duplicate Line Or
+Selection）</td>
+<td style="text-align: center;">Ctrl + D</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">在域的范围内上下移动行</td>
+<td style="text-align: center;">Shift + Ctrl +上下箭头</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">上下移动行</td>
+<td style="text-align: center;">Shift + Alt +上下箭头</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">整体移动</td>
+<td style="text-align: center;">Tab</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">向上开始新的一行（Start New Line Before
+Current）</td>
+<td style="text-align: center;">Ctrl + Alt + Enter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">向下开始新的一行（Start New Line）</td>
+<td style="text-align: center;">Shift + Enter</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">自动在语句末尾加上分号</td>
+<td style="text-align: center;">Ctrl + Shift + Enter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">单行注释</td>
+<td style="text-align: center;">Ctrl + /</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">多行注释</td>
+<td style="text-align: center;">Ctrl + Shift + /，再按还原</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">格式化代码</th>
+<th style="text-align: center;">Ctrl + Alt + L</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">大小写转换</td>
+<td style="text-align: center;">Ctrl + Shift + U</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">重命名</td>
+<td style="text-align: center;">Shift + F6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">提示补全（Basic）</td>
+<td style="text-align: center;">Ctrl + 空格</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">收起代码块或方法</th>
+<th style="text-align: center;">Ctrl + . 或 Ctrl + - 或右键/Folding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">打开代码块或方法</td>
+<td style="text-align: center;">Ctrl + . 或 Ctrl + +</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">收起全部代码块</td>
+<td style="text-align: center;">Ctrl + Shift + -</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">打开全部代码块</td>
+<td style="text-align: center;">Ctrl + Shift + +</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 60%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">提示方法形参类型（Parameter Info）</th>
+<th style="text-align: center;">Ctrl +
+P（先将光标定位到方法的括号里）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">查看文档（Quick
+Documentation），将光标定位方法名或类名上</td>
+<td style="text-align: center;">Ctrl + Q 、 Alt +鼠标中键</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">快速定位至错误处</td>
+<td style="text-align: center;">F2 、 Shift + F2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">解决错误</td>
+<td style="text-align: center;">Alt + Enter</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">快速生成构造和其他方法如 getset 、
+toString 等方法</th>
+<th style="text-align: center;">Alt + Ins Scrlk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">局部变量抽取为成员变量</td>
+<td style="text-align: center;">Ctrl + Alt + F</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">生成 try-catch 等常用代码块</td>
+<td style="text-align: center;">Ctrl + Alt + T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">抽取成方法</td>
+<td style="text-align: center;">Ctrl + Alt + M</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">自动分配变量名</td>
+<td style="text-align: center;">Ctrl + Alt + V</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">清除多余的 import</td>
+<td style="text-align: center;">Ctrl + Alt + O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">重写方法</td>
+<td style="text-align: center;">Ctrl + O</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">实现接口方法</td>
+<td style="text-align: center;">Ctrl + i</td>
+</tr>
+</tbody>
+</table>
+<p><strong>选择单词填入</strong>（Cyclic Expand Word）： Alt +（Shift）+
+/，Shift 是反方向</p>
+<p>当你什么都不写，按下此快捷键从当前行的上方选择并填入单词；当你已经输入开头，如
+s，就会寻找本类 s 开头的单词自动填人。（可以多按几次找到想要的单词）</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/65MA3hBEKyk1Yi2.png" alt="自动填入">
+<figcaption aria-hidden="true">自动填入</figcaption>
+</figure>
+<p><strong>多行操作</strong>：Shift + Alt + Ins Scrlk，再按住 Shift
+和上下箭头，或者按住鼠标左键不放拖动鼠标，会增加光标个数。（期间左键单击光标变为
+1）</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/aQERS24GANKPU3q.png" alt="多行操作">
+<figcaption aria-hidden="true">多行操作</figcaption>
+</figure>
+<p>另一种方法，按住 Alt 和鼠标左键不放，鼠标往下滑。</p>
+<p><strong>快速生成方法</strong></p>
+<p>Select None 是无参构造，如果想同时选中多个字段，可以通过 Shift +
+上下键或 Ctrl + A 或 Ctrl +
+鼠标点击选择生成的有参构造为哪些字段赋值。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/n3kstKrLTdIJoHc.png" alt="构造器">
+<figcaption aria-hidden="true">构造器</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/AuZOrv7xLp4G5Km.png" alt="生成有参构造">
+<figcaption aria-hidden="true">生成有参构造</figcaption>
+</figure>
+<h3 id="查找浏览">9.4.2 查找浏览</h3>
+<table>
+<colgroup>
+<col style="width: 41%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">关闭当前编辑页面</th>
+<th style="text-align: center;">Ctrl + F4、右键编辑区的文件标签点击
+Close、Shift + 单击标签</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">单独为编辑页面生成窗口</td>
+<td style="text-align: center;">Shift + F4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">关闭/隐藏页面</td>
+<td style="text-align: center;">（Shift）+ Esc、Ctrl + Shift + F4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">编辑窗口全屏显示</td>
+<td style="text-align: center;">Ctrl + Shift + F12</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">左右移动标签查看对应文件</td>
+<td style="text-align: center;">Alt +左右箭头</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光标不动，上下翻页</td>
+<td style="text-align: center;">按住 Ctrl 不松，按下 Up/Down</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">光标至当前显示的内容首尾</td>
+<td style="text-align: center;">Ctrl + Pgup/Pgdn</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光标至文件首尾</td>
+<td style="text-align: center;">Ctrl + Home/End</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">光标在方法之间移动</td>
+<td style="text-align: center;">Alt + 上下箭头（up/down）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">光标返回上一次编辑的位置</td>
+<td style="text-align: center;">Ctrl + Alt + 左右箭头（left+right）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">查看光标最近到过的位置（Recent
+Locations）</td>
+<td style="text-align: center;">Ctrl + Shift + E</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">跳转至某行某列</td>
+<td style="text-align: center;">Ctrl + G</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 41%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">打开对应菜单栏</th>
+<th style="text-align: center;">Alt + 划横线的字母</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">打开对应快捷栏</td>
+<td style="text-align: center;">Alt + 数字</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">打开当前文件所在文件夹（Show In
+Explorer）</td>
+<td style="text-align: center;">按住 Ctrl 点击文件标签 或 Ctrl + Alt +
+F12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">打开最近修改的文件</td>
+<td style="text-align: center;">Ctrl + E 、Ctrl + Tab（Ctrl 不要松，按下
+Tab 键或按下画横线的字母和数字）</td>
+</tr>
+</tbody>
+</table>
+<p>Alt + 1 、 Alt + Home 进入工作列表，上下箭头选择文件，回车或按下
+F4。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">查找所有文件</th>
+<th style="text-align: center;">双击 Shift</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">查找类文件</td>
+<td style="text-align: center;">Ctrl + N</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">查找文件</td>
+<td style="text-align: center;">Shift + Ctrl + N</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">查找（全局）</th>
+<th style="text-align: center;">Ctrl +（Shift）+ F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">选中查找的结果之一</td>
+<td style="text-align: center;">（Shift）+ F3、 Ctrl +（Shift）+ L</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">替换</td>
+<td style="text-align: center;">Ctrl + R</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">标记某行</th>
+<th style="text-align: center;">Ctrl + Shift + 数字（再按取消标记）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">标记某行</td>
+<td style="text-align: center;">Ctrl + F11，点击对应序号标记</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">跳转至标记的某行</td>
+<td style="text-align: center;">Ctrl + 数字</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">添加书签</th>
+<th style="text-align: center;">F11</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">查看收藏与书签</td>
+<td style="text-align: center;">Alt + 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">跳转书签所在位置</td>
+<td style="text-align: center;">Shift + F11</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 60%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">查找已有的模板缩写</th>
+<th style="text-align: center;">Ctrl + J</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">查看源码</td>
+<td style="text-align: center;">按住 Ctrl 再单击类名、Ctrl + B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">查看父类方法（Go To Super Method）</td>
+<td style="text-align: center;">将光标定位到子类方法名处，按下 Ctrl +
+U</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">查看一个类的结构</td>
+<td style="text-align: center;">Ctrl + F12、Alt + 7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">查看类的继承关系</td>
+<td style="text-align: center;">Ctrl + H</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">查看有关所有实现或者覆写了当前方法的类的结构图（Method
+Hierarchy）</td>
+<td style="text-align: center;">Ctrl + Shift + H</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">查看类的继承结构图（Show UML
+Diagram）</td>
+<td style="text-align: center;">Ctrl + Alt +（Shift）+ U、右键
+Diagrams</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">呈现当前方法的调用层级结构（Call
+Hierarchy）</td>
+<td style="text-align: center;">Ctrl + Alt + H</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/klc1NEMCHqzm4hS.png" alt="Declaration or Usages">
+<figcaption aria-hidden="true">Declaration or Usages</figcaption>
+</figure>
+<p>查看此文件在磁盘的位置：按住 Ctrl 键，点击此文件标签，或者右键 Open
+In/Explorer</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/lYqhw6bRWSDAKda.png" alt="打开文件所在目录">
+<figcaption aria-hidden="true">打开文件所在目录</figcaption>
+</figure>
+<p>添加到收藏（Add To Favorites）：Shift + Alt + F、或者文件右击 Add To
+Favorites 选择已有的收藏夹，Add To New Favorites List
+创建新的收藏夹。</p>
+<p>替换：Ctrl + R，Replace 一个个替换，All 全部替换，include
+排除（被排除的不会被替换）</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/yrbPWXsiuqIBkS2.png" alt="替换">
+<figcaption aria-hidden="true">替换</figcaption>
+</figure>
+<h3 id="修改快捷键">9.4.3 修改快捷键</h3>
+<p>打开
+Settings/keymap，有两个放大镜，左边输入功能名称；点击右边的放大镜按下快捷键，寻找快捷键对应的功能；</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/O8Efr27xWoLKNq6.png" alt="快捷键">
+<figcaption aria-hidden="true">快捷键</figcaption>
+</figure>
+<p>比如修改复制当前行操作的快捷键，搜索 Duplicate，右键 Add keyboard
+Shortcut，更换快捷键。不用输入字母，而是把你希望的组合键同时按下。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/sFzqyTRPkSlVjrd.png" alt="更改快捷键">
+<figcaption aria-hidden="true">更改快捷键</figcaption>
+</figure>
+<p>Add Keyboard Shortcut：键盘快捷键</p>
+<p>Add Mouse Shortcut：鼠标快捷键，例 Ctrl + 左键单击</p>
+<p>Add Abbreviation：添加操作的缩写</p>
+<p>Remove：移除快捷键</p>
+<p>Reset Shortcuts：重新设置快捷键</p>
+<p>你怎么知道输入 Duplicate？在 IDEA 安装路径下有个 help
+目录，里面有两个 pdf 文件，打开查看对组合键作用的描述；如 Ctrl +
+D，Duplicate current line or selected
+block：复制当前行及选中的文本，与上面的解释大同小异，配合显示的快捷键即可快速定位想要修改的组合键。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/M1cBqNFrECWGygp.png" alt="keymap">
+<figcaption aria-hidden="true">keymap</figcaption>
+</figure>
+<p>如 Ctrl + Alt + L 格式化代码，在第一列第 19 个，搜索 Reformat
+code</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/uJnLyZ8HOaTqSzB.png" alt="Reformat code">
+<figcaption aria-hidden="true">Reformat code</figcaption>
+</figure>
+<p>如果习惯使用 Eclipse 的快捷键，可以将 keymap 改为 Eclipse。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/eJzFsTr2LfVkbqA.png" alt="Eclipse">
+<figcaption aria-hidden="true">Eclipse</figcaption>
+</figure>
+<h3 id="常见问题">9.4.4 常见问题</h3>
+<p>按下快捷键时，如果没有反应，那么<mark>这组快捷键可能是被其他软件占用</mark>了，需要更改快捷键组合方式。</p>
+<p>或者你觉得快捷键很别扭，易混淆；比如 Ctrl + D，在其他软件是 delete
+删除的意思，而在 IDEA 却是 add 增加一行的意思。</p>
+<p>Ctrl + 空格、Ctrl + . 等快捷键已被 Windows 系统占用；</p>
+<p>打开 Windows 设置，时间和语言/语言/键盘/输入语言热键，可以看到 Ctrl +
+空格已被占用，所以 IDEA 的自动补全失效了。</p>
+<p>或者首选语言选择中文（简体、中国）选项，键盘/微软拼音/选项/按键，看看快捷键组合方式是否被占用了。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/xAsHFXltvioENLy.png" alt="陷阱">
+<figcaption aria-hidden="true">陷阱</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/zSIOvP8nJ2gMNku.png" alt="都是陷阱">
+<figcaption aria-hidden="true">都是陷阱</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/05/09/2Yz3MCj6rnTkpEh.png" alt="中英切换">
+<figcaption aria-hidden="true">中英切换</figcaption>
+</figure>
+<h2 id="自定义模板">9.5 自定义模板</h2>
+<p>内容导视：</p>
+<ul>
+<li>常用模板缩写</li>
+<li>后缀模板</li>
+<li>实时模板</li>
+</ul>
+<p>Templates，代码片段对应的字母缩写，输入缩写按下 Tab
+键后可以出现预定义的固定模式的代码，提高了开发效率；如 sout 是
+<code>System.out.println()</code>，Ctrl + J
+快捷键可以查看所有模板缩写。</p>
+<h3 id="常用模板缩写">9.5.1 常用模板缩写</h3>
+<p>输入缩写后按下 Tab 键，如 main 方法的缩写：main、psvm。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">输出语句</th>
+<th style="text-align: center;">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">普通输出语句</td>
+<td style="text-align: center;">sout</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">输出方法参数名及值</td>
+<td style="text-align: center;">soutp</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">输出方法名</td>
+<td style="text-align: center;">soutm</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">输出变量值</td>
+<td style="text-align: center;">soutv 或 xxx.sout</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">输出变量名及值</td>
+<td style="text-align: center;">xxx.soutv</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">for 语句</th>
+<th style="text-align: center;">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">i 从 0 到 ？，i++</td>
+<td style="text-align: center;">fori</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">增强 for 循环</td>
+<td style="text-align: center;">iter、xxx.for</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">遍历数组</td>
+<td style="text-align: center;">itar</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">迭代器遍历</td>
+<td style="text-align: center;">itit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">顺序遍历</td>
+<td style="text-align: center;">xxx.fori</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">逆序遍历</td>
+<td style="text-align: center;">xxx.forr</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">if 语句</th>
+<th style="text-align: center;">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">if (xxx == null）</td>
+<td style="text-align: center;">ifn、xxx.null</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">if (xxx != null）</td>
+<td style="text-align: center;">inn、xxx.nn</td>
+</tr>
+</tbody>
+</table>
+<h3 id="后缀模板">9.5.2 后缀模板</h3>
+<p>打开 Settings，Editor/General/Postfix
+Completion，没法修改预定义的代码模板，倒是可以修改缩写（先选择要修改的地方，然后点击
++ 右边的铅笔）。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/iksAal1Jb3OjfRZ.png" alt="启动后缀模板">
+<figcaption aria-hidden="true">启动后缀模板</figcaption>
+</figure>
+<p>Enable postfix completion：启动后缀模板</p>
+<p>Expand templates with Tab：输入xxx.缩写后按下 Tab
+键后生成模板，一般还未输入完时 IDEA 会自动弹出提示回车就行。</p>
+<p>打个比方，定义了一个 int 类型的数组 arr，fori 是后缀模板缩写，输入
+arr.fori 按下 Tab 键后出现预定义的代码。</p>
+<p><strong>自定义后缀模板</strong></p>
+<p>自定义后缀模板，按下 +，选择将模板应用在哪里，比如 java。</p>
+<p>介绍含义：</p>
+<p>key：缩写，这里我填写的是 <code>syso</code></p>
+<p>Minimum language level：此模板生效的最低 JDK 版本。例：假如 level
+设置为 9，那么在 JDK8 中此模板不生效</p>
+<p>Use static import if possible：如果可能的话使用静态导入</p>
+<p><code>$EXPR$</code>：引用目标表达式</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/pwUchkYjsEZSCV7.png" alt="创建后缀模板">
+<figcaption aria-hidden="true">创建后缀模板</figcaption>
+</figure>
+<p>点击 OK，在 java 源文件中，假设现在有变量，名为 i，输入
+<code>i.syso</code> 按下 Tab 键后生成
+<code>System.out.println("i的值：" + i);</code></p>
+<p>那么 <code>$EXPR$</code> 就是 i。</p>
+<p>Applicable expression
+types：应用至哪些类型，如果不选择，默认任意类型都可以使用此模板；</p>
+<p>​ void：没有返回类型才能使用此模板</p>
+<p>​ not primitive type：包装类型</p>
+<p>​ array：数组类型</p>
+<p>​ choose class in xxx：选择自己的模块中哪些类可以使用此模板</p>
+<p>​ enter class name：选择哪些类可以使用此模板</p>
+<p><code>$END$</code>：生成模板后光标所在位置</p>
+<p>例：设置只有数组类型的变量才能使用此模板，有 int 类型的数组 arr，输入
+<code>arr.cqhsort</code> 后按下 Tab 键才会生效。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/9ktSVrUqjvu16iC.png" alt="cqhsort">
+<figcaption aria-hidden="true">cqhsort</figcaption>
+</figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>$EXPR$ <span class="token keyword">instanceof</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> temp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> $EXPR$<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> min <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> $EXPR$<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>$EXPR$<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> $EXPR$<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                min <span class="token operator">=</span> j<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>min <span class="token operator">!=</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            temp <span class="token operator">=</span> $EXPR$<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            $EXPR$<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> $EXPR$<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            $EXPR$<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>$EXPR$<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>$END$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实时模板">9.5.3 实时模板</h3>
+<p>Edit/Live Templates</p>
+<p><strong>单词翻译</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/BUkxmsEnhdL6wJ4.png" alt="Live Templates">
+<figcaption aria-hidden="true">Live Templates</figcaption>
+</figure>
+<p>By default expand with Tab：默认情况按下 Tab 生成模板</p>
+<p>Abbreviation：模板的缩写词</p>
+<p>Description：模板的描述</p>
+<p>Template text：预定义的模板文本</p>
+<p>Applicable in Java: statement：将此模板应用至 java 中的语句声明</p>
+<p>Expand with Tab：按下 Tab 键后生成模板</p>
+<p>Reformat according to style：格式化预定义的模板</p>
+<p>Use static import if possible：如果可能的话使用静态导入</p>
+<p><strong>模板应用范围</strong></p>
+<p>点击 Change 改变模板应用范围</p>
+<p>Comment：注释</p>
+<p>Consumer function：方法</p>
+<p>Declaration：变量声明</p>
+<p>Expression：表达式</p>
+<p>Statement：语句声明</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/CeRc1lUwdfL9hXG.png" alt="应用到 Java 的 xxx">
+<figcaption aria-hidden="true">应用到 Java 的 xxx</figcaption>
+</figure>
+<p><strong>自定义模板</strong></p>
+<p>按下 + 号（Alt + Ins scrlk），创建组，任意取名如 cqh；</p>
+<p>Live Template：定义模板</p>
+<p>Template Group ... ：创建模板组</p>
+<p>选中自己刚刚创建的组按下 + 号，点击 Live
+Template，可以模仿如下设置：</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/ehvdMPNTySl3FEm.png" alt="自己定义吧">
+<figcaption aria-hidden="true">自己定义吧</figcaption>
+</figure>
+<p>点击 Define 选择模板应用范围如 java；</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/eP4pCIJchBRF16S.png" alt="填值">
+<figcaption aria-hidden="true">填值</figcaption>
+</figure>
+<p>点击 Edit variables，为变量 <code>$VAR$</code>
+设值为第一个变量名，默认值为 var，跳过定义（如果 skip if defined
+不勾选，光标会停在 <code>$VAR$</code> 处）</p>
+<p><code>suggestFirstVariableName("Object")</code>：获取第一个变量名</p>
+<p>常见的 Expression（预定义函数）请看<a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions">实时模板变量</a>。</p>
+<p>点击 OK 后，在 java 文件中输入 try 按下 Tab 后即可生成模板。</p>
+<h2 id="断点调试">9.6 断点调试</h2>
+<ul>
+<li>运行类</li>
+<li>debug 设置</li>
+<li>debug 调试快捷键</li>
+<li>debug 实际操作</li>
+</ul>
+<h3 id="运行类">9.6.1 运行类</h3>
+<p>run 即调用某个类的 main 方法，快捷键：Shift + Ctrl +
+F10，也可以右键或点击绿色三角图标也可以运行此类；运行过后右上角会多出此类的运行配置信息，下拉框选中此类，Shift
++ F10 即可运行，Shift + F9 即可调试。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/Kzai7468SC2NYvc.png" alt="选中">
+<figcaption aria-hidden="true">选中</figcaption>
+</figure>
+<p>Edit Configurations 用来编辑每个类的运行配置</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/15/T9avpJDxmZyweHq.png" alt="配置每个类的运行信息">
+<figcaption aria-hidden="true">配置每个类的运行信息</figcaption>
+</figure>
+<p>Alt + Shift + F9/F10，会列出已运行过的类，可以通过左右上下箭头选择
+Run 后回车。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/iQ1VzoON7LsneyP.png" alt="从已运行的类中选择">
+<figcaption aria-hidden="true">从已运行的类中选择</figcaption>
+</figure>
+<p>常用的 run 和 debug 快捷键</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/LzIuGlvTQBFYJ9W.png" alt="常用快捷键">
+<figcaption aria-hidden="true">常用快捷键</figcaption>
+</figure>
+<h3 id="debug-设置">9.6.2 debug 设置</h3>
+<p><strong>减少内存占用</strong></p>
+<p>打开 Settings/Build，Execution，Deployment/Debugger，设置 Debug
+连接方式，默认是 Socket。</p>
+<p>Shared memory 是 Windows 特有的一个属性，一般在 Windows
+系统下建议使用此设置，内存占用相对较少。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/GdqfItkZKHxeDNc.png" alt="Debugger">
+<figcaption aria-hidden="true">Debugger</figcaption>
+</figure>
+<p><strong>步入源码</strong></p>
+<p>Debugger/Stepping</p>
+<p>Do not step into the classes：不要进入此类</p>
+<p>取消勾选 java.*、javax.*</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/XVNJ6bOnAfsT8D7.png" alt="取消勾选 java.*">
+<figcaption aria-hidden="true">取消勾选 java.*</figcaption>
+</figure>
+<p><strong>显示完整实例信息</strong></p>
+<p>Debugger/Data Views/Java</p>
+<p>取消勾选 Enable alternative view for Collections classes</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/K9nBG7rUILc5fE2.png" alt="集合实例的信息视图被简略过了">
+<figcaption aria-hidden="true">集合实例的信息视图被简略过了</figcaption>
+</figure>
+<h3 id="debug-调试快捷键">9.6.3 debug 调试快捷键</h3>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/pNWJ5u3jKkSy48x.png" alt="开启 debug 后">
+<figcaption aria-hidden="true">开启 debug 后</figcaption>
+</figure>
+<p>1：step over（F8)：进入下一行，如果当前行断点是方法，不进入方法内
+2：step into（F7)：进入下一行，如果当前行断点是方法，则进入方法体内
+3：force step into（Alt + Shift
++F7)：同上，但有些进不去的方法可以使用此键强制进入（比如源码) 4：step
+out（Shift + F8)：跳出方法 5：Drop Frame：回退到上一个调用的方法 6：Run
+to Cursor（Alt + F9)：运行到光标位置，只能前进 7：Ctrl + F5：重新 debug
+8：Resume
+Program（F9)：恢复程序运行，但如果下面还有断点则停到下个断点处，没有断点直接跑完
+9：stop（Ctrl + F2)：结束进程 10：View Breakpoints（Ctrl + Shift +
+F8)：查看所有断点，Condition：为断点设置执行的条件</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/2hNaRZ3UWfsrvMc.png" alt="条件断点">
+<figcaption aria-hidden="true">条件断点</figcaption>
+</figure>
+<p>11：Mute Breakpoints：忽略剩下的断点</p>
+<p>12：Evaluate Expression ...（Alt
++F8)：计算表达式，输入表达式查看结果。按下Alt + ↓
+或下拉框查看历史记录</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/7RYHZVWiG8a3NEx.png" alt="求值">
+<figcaption aria-hidden="true">求值</figcaption>
+</figure>
+<h3 id="debug-实际操作">9.6.4 debug 实际操作</h3>
+<p>debug 就是断点调试，在某一行设置一个断点，debug
+时，程序运行到这一行就会卡住，可以一步步执行代码（按下 F7 或
+F8），定位错误的地方。</p>
+<p><strong>设置断点</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/dykUaRFQ3OXuD2e.png" alt="单击此处">
+<figcaption aria-hidden="true">单击此处</figcaption>
+</figure>
+<p>单击红点的位置处生成断点，再单击就是取消断点。点击绿色小虫图标开始
+debug，代码自动在断点处停下。</p>
+<p><strong>设置条件</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/d3HrGFBDsvT7tUy.png" alt="设置条件">
+<figcaption aria-hidden="true">设置条件</figcaption>
+</figure>
+<p>当断点处于循环内时，右击红点，在条件处输入布尔表达式，如 i ==
+6，那么只有 i == 6 为 true 时，程序才会停下，不用 i = 1，2，3...
+慢慢步进。</p>
+<p>或者点击 Set Value（F2）修改值加快进程。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/NRdrwfi4CXL2v5Y.png" alt="Set Value">
+<figcaption aria-hidden="true">Set Value</figcaption>
+</figure>
+<h2 id="其它-1">9.7 其它</h2>
+<p>内容如下：</p>
+<ul>
+<li>展开包名</li>
+<li>新增 JDK 与源码</li>
+<li>生成 JavaDoc</li>
+<li>清理缓存</li>
+<li>取消更新</li>
+<li>插件使用</li>
+</ul>
+<p><strong>展开包名</strong></p>
+<p>使用 Alt + Ins scrlk 创建 package 后，包名都重叠在一起。</p>
+<p>点击 Project 右边的设置图标，取消 Compact Middle Packages 的对勾</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/vsJKSFdnurtzyRk.png" alt="随个人喜好">
+<figcaption aria-hidden="true">随个人喜好</figcaption>
+</figure>
+<p><strong>查看文件历史修改记录</strong></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/xWbN8C3zJVPfFQH.png" alt="Show History">
+<figcaption aria-hidden="true">Show History</figcaption>
+</figure>
+<p><strong>对比两个文件</strong></p>
+<p>右键 Compare with 选择比较的文件，或者按住 Ctrl
+不放选中两个文件，再按下 Ctrl + D</p>
+<p>Do not ignore：不要忽视，Ignore whitespaces：忽略空格</p>
+<p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/comparing-files-and-folders.html#comparing_files">官方比较文件的详细说明</a></p>
+<p><strong>新增 JDK 与源码</strong></p>
+<p>Project Structure/SDKs，点击 +/Add JDK...</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/piUEkF1BnLXh5eH.png" alt="选择 JDK 安装目录">
+<figcaption aria-hidden="true">选择 JDK 安装目录</figcaption>
+</figure>
+<blockquote>
+<p>SDK
+是软件开发工具包，辅助开发某一类软件的相关文档、范例和工具的集合都可以叫做SDK；JDK是SDK的子集。</p>
+</blockquote>
+<p>SDKs/Sourcepath/+，导入源码，方便以后 Ctrl + B 查看。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/fXl4QTIqtzS1GeZ.png" alt="导入源码">
+<figcaption aria-hidden="true">导入源码</figcaption>
+</figure>
+<hr>
+<p><strong>生成 JavaDoc</strong></p>
+<p>Tools/Generate JavaDoc...</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/gTJmpRNUGywZ8qx.png" alt="javadoc">
+<figcaption aria-hidden="true">javadoc</figcaption>
+</figure>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/alZWv21bp3P6nQR.png" alt="选择范围">
+<figcaption aria-hidden="true">选择范围</figcaption>
+</figure>
+<pre class="line-numbers language-tex" data-language="tex"><code class="language-tex">Generate JavaDoc Scope：生成 API 文档的范围
+	Whole project：当前项目的所有模块
+	Module '01-package'：当前模块
+	File：当前文件
+	Custome scope： 自定义范围
+
+Include JDK and library sources in -sourcepath：包含 JDK 源码
+Link to JDK documentation：链接 JDK 的 API 文档
+
+Output directory：生成的 API 文档的位置
+显示 protected 以上级别的内容：private 私有和 package 包级别不显示
+
+Locale：语言类型，如 zh_CN
+Other command line arguments：其它命令行参数：-encoding UTF-8 -charset UTF-8
+	-charset 是告知浏览器此文件采用什么编码方式读取这个文件
+	-encoding 是告知 java 源代码的字符编码
+
+Open generated documentation in browser：在浏览器打开生成的文档<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>点击 OK 后，生成了一大堆 html 文件，点击 index.html 即可。</p>
+<p><strong>清理缓存</strong></p>
+<blockquote>
+<p>我没有经历过，用的挺好，下面是尚硅谷资料的原话。</p>
+</blockquote>
+<p>IntelliJ IDEA
+首次加载项目的时候,都会创建索引，创建索引的时间跟项目的文件多少成正比。IntelliJ
+IDEA的<mark>缓存和索引主要是用来加快文件查询</mark>，从而加快各种查找、代码提示等操作的速度。</p>
+<p>在某些特殊条件下，IntelliJ IDEA
+的缓存和索引文件也是会损坏的，比如：断电、蓝屏引起的强制关机，当你重新打开
+IntelliJ IDEA，很可能 IntelliJ IDEA
+会报各种莫名其妙错误，甚至项目打不开，IntelliJIDEA
+主题还原成默认状态。</p>
+<p>即使没有断电、蓝屏，也会有莫名奇怪的问题的时候，也很有可能是 IntelliJ
+IDEA
+缓存和索引出现了问题，这种情况还不少。遇到此类问题也不用过多担心。我们可以清理缓存和索引。</p>
+<p>File/Invalidate Caches...</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/zTlQcmqKHuLkCfE.png" alt="清理缓存">
+<figcaption aria-hidden="true">清理缓存</figcaption>
+</figure>
+<p>Invalidate Caches：清除缓存</p>
+<p>Reload All from Disk：从磁盘重新加载所有内容</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/8nVQj7BRlosWUzu.png" alt="删除所有项目的缓存和索引，当您重新打开项目时，将生成新的缓存。">
+<figcaption aria-hidden="true">删除所有项目的缓存和索引，当您重新打开项目时，将生成新的缓存。</figcaption>
+</figure>
+<p>Clear file system cache and Local
+History：清除文件的系统缓存和本地历史修改记录（即清除C:/Users/用户名/AppData/Local/JetBrains/IntelliJIdea2021.2/LocalHistory，一般不建议勾选）</p>
+<p>Clear VCS Log caches and indexes：清除 VCS（版本控制系统）
+日志缓存和索引</p>
+<p>Clear downloaded shared indexes：清除下载的共享索引</p>
+<p>Ask before downloading new shared
+indexes：请在下载新的共享索引之前进行询问</p>
+<p>Invalidate and Restart：清除并重启（老版会全部清除，记得备份
+config）</p>
+<p>cancel：取消</p>
+<p>Just Restart：仅重启</p>
+<p><strong>取消更新</strong></p>
+<p>打开 Settings，Appearance &amp; Behavior/System Settings/Updates</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/YBpHLZI6T812Qg4.png" alt="取消更新">
+<figcaption aria-hidden="true">取消更新</figcaption>
+</figure>
+<p>老版取消勾选 Automatically check updates for</p>
+<p>下面根据自己的情况取消勾选</p>
+<p>Check IDE updates for Stable Releases：检查 IDEA 稳定版的更新</p>
+<p>Check for plugin updates：检查插件的更新</p>
+<p>Show What's New in the editor after an IDE update
+idea：更新后显示更新的内容</p>
+<p><strong>插件使用</strong></p>
+<p>Settings/Plugins，在 Marketplace 中搜自己想要的插件，installed
+是已安装的插件。（官方的插件库：<a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/">https://plugins.jetbrains.com/</a>）</p>
+<p>也可以点击设置从磁盘上安装插件。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/SeMUcuRL59f6odA.png" alt="市场">
+<figcaption aria-hidden="true">市场</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">插件名</th>
+<th style="text-align: center;">功能</th>
+<th style="text-align: center;">网址</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Key promoter</td>
+<td style="text-align: center;">快捷键提示</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/4455?pr=idea</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CamelCase</td>
+<td style="text-align: center;">驼峰式命名和下划线命名交替变化</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/7160?pr=idea</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Checkstyle-IDEA</td>
+<td style="text-align: center;">代码样式检查</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/1065?pr=idea</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">FindBugs-IDEA</td>
+<td style="text-align: center;">代码 Bug 检查</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/3847?pr=idea</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Statistice</td>
+<td style="text-align: center;">代码统计</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/4509?pr=idea</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">JRebel Plugine</td>
+<td style="text-align: center;">热部署</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/?id=4441</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CodeGlance</td>
+<td style="text-align: center;">在编辑代码最右侧，显示一块代码小地图</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/7275?pr=idea</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Eclipse Code Formatter</td>
+<td style="text-align: center;">使用 Eclipse
+的代码格式化风格，在一个团队中如果公司有规定格式化风格，这个可以使用</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/6546?pr=idea</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">GsonFormate</td>
+<td style="text-align: center;">把 JSON 字符串直接实例化成类</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/7654?pr=idea</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">IDE Eval Reset</td>
+<td style="text-align: center;">重置 IDEA 使用</td>
+<td style="text-align: center;">https://zhile.io/2020/11/18/jetbrains-eval-reset-deprecated.html</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Translation</td>
+<td style="text-align: center;">中英文翻译 Ctrl + Shift + O，或选中单词
+后 Ctrl + Shift + Y</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/8579-translation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Xcode-Dark Theme</td>
+<td style="text-align: center;">一种 IDEA 主题</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/13106-xcode-dark-theme</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Alibaba Java Coding Guidelines</td>
+<td style="text-align: center;">阿里巴巴代码检查</td>
+<td style="text-align: center;">https://plugins.jetbrains.com/plugin/10046-alibaba-java-coding-guidelines</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="https://s2.loli.net/2022/05/11/P8eZYImkryDCGHt.png" alt="主题请到这更换">
+<figcaption aria-hidden="true">主题请到这更换</figcaption>
+</figure>
+<h2 id="x-总结回顾">9.x 总结回顾</h2>
+<p>其实也没有什么好回顾的，我又不擅长做视频，内容也不太全面，大家百度就行。虽然使用
+IDEA 体验更好，方便整合，但是如果是因为 Eclipse 太卡了，才考虑使用
+IDEA，但 IDEA 占用内存只会更多，大概 40% 的内存。</p>
+<h2 id="y-实战演练">9.y 实战演练</h2>
+<p>9.1 使用 debug 测试创建对象时的代码执行顺序。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">cqh</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://ccqqhh.github.io/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.9-intellij-idea-shi-yong/">https://ccqqhh.github.io/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.9-intellij-idea-shi-yong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">cqh</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/1-JavaSE/">
+                                    <span class="chip bg-color">1. JavaSE</span>
+                                </a>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">心意我领了，谢谢您</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.b-mian-xiang-dui-xiang-zhong-ji-ji-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/31.jpg" class="responsive-img" alt="1.1.b 面向对象中级-继承">
+                        
+                        <span class="card-title">1.1.b 面向对象中级-继承</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
+                                    1.1 语法入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/05/1.javase/1.1-yu-fa-ru-men/1.1.8-you-xu-shu-zu-cha-zhao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/medias/featureimages/41.jpg" class="responsive-img" alt="1.1.8 有序数组查找">
+                        
+                        <span class="card-title">1.1.8 有序数组查找</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/1-1-%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/" class="post-category">
+                                    1.1 语法入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/1-JavaSE/">
+                        <span class="chip bg-color">1. JavaSE</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('100')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: cqh<br />'
+            + '文章作者: cqh<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，转载请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">cqh</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">168.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="https://github.com/ccqqhh" class="tooltipped" target="_blank" data-tooltip="访问我的 GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2675385031@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2675385031" class="tooltipped" target="_blank" data-tooltip="QQ 联系我: 2675385031" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/ccqqhh/ccqqhh.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
